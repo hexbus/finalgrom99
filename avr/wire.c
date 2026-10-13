@@ -103,11 +103,13 @@ void writeByte(uint8_t b)
 void writeSize(uint8_t size) //OK
 {
   PORTD = size;
+  PORTC = sDUMP;  // one command bit per transition; avoid transient CONFIG
   PORTC = sSIZE;  // set size
   _delay_us(7);
   PORTC &= ~pCCLK;  // CCLK low
   PORTC |= pCCLK;  // CCLK high -> read size
   _delay_us(0.2);
+  PORTC = sDUMP;  // return via 110, never transient 101
   PORTC = sLOAD;  // clear set size
   _delay_us(7);
 }

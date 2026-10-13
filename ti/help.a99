@@ -429,10 +429,10 @@ trampoline_end:
        aorg
 
        ; subroutines
-       copy "vsbw.a99"
-       copy "vmbw.a99"
-       copy "vwtr.a99"
-       copy "vsbmw.a99"
+       copy "vsbw.asm"
+       copy "vmbw.asm"
+       copy "vwtr.asm"
+       copy "vsbmw.asm"
 
        ; constants
 c_newkey:

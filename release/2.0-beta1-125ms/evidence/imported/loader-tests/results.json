@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "hardware_tested": false,
+  "result": "PASS 31 stock loading/menu cases",
+  "limits": "Generated C with modeled bank-limited SRAM/Petit FatFs stream; separate real FAT and RTL tests required."
+}

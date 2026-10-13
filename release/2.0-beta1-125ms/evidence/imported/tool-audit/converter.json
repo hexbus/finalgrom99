@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "converter_sha256": "e7db0ed714e1156795827b5f26306a0fe185eca3b61c7cfca5fa21af07d896b6",
+  "cases": [
+    {
+      "adapter": "cinema",
+      "exact_baseline_files": 4,
+      "wrong_revision_rejected": true,
+      "corrupt_companion_rejected": true
+    },
+    {
+      "adapter": "dragon",
+      "exact_baseline_files": 4,
+      "wrong_revision_rejected": true,
+      "corrupt_companion_rejected": true
+    },
+    {
+      "adapter": "games1m",
+      "exact_baseline_files": 3,
+      "wrong_revision_rejected": true,
+      "corrupt_companion_rejected": true
+    },
+    {
+      "adapter": "games2m",
+      "exact_baseline_files": 3,
+      "wrong_revision_rejected": true,
+      "corrupt_companion_rejected": true
+    },
+    {
+      "adapter": "space",
+      "exact_baseline_files": 4,
+      "wrong_revision_rejected": true,
+      "corrupt_companion_rejected": true
+    },
+    {
+      "adapter": "stealth",
+      "exact_baseline_files": 4,
+      "wrong_revision_rejected": true,
+      "corrupt_companion_rejected": true
+    },
+    {
+      "adapter": "badloop",
+      "exact_baseline_files": 4,
+      "wrong_revision_rejected": true,
+      "corrupt_companion_rejected": true
+    },
+    {
+      "adapter": "badmusic",
+      "exact_baseline_files": 4,
+      "wrong_revision_rejected": true,
+      "corrupt_companion_rejected": true
+    },
+    {
+      "adapter": "badfull",
+      "exact_baseline_files": 4,
+      "wrong_revision_rejected": true,
+      "corrupt_companion_rejected": true
+    },
+    {
+      "adapter": "badfmus",
+      "exact_baseline_files": 4,
+      "wrong_revision_rejected": true,
+      "corrupt_companion_rejected": true
+    }
+  ],
+  "unknown_refused": true,
+  "path_escape_rejected": true,
+  "existing_output_preserved": true,
+  "hardware_tested": false
+}

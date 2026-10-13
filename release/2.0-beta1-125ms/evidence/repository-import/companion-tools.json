@@ -1,0 +1,150 @@
+{
+  "passed": true,
+  "independent_decode": true,
+  "learned_successors": "2/3",
+  "byte_identical_companion_roundtrip": true,
+  "invalid_recipes_rejected": 10,
+  "cli_calls": [
+    {
+      "script": "build-cooperative-profile.py",
+      "arguments": [
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\recipe.json",
+        "--output",
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\built"
+      ],
+      "returncode": 0
+    },
+    {
+      "script": "build-sector-overlay.py",
+      "arguments": [
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\DEMO.GCR",
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\recipe.json",
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\standalone.GOV"
+      ],
+      "returncode": 0
+    },
+    {
+      "script": "build-giga-predict.py",
+      "arguments": [
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\model.json",
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\built\\DEMO.GPR"
+      ],
+      "returncode": 0
+    },
+    {
+      "script": "verify-prepared-set.py",
+      "arguments": [
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\built\\DEMO.GCR"
+      ],
+      "returncode": 0
+    },
+    {
+      "script": "export-prepared-recipe.py",
+      "arguments": [
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\built\\DEMO.GCR",
+        "--output",
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\exported"
+      ],
+      "returncode": 0
+    },
+    {
+      "script": "build-cooperative-profile.py",
+      "arguments": [
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\exported\\recipe.json",
+        "--output",
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\rebuilt"
+      ],
+      "returncode": 0
+    },
+    {
+      "script": "build-giga-predict.py",
+      "arguments": [
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\exported\\prediction.json",
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\rebuilt\\DEMO.GPR"
+      ],
+      "returncode": 0
+    },
+    {
+      "script": "learn-cartridge-prediction.py",
+      "arguments": [
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\DEMO.GCR",
+        "--train",
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\train.csv",
+        "--validate",
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\validate.csv",
+        "--top",
+        "1",
+        "--output",
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\learned"
+      ],
+      "returncode": 0
+    },
+    {
+      "script": "convert-cartridge.py",
+      "arguments": [
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\DEMO.GCR",
+        "--catalog",
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\catalog.json",
+        "--inspect"
+      ],
+      "returncode": 0
+    },
+    {
+      "script": "convert-cartridge.py",
+      "arguments": [
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\DEMO.GCR",
+        "--catalog",
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\catalog.json",
+        "--output",
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\converted"
+      ],
+      "returncode": 0
+    },
+    {
+      "script": "convert-cartridge.py",
+      "arguments": [
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\DEMO.GCR",
+        "--catalog",
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\catalog.json",
+        "--output",
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\converted"
+      ],
+      "returncode": 2
+    },
+    {
+      "script": "learn-cartridge-prediction.py",
+      "arguments": [
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\DEMO.GCR",
+        "--train",
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\train.csv",
+        "--validate",
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\train.csv",
+        "--output",
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\invalid-learning"
+      ],
+      "returncode": 2
+    },
+    {
+      "script": "build-cooperative-profile.py",
+      "arguments": [
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\recipe.json",
+        "--output",
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\built"
+      ],
+      "returncode": 1
+    },
+    {
+      "script": "export-prepared-recipe.py",
+      "arguments": [
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\built\\DEMO.GCR",
+        "--output",
+        "E:\\git\\finalgrom-2.0\\output\\companion-example\\exported"
+      ],
+      "returncode": 1
+    }
+  ],
+  "original_input_unchanged": true,
+  "game_roms_required": false,
+  "hardware_tested": false,
+  "runnable_ti_cartridge": false
+}

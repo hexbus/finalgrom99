@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "normal_stripe": true,
+  "error_visible": true,
+  "pagination": true,
+  "version_bitmap": "2.0",
+  "hardware_tested": false,
+  "limitation": "Standalone CPU menu fixture; no AVR or CPLD integration."
+}

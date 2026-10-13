@@ -3,6 +3,8 @@
 *  FinalGROM 99 Menu
 *
 *  Copyright (c) 2017 Ralph Benzinger <r@0x01.de>
+*  /4 changes: Jon Guidry with Lee Stewart. QI wait changes: Jochen Buur.
+*  Preparation prototype: uses the reconstructed combined menu source.
 *
 *  This program is free software; you can redistribute it and/or
 *  modify it under the terms of the GNU General Public License
@@ -123,7 +125,7 @@ restart:
        ; title (assumes blank screen)
        clr  r0
        li   r1, title_text
-       li   r2, 32 + 30
+       li   r2, 3 * 32
        bl   @vmbw
 
        ; add color stripe
@@ -135,6 +137,12 @@ restart:
        ai   r0, >10 * 8
        dec  r3
        jne  -!
+
+       ; BETA occupies the four yellow cells of the stock stripe.
+       li   r0, >800 + (>a4 * 8)
+       li   r1, beta_patterns
+       li   r2, 32
+       bl   @vmbw
 
        li   r0, >380 + 18     ; color
        li   r1, color_data
@@ -217,8 +225,10 @@ animate:
        li   r7, >6000         ; search address
 wait:
        mov  *r7+, r2          ; image ready?
+       jeq  jb1
+       inv  r2
        jne  ready
-       dec  r4
+jb1    dec  r4
        jne  wait
        jmp  animate
 
@@ -302,10 +312,10 @@ trampoline_end:
 
 * library functions
 
-       copy "vsbw.a99"        ; part of xdt99 (lib/)
-       copy "vmbw.a99"
-       copy "vmbr.a99"
-       copy "vsbmw.a99"
+       copy "vsbw.asm"        ; part of xdt99 (lib/)
+       copy "vmbw.asm"
+       copy "vmbr.asm"
+       copy "vsbmw.asm"
 
 * constants
 
@@ -313,12 +323,22 @@ c_ff:
        byte >ff00
 
 title_text:
-       text '  `abcdefghijklmn  (C) 2017 RB  '
-       text '  opqrstuvwxyz{|}^', >7f, '  <, -/- .>'
+       text >20606162636465666768696a6b6c6d6e20202028432920323031372052422020
+       text >206f707172737475767778797a7b7c7d5e7f205149202d2032303232204a4220
+       text >202020202020202020202020202020202020202f342b474947203236204a4720
+
+page_text:
+       text '<, -/- .>'
 
 stripe_text:
-       text >90909191a0a0a1a1b0b0b1b1c0c0c1c1
+       text >90909191a4a5a6a7b0b0b1b1c0c0c1c1
        text >d0d0b1b1d1d1e0e0e1e1f0f0f1f19090
+
+beta_patterns:
+       text >007c427c42427c00007e407c40407e0000fe101010101000003c42427e424200
+
+beta_space:
+       text '  '
 
 block_data:
        text >ffffffffffffffff
@@ -393,7 +413,7 @@ font_data:
        data >0070, >1010, >1010, >7000
 
        ; version indicator (>5e)
-       text >0000009296a2a2c7  ; v1
+       text >0000009791a7a4c7  ; v2
 ;      text >0000009791a7a4c7  ; v2
 ;      text >0000009791a7a1c7  ; v3
 ;      text >0000009595a7a1c1  ; v4
@@ -435,7 +455,7 @@ font_data:
        ; extended version indicator (>7f)
        ;text >000000081808085c  ; .1
        ;text >0000001c041c105c  ; .2
-       text >0000001804080458  ; .3
+       text >0000001c1414145c  ; .0 (2.0 beta display version)
 
        ; animation patterns
        text >0060600000060600  ; >80

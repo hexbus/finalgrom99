@@ -1,0 +1,131 @@
+* SPDX-License-Identifier: GPL-3.0-or-later
+* Profile-supplied bridge: original Dragon joystick/keyboard GROM entries.
+* Runs in physical SRAM slot 0 before any logical bank is selected.
+* Uses the FinalGROM uppercase font and console SCAN in GPL workspace.
+* Saved scratchpad at VDP >1000 is untouched; no expansion RAM needed.
+* MAILBOX=1 replaces the shim's native selector with a cooperative RAM wait.
+* Default remains the original GPL bridge used by existing profiles.
+       .ifndef MAILBOX
+MAILBOX equ 0
+       .endif
+       aorg >6000
+       data >9999
+       bss  >1e
+boot
+       mov  r11,@>83d0
+       mov  r10,@>83d2
+       li   r0,>2041           * Name table row 9, swapped write address
+       movb r0,@>8c02
+       swpb r0
+       movb r0,@>8c02
+       li   r1,labels
+       li   r2,labelend-labels
+draw
+       movb *r1+,@>8c00
+       dec  r2
+       jne  draw
+       li   r0,>9e7e           * Same SCAN stack setup as /4-patched menu
+       mov  r0,@>8372
+       li   r0,>00ff           * Preserve the existing /4-compatible key mode
+       mov  r0,@>8374
+* Require release so the FinalGROM selection key cannot choose a mode.
+release
+       clr  @>837c
+       bl   @>000e
+       cb   @>8375,@nokey
+       jne  release
+choose
+       clr  @>837c
+       bl   @>000e
+       clr  r0
+       movb @>8375,r0
+       ci   r0,>3100
+       jeq  joy
+       ci   r0,>3200
+       jne  choose
+       .ifeq MAILBOX,0
+       li   r6,>beef           * Patched from original KEY GROM node
+       .else
+       li   r6,1
+       .endif
+       jmp  enter
+joy
+       .ifeq MAILBOX,0
+       li   r6,>dead           * Patched from original JOY GROM node
+       .else
+       clr  r6
+       .endif
+enter
+       mov  @>83d0,r11
+       mov  @>83d2,r10
+       li   r0,>0010           * Read saved scratchpad at VDP >1000
+       movb r0,@>8c02
+       swpb r0
+       movb r0,@>8c02
+       li   r4,restore
+       li   r5,>83e0
+       mov  *r4+,*r5+
+       mov  *r4+,*r5+
+       mov  *r4+,*r5+
+       mov  *r4+,*r5+
+       li   r4,>8300
+       li   r5,>00e0
+       .ifeq MAILBOX,0
+       li   r7,>0060
+       .else
+       li   r7,demandboot
+       .endif
+       li   r8,>8800
+       b    @>83e0
+restore
+       movb *r8,*r4+
+       dec  r5
+       jne  restore
+       b    *r7
+nokey  byte >ff
+labels text '         DRAGON''S LAIR          '
+       text '                                '
+       text '          1 - JOYSTICK          '
+       text '                                '
+       text '          2 - KEYBOARD          '
+labelend
+       .ifne labelend-labels,5*32
+       .error "Choice rows must each occupy exactly 32 characters"
+       .endif
+       even
+       .ifne MAILBOX,0
+* Restore the console scratchpad first, retaining its random seed at >83C0.
+* R6 in the GPL workspace (>83EC) survives that restore. Dragon itself
+* initializes its workspace/state at MAIN, immediately after >601C.
+demandboot
+       limi 0
+       lwpi >8300
+       mov  @>83ec,r3
+       mov  r3,r0
+       swpb r0
+       mov  r0,@>7ff8
+       clr  @>7ffa
+       sla  r3,1
+       ai   r3,>6000
+       li   r0,>8320
+       li   r2,bootwait
+bootcopy
+       mov  *r2+,*r0+
+       ci   r0,>8338
+       jne  bootcopy
+       b    @>8320
+bootwait
+       xorg >8320
+       clr  @>7ffe
+bootpoll
+       mov  @>7ffc,r0
+       andi r0,>0100
+       jeq  bootpoll
+       clr  @>7ffc
+       clr  *r3
+       b    @>601c
+       .ifne $,>8338
+       .error "startup waiter size changed"
+       .endif
+       .endif
+       end

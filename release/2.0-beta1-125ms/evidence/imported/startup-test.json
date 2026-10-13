@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "linkedAvrInstructions": true,
+  "old": {
+    "sha256": "70d9bdd23588b171ce2e522f9cfbb617f516a4c8368d19289d648940d76ac14d",
+    "setupCycles": 40075,
+    "offlineCycle": 59,
+    "offlineBeforeSdCycles": 40016,
+    "controls": [
+      {
+        "cycles": 59,
+        "value": 31
+      }
+    ],
+    "instructions": 20051
+  },
+  "fresh": {
+    "sha256": "041bd157a71deeb9141e676ea945a940e8a011fb8e9d5a674ec0eeb40118849f",
+    "setupCycles": 1000075,
+    "offlineCycle": 59,
+    "offlineBeforeSdCycles": 1000016,
+    "controls": [
+      {
+        "cycles": 59,
+        "value": 31
+      }
+    ],
+    "instructions": 800050
+  },
+  "extraCycles": 960000,
+  "extraMilliseconds": 120,
+  "intendedStartupDelayMs": 125,
+  "hardwareTested": false,
+  "limits": "Starts at setup with initialized simulated CPU. Excludes AVR oscillator/reset-fuse delay, boot power ramp, console execution and SD/menu loading."
+}

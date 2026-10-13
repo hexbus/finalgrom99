@@ -1716,7 +1716,7 @@ void xsvfCleanup( SXsvfInfo* pXsvfInfo )
 * Parameters:   none.
 * Returns:      int - Legacy result values:  1 == success;  0 == failed.
 *****************************************************************************/
-int xsvfExecute()
+int __attribute__((noinline)) xsvfExecute()
 {
     SXsvfInfo   xsvfInfo;
 

@@ -1,0 +1,1999 @@
+ 
+cpldfit:  version P.20131013                        Xilinx Inc.
+                                  Fitter Report
+Design Name: logic                               Date:  9-15-2026, 11:03PM
+Device Used: XC95144XL-10-TQ100
+Fitting Status: Successful
+
+*************************  Mapped Resource Summary  **************************
+
+Macrocells     Product Terms    Function Block   Registers      Pins           
+Used/Tot       Used/Tot         Inps Used/Tot    Used/Tot       Used/Tot       
+137/144 ( 95%) 595 /720  ( 83%) 371/432 ( 86%)   66 /144 ( 46%) 70 /81  ( 86%)
+
+** Function Block Resources **
+
+Function    Mcells      FB Inps     Pterms      IO          
+Block       Used/Tot    Used/Tot    Used/Tot    Used/Tot    
+FB1          18/18*      46/54       79/90      10/11
+FB2          17/18       40/54       48/90       9/10
+FB3          18/18*      49/54       86/90       8/10
+FB4          18/18*      49/54       65/90      10/10*
+FB5          18/18*      49/54       62/90      10/10*
+FB6          16/18       40/54       87/90       9/10
+FB7          18/18*      49/54       80/90      10/10*
+FB8          14/18       49/54       88/90       4/10
+             -----       -----       -----      -----    
+            137/144     371/432     595/720     70/81 
+
+* - Resource is exhausted
+
+** Global Control Resources **
+
+Global clock net(s) unused.
+Global output enable net(s) unused.
+Global set/reset net(s) unused.
+
+** Pin Resources **
+
+Signal Type    Required     Mapped  |  Pin Type            Used    Total 
+------------------------------------|------------------------------------
+Input         :   23          23    |  I/O              :    66      73
+Output        :   22          22    |  GCK/IO           :     0       3
+Bidirectional :   25          25    |  GTS/IO           :     4       4
+GCK           :    0           0    |  GSR/IO           :     0       1
+GTS           :    0           0    |
+GSR           :    0           0    |
+                 ----        ----
+        Total     70          70
+
+** Power Data **
+
+There are 137 macrocells in high performance mode (MCHP).
+There are 0 macrocells in low power mode (MCLP).
+End of Mapped Resource Summary
+**************************  Errors and Warnings  ***************************
+
+WARNING:Cpld - Unable to retrieve the path to the iSE Project Repository. Will
+   use the default filename of 'logic.ise'.
+*************************  Summary of Mapped Logic  ************************
+
+** 47 Outputs **
+
+Signal                                                                              Total Total Loc     Pin  Pin     Pin     Pwr  Slew Reg Init
+Name                                                                                Pts   Inps          No.  Type    Use     Mode Rate State
+BUS_DX<6>                                                                           2     3     FB1_3   12   I/O     I/O     STD  FAST 
+BUS_DX<5>                                                                           2     3     FB1_6   14   I/O     I/O     STD  FAST 
+BUS_DX<4>                                                                           2     3     FB1_9   16   I/O     I/O     STD  FAST 
+BUS_DX<3>                                                                           2     3     FB1_12  18   I/O     I/O     STD  FAST 
+BUS_DX<2>                                                                           3     4     FB1_15  20   I/O     I/O     STD  FAST 
+BUS_DX<7>                                                                           3     4     FB2_17  10   I/O     I/O     STD  FAST 
+BUS_DX<1>                                                                           3     4     FB3_5   24   I/O     I/O     STD  FAST 
+BUS_DX<0>                                                                           4     5     FB3_6   25   I/O     I/O     STD  FAST 
+RAM_DX<6>                                                                           3     4     FB3_9   28   I/O     I/O     STD  FAST 
+RAM_DX<5>                                                                           3     4     FB3_11  29   I/O     I/O     STD  FAST 
+RAM_DX<4>                                                                           3     4     FB3_12  30   I/O     I/O     STD  FAST 
+RAM_AX<9>                                                                           3     5     FB3_14  32   I/O     O       STD  FAST 
+RAM_AX<10>                                                                          3     5     FB3_15  33   I/O     O       STD  FAST 
+RAM_AX<11>                                                                          3     5     FB3_17  34   I/O     O       STD  FAST 
+CX                                                                                  6     6     FB4_2   87   I/O     I/O     STD  FAST 
+RAM_AX<12>                                                                          3     5     FB5_2   35   I/O     O       STD  FAST 
+RAM_AX<13>                                                                          4     8     FB5_5   36   I/O     O       STD  FAST 
+RAM_AX<14>                                                                          3     7     FB5_6   37   I/O     O       STD  FAST 
+RAM_DX<7>                                                                           3     4     FB5_8   39   I/O     I/O     STD  FAST 
+RAM_AX<8>                                                                           3     5     FB5_9   40   I/O     O       STD  FAST 
+RAM_OE                                                                              3     10    FB5_11  41   I/O     O       STD  FAST 
+RAM_AX<7>                                                                           3     5     FB5_12  42   I/O     O       STD  FAST 
+RAM_AX<6>                                                                           3     5     FB5_14  43   I/O     O       STD  FAST 
+RAM_AX<5>                                                                           3     5     FB5_15  46   I/O     O       STD  FAST 
+RAM_AX<4>                                                                           3     5     FB5_17  49   I/O     O       STD  FAST 
+CDX<7>                                                                              5     9     FB6_5   76   I/O     I/O     STD  FAST 
+CDX<6>                                                                              4     9     FB6_6   77   I/O     I/O     STD  FAST 
+CDX<5>                                                                              6     10    FB6_8   78   I/O     I/O     STD  FAST 
+CDX<4>                                                                              5     10    FB6_9   79   I/O     I/O     STD  FAST 
+CDX<3>                                                                              6     10    FB6_11  80   I/O     I/O     STD  FAST 
+CDX<2>                                                                              5     10    FB6_12  81   I/O     I/O     STD  FAST 
+CDX<1>                                                                              6     11    FB6_14  82   I/O     I/O     STD  FAST 
+CDX<0>                                                                              6     11    FB6_15  85   I/O     I/O     STD  FAST 
+RAM_AX<3>                                                                           3     5     FB7_2   50   I/O     O       STD  FAST 
+RAM_AX<2>                                                                           3     5     FB7_5   52   I/O     O       STD  FAST 
+RAM_AX<1>                                                                           3     5     FB7_6   53   I/O     O       STD  FAST 
+RAM_AX<0>                                                                           3     5     FB7_8   54   I/O     O       STD  FAST 
+RAM_DX<0>                                                                           3     4     FB7_9   55   I/O     I/O     STD  FAST 
+RAM_DX<1>                                                                           3     4     FB7_11  56   I/O     I/O     STD  FAST 
+RAM_AX<15>                                                                          3     7     FB7_12  58   I/O     O       STD  FAST 
+
+Signal                                                                              Total Total Loc     Pin  Pin     Pin     Pwr  Slew Reg Init
+Name                                                                                Pts   Inps          No.  Type    Use     Mode Rate State
+RAM_AX<16>                                                                          6     11    FB7_14  59   I/O     O       STD  FAST 
+RAM_AX<17>                                                                          6     11    FB7_15  60   I/O     O       STD  FAST 
+RAM_AX<18>                                                                          6     11    FB7_17  61   I/O     O       STD  FAST 
+RAM_AX<19>                                                                          6     11    FB8_2   63   I/O     O       STD  FAST 
+RAM_WE                                                                              3     14    FB8_5   64   I/O     O       STD  FAST 
+RAM_DX<3>                                                                           3     4     FB8_6   65   I/O     I/O     STD  FAST 
+RAM_DX<2>                                                                           3     4     FB8_8   66   I/O     I/O     STD  FAST 
+
+** 90 Buried Nodes **
+
+Signal                                                                              Total Total Loc     Pwr  Reg Init
+Name                                                                                Pts   Inps          Mode State
+request_epoch                                                                       3     7     FB1_1   STD  RESET
+N01/N01_D2                                                                          3     8     FB1_2   STD  
+select_armed                                                                        5     8     FB1_4   STD  RESET
+logical_bank<9>                                                                     5     11    FB1_5   STD  RESET
+logical_bank<13>                                                                    5     11    FB1_7   STD  RESET
+logical_bank<10>                                                                    5     11    FB1_8   STD  RESET
+$OpTx$FX_DC$271                                                                     5     7     FB1_10  STD  
+valid                                                                               6     17    FB1_11  STD  SET
+logical_bank<7>                                                                     6     11    FB1_13  STD  RESET
+logical_bank<6>                                                                     6     11    FB1_14  STD  RESET
+logical_bank<5>                                                                     6     11    FB1_16  STD  RESET
+logical_bank<2>                                                                     6     11    FB1_17  STD  RESET
+mailbox_session                                                                     7     9     FB1_18  STD  RESET
+data_drive/data_drive_RSTF                                                          1     2     FB2_2   STD  
+Madd_address_next_12_0_add0000__and0007/Madd_address_next_12_0_add0000__and0007_D2  1     5     FB2_3   STD  
+slot<6>/slot<6>_CLKF                                                                2     3     FB2_4   STD  
+previous_offline                                                                    2     2     FB2_5   STD  SET
+grant/grant_RSTF                                                                    2     3     FB2_6   STD  
+RAM_DX_or0000/RAM_DX_or0000_D2                                                      2     5     FB2_7   STD  
+offline                                                                             3     4     FB2_8   STD  SET
+fill_phase<2>                                                                       3     3     FB2_9   STD  RESET
+fill_phase<1>                                                                       3     3     FB2_10  STD  RESET
+fill_phase<0>                                                                       3     3     FB2_11  STD  SET
+data_drive                                                                          3     4     FB2_12  STD  RESET
+slot<5>                                                                             4     8     FB2_13  STD  RESET
+slot<4>                                                                             4     8     FB2_14  STD  RESET
+slot<3>                                                                             4     8     FB2_15  STD  RESET
+grant                                                                               4     4     FB2_16  STD  RESET
+accepted                                                                            4     6     FB2_18  STD  RESET
+$OpTx$INV$268                                                                       2     6     FB3_1   STD  
+grom_mask<4>                                                                        3     7     FB3_2   STD  RESET
+grom_mask<1>                                                                        3     7     FB3_3   STD  RESET
+load_addr<19>                                                                       6     11    FB3_4   STD  RESET
+load_addr<18>                                                                       6     11    FB3_7   STD  RESET
+load_addr<17>                                                                       6     11    FB3_8   STD  RESET
+load_addr<16>                                                                       6     11    FB3_10  STD  RESET
+load_addr<11>                                                                       9     15    FB3_13  STD  RESET
+load_addr<14>                                                                       10    11    FB3_16  STD  RESET
+load_addr<12>                                                                       10    16    FB3_18  STD  RESET
+lookup/lookup_D2                                                                    1     5     FB4_1   STD  
+
+Signal                                                                              Total Total Loc     Pwr  Reg Init
+Name                                                                                Pts   Inps          Mode State
+fill_mode/fill_mode_D2                                                              1     5     FB4_3   STD  
+grom_sel/grom_sel_CLKF                                                              2     5     FB4_4   STD  
+ram_mode                                                                            3     6     FB4_5   STD  RESET
+idle_sample                                                                         3     4     FB4_6   STD  RESET
+grom_mask<0>                                                                        3     7     FB4_7   STD  RESET
+grit                                                                                3     3     FB4_8   STD  SET
+giga                                                                                3     6     FB4_9   STD  RESET
+fault                                                                               3     6     FB4_10  STD  RESET
+slot<6>                                                                             4     8     FB4_11  STD  RESET
+slot<2>                                                                             4     8     FB4_12  STD  RESET
+slot<1>                                                                             4     8     FB4_13  STD  RESET
+slot<0>                                                                             4     8     FB4_14  STD  RESET
+load_addr<9>/load_addr<9>_CLKF                                                      4     5     FB4_15  STD  
+BUS_DX_7_IOBUFE/BUS_DX_7_IOBUFE_TRST                                                4     13    FB4_16  STD  
+address_enable/address_enable_D2                                                    5     7     FB4_17  STD  
+grom_sel                                                                            8     16    FB4_18  STD  RESET
+slot_enable/slot_enable_D2                                                          2     8     FB5_1   STD  
+mailbox_read/mailbox_read_D2                                                        2     16    FB5_3   STD  
+logical_bank_13_and0005/logical_bank_13_and0005_D2                                  2     16    FB5_4   STD  
+RAM_DX_7_IOBUFE/RAM_DX_7_IOBUFE_TRST                                                2     7     FB5_7   STD  
+native_address_clock                                                                3     5     FB5_10  STD  RESET
+logical_bank_13_not0001/logical_bank_13_not0001_D2                                  5     20    FB5_13  STD  
+logical_bank_0_not0001/logical_bank_0_not0001_D2                                    5     20    FB5_16  STD  
+load_addr<13>                                                                       10    11    FB5_18  STD  RESET
+logical_bank<12>                                                                    5     11    FB6_2   STD  RESET
+logical_bank<11>                                                                    5     11    FB6_3   STD  RESET
+logical_bank<8>                                                                     6     12    FB6_4   STD  RESET
+logical_bank<4>                                                                     6     11    FB6_7   STD  RESET
+logical_bank<3>                                                                     6     11    FB6_10  STD  RESET
+logical_bank<1>                                                                     6     11    FB6_13  STD  RESET
+logical_bank<0>                                                                     6     11    FB6_17  STD  RESET
+ack_epoch                                                                           4     7     FB6_18  STD  RESET
+load_addr<4>                                                                        10    18    FB7_1   STD  RESET
+$OpTx$FX_DC$281                                                                     2     5     FB7_3   STD  
+N11/N11_D2                                                                          3     6     FB7_4   STD  
+load_addr<0>                                                                        6     14    FB7_7   STD  RESET
+load_addr<1>                                                                        7     15    FB7_10  STD  RESET
+CDX_and0005/CDX_and0005_D2                                                          3     6     FB7_13  STD  
+load_addr<3>                                                                        9     17    FB7_16  STD  RESET
+Madd_address_next_12_0_add0000__and0003/Madd_address_next_12_0_add0000__and0003_D2  1     5     FB7_18  STD  
+
+Signal                                                                              Total Total Loc     Pwr  Reg Init
+Name                                                                                Pts   Inps          Mode State
+grom_mask<3>                                                                        3     7     FB8_1   STD  RESET
+grom_mask<2>                                                                        3     7     FB8_3   STD  RESET
+load_addr<9>                                                                        7     13    FB8_4   STD  RESET
+load_addr<5>                                                                        7     15    FB8_7   STD  RESET
+load_addr<6>                                                                        8     16    FB8_9   STD  RESET
+load_addr<10>                                                                       8     14    FB8_10  STD  RESET
+load_addr<2>                                                                        8     16    FB8_11  STD  RESET
+load_addr<7>                                                                        9     17    FB8_14  STD  RESET
+load_addr<8>                                                                        10    16    FB8_16  STD  RESET
+load_addr<15>                                                                       10    11    FB8_18  STD  RESET
+
+** 23 Inputs **
+
+Signal                                                                              Loc     Pin  Pin     Pin     
+Name                                                                                        No.  Type    Use     
+BUS_AX<5>                                                                           FB1_2   11   I/O     I
+BUS_AX<4>                                                                           FB1_5   13   I/O     I
+BUS_AX<3>                                                                           FB1_8   15   I/O     I
+BUS_AX<2>                                                                           FB1_11  17   I/O     I
+BUS_AX<0>                                                                           FB1_14  19   I/O     I
+BUS_AX<9>                                                                           FB2_5   1    GTS/I/O I
+DBIN                                                                                FB2_6   2    GTS/I/O I
+BUS_AX<12>                                                                          FB2_8   3    GTS/I/O I
+BUS_AX<1>                                                                           FB2_9   4    GTS/I/O I
+BUS_AX<8>                                                                           FB2_11  6    I/O     I
+GS                                                                                  FB2_12  7    I/O     I
+BUS_AX<7>                                                                           FB2_14  8    I/O     I
+BUS_AX<6>                                                                           FB2_15  9    I/O     I
+CCLK                                                                                FB4_5   89   I/O     I
+CCMD<2>                                                                             FB4_6   90   I/O     I
+CCMD<1>                                                                             FB4_8   91   I/O     I
+ROMS                                                                                FB4_9   92   I/O     I
+WE                                                                                  FB4_11  93   I/O     I
+GR                                                                                  FB4_12  94   I/O     I
+BUS_AX<11>                                                                          FB4_14  95   I/O     I
+BUS_AX<10>                                                                          FB4_15  96   I/O     I
+GC                                                                                  FB4_17  97   I/O     I
+CCMD<0>                                                                             FB6_17  86   I/O     I
+
+Legend:
+Pin No. - ~ - User Assigned
+**************************  Function Block Details  ************************
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X            - Signal used as input to the macrocell logic.
+Pin No.      - ~  - User Assigned
+*********************************** FB1  ***********************************
+Number of function block inputs used/remaining:               46/8
+Number of signals used by logic mapping into function block:  46
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+request_epoch         3       0   /\2   0     FB1_1         (b)     (b)
+N01/N01_D2            3       0     0   2     FB1_2   11    I/O     I
+BUS_DX<6>             2       0     0   3     FB1_3   12    I/O     I/O
+select_armed          5       0     0   0     FB1_4         (b)     (b)
+logical_bank<9>       5       0     0   0     FB1_5   13    I/O     I
+BUS_DX<5>             2       0     0   3     FB1_6   14    I/O     I/O
+logical_bank<13>      5       0     0   0     FB1_7         (b)     (b)
+logical_bank<10>      5       0     0   0     FB1_8   15    I/O     I
+BUS_DX<4>             2       0   \/1   2     FB1_9   16    I/O     I/O
+$OpTx$FX_DC$271       5       1<- \/1   0     FB1_10        (b)     (b)
+valid                 6       1<-   0   0     FB1_11  17    I/O     I
+BUS_DX<3>             2       0   \/2   1     FB1_12  18    I/O     I/O
+logical_bank<7>       6       2<- \/1   0     FB1_13        (b)     (b)
+logical_bank<6>       6       1<-   0   0     FB1_14  19    I/O     I
+BUS_DX<2>             3       0   \/2   0     FB1_15  20    I/O     I/O
+logical_bank<5>       6       2<- \/1   0     FB1_16        (b)     (b)
+logical_bank<2>       6       1<-   0   0     FB1_17  22    GCK/I/O (b)
+mailbox_session       7       2<-   0   0     FB1_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: BUS_AX<0>                             17: BUS_DX<2>.PIN     32: giga 
+  2: BUS_AX<10>                            18: BUS_DX<1>.PIN     33: logical_bank<10> 
+  3: BUS_AX<11>                            19: RAM_DX<7>.PIN     34: logical_bank<13> 
+  4: BUS_AX<1>                             20: RAM_DX<6>.PIN     35: logical_bank<2> 
+  5: BUS_AX<2>                             21: RAM_DX<5>.PIN     36: logical_bank<5> 
+  6: BUS_AX<3>                             22: RAM_DX<4>.PIN     37: logical_bank<6> 
+  7: BUS_AX<6>                             23: RAM_DX<3>.PIN     38: logical_bank<7> 
+  8: BUS_AX<7>                             24: RAM_DX<2>.PIN     39: logical_bank<9> 
+  9: BUS_AX<8>                             25: RAM_DX<1>.PIN     40: logical_bank_0_not0001/logical_bank_0_not0001_D2 
+ 10: BUS_DX_7_IOBUFE/BUS_DX_7_IOBUFE_TRST  26: RAM_DX<0>.PIN     41: logical_bank_13_and0005/logical_bank_13_and0005_D2 
+ 11: CCMD<0>                               27: ROMS              42: logical_bank_13_not0001/logical_bank_13_not0001_D2 
+ 12: CCMD<1>                               28: WE                43: mailbox_read/mailbox_read_D2 
+ 13: CCMD<2>                               29: accepted          44: mailbox_session 
+ 14: BUS_DX<7>.PIN                         30: ack_epoch         45: offline 
+ 15: BUS_DX<6>.PIN                         31: fill_phase<2>     46: select_armed 
+ 16: BUS_DX<5>.PIN                        
+
+Signal                        1         2         3         4         5 FB
+Name                0----+----0----+----0----+----0----+----0----+----0 Inputs
+request_epoch        ...XX.....................XX............X..XX..... 7
+N01/N01_D2           ...X......XXX...............X.XX............X..... 8
+BUS_DX<6>            .........X.........X......................X....... 3
+select_armed         X..XX.....................XX............X...XX.... 8
+logical_bank<9>      .X........XXX....X.........X...X......X.XX..X..... 11
+BUS_DX<5>            .........X..........X.....................X....... 3
+logical_bank<13>     ..........XXX..X.X.........X...X.X......XX..X..... 11
+logical_bank<10>     ..X.......XXX...X..........X...XX.......XX..X..... 11
+BUS_DX<4>            .........X...........X....................X....... 3
+$OpTx$FX_DC$271      ..........XXX...............X.XX............X..... 7
+valid                X.........XXX.....XXXXXXXXXX...X............XX.... 17
+BUS_DX<3>            .........X............X...................X....... 3
+logical_bank<7>      ........X.XXXX.............X...X.....X.XX...X..... 11
+logical_bank<6>      .......X..XXX.X............X...X....X..XX...X..... 11
+BUS_DX<2>            .........X.............X.....X............X....... 4
+logical_bank<5>      ......X...XXX..X...........X...X...X...XX...X..... 11
+logical_bank<2>      .....X....XXX...X..........X...X..X....XX...X..... 11
+mailbox_session      X..XX.....................XX............X..XXX.... 9
+                    0----+----1----+----2----+----3----+----4----+----5
+                              0         0         0         0         0
+*********************************** FB2  ***********************************
+Number of function block inputs used/remaining:               40/14
+Number of signals used by logic mapping into function block:  40
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB2_1         (b)     
+data_drive/data_drive_RSTF
+                      1       0     0   4     FB2_2   99    GSR/I/O (b)
+Madd_address_next_12_0_add0000__and0007/Madd_address_next_12_0_add0000__and0007_D2
+                      1       0     0   4     FB2_3         (b)     (b)
+slot<6>/slot<6>_CLKF
+                      2       0     0   3     FB2_4         (b)     (b)
+previous_offline      2       0     0   3     FB2_5   1     GTS/I/O I
+grant/grant_RSTF      2       0     0   3     FB2_6   2     GTS/I/O I
+RAM_DX_or0000/RAM_DX_or0000_D2
+                      2       0     0   3     FB2_7         (b)     (b)
+offline               3       0     0   2     FB2_8   3     GTS/I/O I
+fill_phase<2>         3       0     0   2     FB2_9   4     GTS/I/O I
+fill_phase<1>         3       0     0   2     FB2_10        (b)     (b)
+fill_phase<0>         3       0     0   2     FB2_11  6     I/O     I
+data_drive            3       0     0   2     FB2_12  7     I/O     I
+slot<5>               4       0     0   1     FB2_13        (b)     (b)
+slot<4>               4       0     0   1     FB2_14  8     I/O     I
+slot<3>               4       0     0   1     FB2_15  9     I/O     I
+grant                 4       0     0   1     FB2_16        (b)     (b)
+BUS_DX<7>             3       0     0   2     FB2_17  10    I/O     I/O
+accepted              4       0     0   1     FB2_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: BUS_DX_7_IOBUFE/BUS_DX_7_IOBUFE_TRST                                                15: CDX<3>.PIN                  28: idle_sample 
+  2: CCLK                                                                                16: WE                          29: load_addr<5> 
+  3: CCMD<0>                                                                             17: accepted                    30: load_addr<6> 
+  4: CCMD<1>                                                                             18: data_drive                  31: load_addr<7> 
+  5: CCMD<2>                                                                             19: data_drive/data_drive_RSTF  32: load_addr<8> 
+  6: GC                                                                                  20: fault                       33: mailbox_read/mailbox_read_D2 
+  7: Madd_address_next_12_0_add0000__and0003/Madd_address_next_12_0_add0000__and0003_D2  21: fill_mode/fill_mode_D2      34: offline 
+  8: RAM_DX<7>.PIN                                                                       22: fill_phase<0>               35: previous_offline 
+  9: RAM_DX<5>.PIN                                                                       23: fill_phase<1>               36: slot<3> 
+ 10: RAM_DX<4>.PIN                                                                       24: fill_phase<2>               37: slot<4> 
+ 11: RAM_DX<3>.PIN                                                                       25: giga                        38: slot<5> 
+ 12: CDX<7>.PIN                                                                          26: grant                       39: slot<6>/slot<6>_CLKF 
+ 13: CDX<5>.PIN                                                                          27: grant/grant_RSTF            40: slot_enable/slot_enable_D2 
+ 14: CDX<4>.PIN                                                                         
+
+Signal                        1         2         3         4         5 FB
+Name                0----+----0----+----0----+----0----+----0----+----0 Inputs
+data_drive/data_drive_RSTF 
+                     ....................X..X.......................... 2
+Madd_address_next_12_0_add0000__and0007/Madd_address_next_12_0_add0000__and0007_D2 
+                     ......X.....................XXXX.................. 5
+slot<6>/slot<6>_CLKF 
+                     .X.............X.................X................ 3
+previous_offline     ....XX............................................ 2
+grant/grant_RSTF     .................XX.X............................. 3
+RAM_DX_or0000/RAM_DX_or0000_D2 
+                     ..XXX............X...............X................ 5
+offline              ....XX...........................XX............... 4
+fill_phase<2>        .X..................X.X........................... 3
+fill_phase<1>        .X..................XX............................ 3
+fill_phase<0>        .X..................X..X.......................... 3
+data_drive           .X................X...X..X........................ 4
+slot<5>              ........X..XX...........X........X...XXX.......... 8
+slot<4>              .........X.X.X..........X........X..X.XX.......... 8
+slot<3>              ..........XX..X.........X........X.X..XX.......... 8
+grant                .X...................X....XX...................... 4
+BUS_DX<7>            X......X...........X............X................. 4
+accepted             .X..............X...XXX..X........................ 6
+                    0----+----1----+----2----+----3----+----4----+----5
+                              0         0         0         0         0
+*********************************** FB3  ***********************************
+Number of function block inputs used/remaining:               49/5
+Number of signals used by logic mapping into function block:  49
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+$OpTx$INV$268         2       2<- /\5   0     FB3_1         (b)     (b)
+grom_mask<4>          3       0   /\2   0     FB3_2   23    GCK/I/O (b)
+grom_mask<1>          3       0   \/1   1     FB3_3         (b)     (b)
+load_addr<19>         6       1<-   0   0     FB3_4         (b)     (b)
+BUS_DX<1>             3       0   \/1   1     FB3_5   24    I/O     I/O
+BUS_DX<0>             4       1<- \/2   0     FB3_6   25    I/O     I/O
+load_addr<18>         6       2<- \/1   0     FB3_7         (b)     (b)
+load_addr<17>         6       1<-   0   0     FB3_8   27    GCK/I/O (b)
+RAM_DX<6>             3       0   \/1   1     FB3_9   28    I/O     I/O
+load_addr<16>         6       1<-   0   0     FB3_10        (b)     (b)
+RAM_DX<5>             3       0   \/2   0     FB3_11  29    I/O     I/O
+RAM_DX<4>             3       2<- \/4   0     FB3_12  30    I/O     I/O
+load_addr<11>         9       4<-   0   0     FB3_13        (b)     (b)
+RAM_AX<9>             3       0   \/1   1     FB3_14  32    I/O     O
+RAM_AX<10>            3       1<- \/3   0     FB3_15  33    I/O     O
+load_addr<14>        10       5<-   0   0     FB3_16        (b)     (b)
+RAM_AX<11>            3       0   /\2   0     FB3_17  34    I/O     O
+load_addr<12>        10       5<-   0   0     FB3_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$FX_DC$281                                                                     18: RAM_DX<1>.PIN                         34: load_addr<12> 
+  2: BUS_AX<10>                                                                          19: RAM_DX<0>.PIN                         35: load_addr<14> 
+  3: BUS_AX<11>                                                                          20: CDX<7>.PIN                            36: load_addr<16> 
+  4: BUS_AX<12>                                                                          21: CDX<6>.PIN                            37: load_addr<17> 
+  5: BUS_AX<1>                                                                           22: CDX<5>.PIN                            38: load_addr<18> 
+  6: BUS_AX<9>                                                                           23: CDX<4>.PIN                            39: load_addr<19> 
+  7: BUS_DX_7_IOBUFE/BUS_DX_7_IOBUFE_TRST                                                24: CDX<3>.PIN                            40: load_addr<3> 
+  8: CCLK                                                                                25: CDX<1>.PIN                            41: load_addr<4> 
+  9: CCMD<0>                                                                             26: RAM_DX_7_IOBUFE/RAM_DX_7_IOBUFE_TRST  42: load_addr<6> 
+ 10: CCMD<1>                                                                             27: RAM_DX_or0000/RAM_DX_or0000_D2        43: load_addr<8> 
+ 11: CCMD<2>                                                                             28: ack_epoch                             44: load_addr<9> 
+ 12: Madd_address_next_12_0_add0000__and0007/Madd_address_next_12_0_add0000__and0007_D2  29: address_enable/address_enable_D2      45: load_addr<9>/load_addr<9>_CLKF 
+ 13: N01/N01_D2                                                                          30: fill_mode/fill_mode_D2                46: lookup/lookup_D2 
+ 14: BUS_DX<6>.PIN                                                                       31: giga                                  47: mailbox_read/mailbox_read_D2 
+ 15: BUS_DX<5>.PIN                                                                       32: load_addr<10>                         48: offline 
+ 16: N11/N11_D2                                                                          33: load_addr<11>                         49: request_epoch 
+ 17: BUS_DX<4>.PIN                                                                      
+
+Signal                        1         2         3         4         5 FB
+Name                0----+----0----+----0----+----0----+----0----+----0 Inputs
+$OpTx$INV$268        .......XXXX...................X................X.. 6
+grom_mask<4>         .......XXXX........X..X........................X.. 7
+grom_mask<1>         .......XXXX........X....X......................X.. 7
+load_addr<19>        X.......XXX........XX.........X.X.....X.....X..X.. 11
+BUS_DX<1>            ......X..........X............................X.X. 4
+BUS_DX<0>            ......X...........X........X..................X.X. 5
+load_addr<18>        X.......XXX........X.X........XX.....X......X..X.. 11
+load_addr<17>        X.......XXX........X..X.......X.....X......XX..X.. 11
+RAM_DX<6>            .............X......X....XX....................... 4
+load_addr<16>        X.......XXX........X...X......X....X......X.X..X.. 11
+RAM_DX<5>            ..............X......X...XX....................... 4
+RAM_DX<4>            ................X.....X..XX....................... 4
+load_addr<11>        ....X...XXXXX...............XXXXX......X...XX..X.. 15
+RAM_AX<9>            .X...X.........X...........................X.X.... 5
+RAM_AX<10>           .XX............X...............X.............X.... 5
+load_addr<14>        ....X...XXX........X....X.....X...X......X..X..X.. 11
+RAM_AX<11>           ..XX...........X................X............X.... 5
+load_addr<12>        ....X...XXXXX...............XXXXXX......X..XX..X.. 16
+                    0----+----1----+----2----+----3----+----4----+----5
+                              0         0         0         0         0
+*********************************** FB4  ***********************************
+Number of function block inputs used/remaining:               49/5
+Number of signals used by logic mapping into function block:  49
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+lookup/lookup_D2      1       0   \/1   3     FB4_1         (b)     (b)
+CX                    6       1<-   0   0     FB4_2   87    I/O     I/O
+fill_mode/fill_mode_D2
+                      1       0     0   4     FB4_3         (b)     (b)
+grom_sel/grom_sel_CLKF
+                      2       0     0   3     FB4_4         (b)     (b)
+ram_mode              3       0     0   2     FB4_5   89    I/O     I
+idle_sample           3       0     0   2     FB4_6   90    I/O     I
+grom_mask<0>          3       0     0   2     FB4_7         (b)     (b)
+grit                  3       0     0   2     FB4_8   91    I/O     I
+giga                  3       0     0   2     FB4_9   92    I/O     I
+fault                 3       0     0   2     FB4_10        (b)     (b)
+slot<6>               4       0     0   1     FB4_11  93    I/O     I
+slot<2>               4       0     0   1     FB4_12  94    I/O     I
+slot<1>               4       0     0   1     FB4_13        (b)     (b)
+slot<0>               4       0   \/1   0     FB4_14  95    I/O     I
+load_addr<9>/load_addr<9>_CLKF
+                      4       1<- \/2   0     FB4_15  96    I/O     I
+BUS_DX_7_IOBUFE/BUS_DX_7_IOBUFE_TRST
+                      4       2<- \/3   0     FB4_16        (b)     (b)
+address_enable/address_enable_D2
+                      5       3<- \/3   0     FB4_17  97    I/O     I
+grom_sel              8       3<-   0   0     FB4_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: BUS_AX<1>         18: CDX<0>.PIN              34: grom_sel/grom_sel_CLKF 
+  2: CCLK              19: ROMS                    35: load_addr<5> 
+  3: CCMD<0>           20: WE                      36: load_addr<6> 
+  4: CCMD<1>           21: accepted                37: load_addr<7> 
+  5: CCMD<2>           22: fault                   38: logical_bank<8> 
+  6: DBIN              23: fill_mode/fill_mode_D2  39: mailbox_read/mailbox_read_D2 
+  7: GC                24: fill_phase<2>           40: native_address_clock 
+  8: GR                25: giga                    41: offline 
+  9: GS                26: grant                   42: select_armed 
+ 10: RAM_DX<6>.PIN     27: grit                    43: slot<0> 
+ 11: RAM_DX<2>.PIN     28: grom_mask<0>            44: slot<1> 
+ 12: RAM_DX<1>.PIN     29: grom_mask<1>            45: slot<2> 
+ 13: RAM_DX<0>.PIN     30: grom_mask<2>            46: slot<6> 
+ 14: CDX<7>.PIN        31: grom_mask<3>            47: slot<6>/slot<6>_CLKF 
+ 15: CDX<6>.PIN        32: grom_mask<4>            48: slot_enable/slot_enable_D2 
+ 16: CDX<2>.PIN        33: grom_sel                49: valid 
+ 17: CDX<1>.PIN       
+
+Signal                        1         2         3         4         5 FB
+Name                0----+----0----+----0----+----0----+----0----+----0 Inputs
+lookup/lookup_D2     ..................XX....X...............XX........ 5
+CX                   ....................XXX.X............X..X......... 6
+fill_mode/fill_mode_D2 
+                     ..XXX...................X...............X......... 5
+grom_sel/grom_sel_CLKF 
+                     X....X..X..........X......X....................... 5
+ram_mode             ..XXX.X..........X......................X......... 6
+idle_sample          .X......X.........X...X........................... 4
+grom_mask<0>         .XXXX........X...X......................X......... 7
+grit                 X....X.X.......................................... 3
+giga                 ..XXX.X........X........................X......... 6
+fault                .....X............X.....X.............X.X.......X. 6
+slot<6>              .........X...XX.........X...............X....XXX.. 8
+slot<2>              ..........X..X.X........X...............X...X.XX.. 8
+slot<1>              ...........X.X..X.......X...............X..X..XX.. 8
+slot<0>              ............XX...X......X...............X.X...XX.. 8
+load_addr<9>/load_addr<9>_CLKF 
+                     .X......................X........X.....XX......... 5
+BUS_DX_7_IOBUFE/BUS_DX_7_IOBUFE_TRST 
+                     X....X.XX.........XX.X..XX......X.....X.X.......X. 13
+address_enable/address_enable_D2 
+                     ..XXX...............X..XX...............X......... 7
+grom_sel             X.XXX........XX............XXXXX.XXXX...X......... 16
+                    0----+----1----+----2----+----3----+----4----+----5
+                              0         0         0         0         0
+*********************************** FB5  ***********************************
+Number of function block inputs used/remaining:               49/5
+Number of signals used by logic mapping into function block:  49
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+slot_enable/slot_enable_D2
+                      2       0   /\3   0     FB5_1         (b)     (b)
+RAM_AX<12>            3       0     0   2     FB5_2   35    I/O     O
+mailbox_read/mailbox_read_D2
+                      2       0     0   3     FB5_3         (b)     (b)
+logical_bank_13_and0005/logical_bank_13_and0005_D2
+                      2       0     0   3     FB5_4         (b)     (b)
+RAM_AX<13>            4       0     0   1     FB5_5   36    I/O     O
+RAM_AX<14>            3       0     0   2     FB5_6   37    I/O     O
+RAM_DX_7_IOBUFE/RAM_DX_7_IOBUFE_TRST
+                      2       0     0   3     FB5_7         (b)     (b)
+RAM_DX<7>             3       0     0   2     FB5_8   39    I/O     I/O
+RAM_AX<8>             3       0     0   2     FB5_9   40    I/O     O
+native_address_clock
+                      3       0     0   2     FB5_10        (b)     (b)
+RAM_OE                3       0     0   2     FB5_11  41    I/O     O
+RAM_AX<7>             3       0     0   2     FB5_12  42    I/O     O
+logical_bank_13_not0001/logical_bank_13_not0001_D2
+                      5       0     0   0     FB5_13        (b)     (b)
+RAM_AX<6>             3       0     0   2     FB5_14  43    I/O     O
+RAM_AX<5>             3       0     0   2     FB5_15  46    I/O     O
+logical_bank_0_not0001/logical_bank_0_not0001_D2
+                      5       0     0   0     FB5_16        (b)     (b)
+RAM_AX<4>             3       0   \/2   0     FB5_17  49    I/O     O
+load_addr<13>        10       5<-   0   0     FB5_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: BUS_AX<0>         18: BUS_DX<7>.PIN                         34: load_addr<5> 
+  2: BUS_AX<10>        19: N11/N11_D2                            35: load_addr<6> 
+  3: BUS_AX<11>        20: BUS_DX<1>.PIN                         36: load_addr<7> 
+  4: BUS_AX<12>        21: BUS_DX<0>.PIN                         37: load_addr<8> 
+  5: BUS_AX<1>         22: CDX<7>.PIN                            38: load_addr<9>/load_addr<9>_CLKF 
+  6: BUS_AX<2>         23: CDX<0>.PIN                            39: logical_bank<0> 
+  7: BUS_AX<3>         24: RAM_DX_7_IOBUFE/RAM_DX_7_IOBUFE_TRST  40: logical_bank<1> 
+  8: BUS_AX<4>         25: RAM_DX_or0000/RAM_DX_or0000_D2        41: logical_bank_13_not0001/logical_bank_13_not0001_D2 
+  9: BUS_AX<5>         26: ROMS                                  42: lookup/lookup_D2 
+ 10: BUS_AX<6>         27: ack_epoch                             43: mailbox_session 
+ 11: BUS_AX<7>         28: giga                                  44: offline 
+ 12: BUS_AX<8>         29: grant                                 45: ram_mode 
+ 13: BUS_AX<9>         30: load_addr<12>                         46: request_epoch 
+ 14: CCMD<0>           31: load_addr<13>                         47: select_armed 
+ 15: CCMD<1>           32: load_addr<14>                         48: slot<0> 
+ 16: CCMD<2>           33: load_addr<4>                          49: slot<1> 
+ 17: DBIN             
+
+Signal                        1         2         3         4         5 FB
+Name                0----+----0----+----0----+----0----+----0----+----0 Inputs
+slot_enable/slot_enable_D2 
+                     X............XXX.........X.X...............X..X... 8
+RAM_AX<12>           ...X..............X.X........X...........X........ 5
+mailbox_read/mailbox_read_D2 
+                     .XXX..XXXXXXX...X........X.X..............XX..X... 16
+logical_bank_13_and0005/logical_bank_13_and0005_D2 
+                     XXXX..XXXXXXX.............XX...............X.XX... 16
+RAM_AX<13>           ..................XX.......X..X.......X..X.X...X.. 8
+RAM_AX<14>           ..................X........X...X.......X.X.X....X. 7
+RAM_DX_7_IOBUFE/RAM_DX_7_IOBUFE_TRST 
+                     ...X............X.......XX.X...............XX..... 7
+RAM_DX<7>            .................X...X.XX......................... 4
+RAM_AX<8>            ...........XX.....X.................X....X........ 5
+native_address_clock 
+                     .............XXX...........X...............X...... 5
+RAM_OE               ...X.........XXXX........X.XX..............XX..... 10
+RAM_AX<7>            ..........XX......X................X.....X........ 5
+logical_bank_13_not0001/logical_bank_13_not0001_D2 
+                     XXXXXXXXXXXXX............XXX...............XXXX... 20
+RAM_AX<6>            .........XX.......X...............X......X........ 5
+RAM_AX<5>            ........XX........X..............X.......X........ 5
+logical_bank_0_not0001/logical_bank_0_not0001_D2 
+                     XXXX.XXXXXXXX............XXX............X..XXXX... 20
+RAM_AX<4>            .......XX.........X.............X........X........ 5
+load_addr<13>        ....X........XXX.....XX....X..X..X...X.....X...... 11
+                    0----+----1----+----2----+----3----+----4----+----5
+                              0         0         0         0         0
+*********************************** FB6  ***********************************
+Number of function block inputs used/remaining:               40/14
+Number of signals used by logic mapping into function block:  40
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0   \/2   3     FB6_1         (b)     (b)
+logical_bank<12>      5       2<- \/2   0     FB6_2   74    I/O     (b)
+logical_bank<11>      5       2<- \/2   0     FB6_3         (b)     (b)
+logical_bank<8>       6       2<- \/1   0     FB6_4         (b)     (b)
+CDX<7>                5       1<- \/1   0     FB6_5   76    I/O     I/O
+CDX<6>                4       1<- \/2   0     FB6_6   77    I/O     I/O
+logical_bank<4>       6       2<- \/1   0     FB6_7         (b)     (b)
+CDX<5>                6       1<-   0   0     FB6_8   78    I/O     I/O
+CDX<4>                5       0     0   0     FB6_9   79    I/O     I/O
+logical_bank<3>       6       1<-   0   0     FB6_10        (b)     (b)
+CDX<3>                6       2<- /\1   0     FB6_11  80    I/O     I/O
+CDX<2>                5       2<- /\2   0     FB6_12  81    I/O     I/O
+logical_bank<1>       6       3<- /\2   0     FB6_13        (b)     (b)
+CDX<1>                6       4<- /\3   0     FB6_14  82    I/O     I/O
+CDX<0>                6       5<- /\4   0     FB6_15  85    I/O     I/O
+(unused)              0       0   /\5   0     FB6_16        (b)     (b)
+logical_bank<0>       6       1<-   0   0     FB6_17  86    I/O     I
+ack_epoch             4       0   /\1   0     FB6_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$INV$268               15: BUS_DX<1>.PIN     28: logical_bank<3> 
+  2: BUS_AX<12>                  16: BUS_DX<0>.PIN     29: logical_bank<4> 
+  3: BUS_AX<1>                   17: WE                30: logical_bank<5> 
+  4: BUS_AX<2>                   18: ack_epoch         31: logical_bank<6> 
+  5: BUS_AX<4>                   19: fault             32: logical_bank<7> 
+  6: BUS_AX<5>                   20: giga              33: logical_bank<8> 
+  7: BUS_AX<9>                   21: logical_bank<0>   34: logical_bank<9> 
+  8: CCLK                        22: logical_bank<10>  35: logical_bank_0_not0001/logical_bank_0_not0001_D2 
+  9: CCMD<0>                     23: logical_bank<11>  36: logical_bank_13_and0005/logical_bank_13_and0005_D2 
+ 10: CCMD<1>                     24: logical_bank<12>  37: logical_bank_13_not0001/logical_bank_13_not0001_D2 
+ 11: CCMD<2>                     25: logical_bank<13>  38: offline 
+ 12: CDX_and0005/CDX_and0005_D2  26: logical_bank<1>   39: request_epoch 
+ 13: BUS_DX<4>.PIN               27: logical_bank<2>   40: valid 
+ 14: BUS_DX<3>.PIN              
+
+Signal                        1         2         3         4         5 FB
+Name                0----+----0----+----0----+----0----+----0----+----0 Inputs
+logical_bank<12>     ........XXX.X..XX..X...X...........XXX............ 11
+logical_bank<11>     .X......XXX..X..X..X..X............XXX............ 11
+logical_bank<8>      .X....X.XXX....XX..X............X..XXX............ 12
+CDX<7>               .......XXXXX......XX...........X.....X............ 9
+CDX<6>               .......XXXXX.......X..........X......X.X.......... 9
+logical_bank<4>      .....X..XXX.X...X..X........X.....XX.X............ 11
+CDX<5>               X......XXXXX.......X....X....X.......X............ 10
+CDX<4>               X......XXXXX.......X...X....X........X............ 10
+logical_bank<3>      ....X...XXX..X..X..X.......X......XX.X............ 11
+CDX<3>               X......XXXXX.......X..X....X.........X............ 10
+CDX<2>               X......XXXXX.......X.X....X..........X............ 10
+logical_bank<1>      ...X....XXX...X.X..X.....X........XX.X............ 11
+CDX<1>               X......XXXXX.....X.X.....X.......X...X............ 11
+CDX<0>               X......XXXXX.......XX...........X....XX........... 11
+logical_bank<0>      ..X.....XXX....XX..XX.............XX.X............ 11
+ack_epoch            .......XXXX........X.................XX........... 7
+                    0----+----1----+----2----+----3----+----4----+----5
+                              0         0         0         0         0
+*********************************** FB7  ***********************************
+Number of function block inputs used/remaining:               49/5
+Number of signals used by logic mapping into function block:  49
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+load_addr<4>         10       5<-   0   0     FB7_1         (b)     (b)
+RAM_AX<3>             3       3<- /\5   0     FB7_2   50    I/O     O
+$OpTx$FX_DC$281       2       0   /\3   0     FB7_3         (b)     (b)
+N11/N11_D2            3       0     0   2     FB7_4         (b)     (b)
+RAM_AX<2>             3       0     0   2     FB7_5   52    I/O     O
+RAM_AX<1>             3       0   \/1   1     FB7_6   53    I/O     O
+load_addr<0>          6       1<-   0   0     FB7_7         (b)     (b)
+RAM_AX<0>             3       0     0   2     FB7_8   54    I/O     O
+RAM_DX<0>             3       0   \/1   1     FB7_9   55    I/O     I/O
+load_addr<1>          7       2<-   0   0     FB7_10        (b)     (b)
+RAM_DX<1>             3       0   /\1   1     FB7_11  56    I/O     I/O
+RAM_AX<15>            3       0   \/1   1     FB7_12  58    I/O     O
+CDX_and0005/CDX_and0005_D2
+                      3       1<- \/3   0     FB7_13        (b)     (b)
+RAM_AX<16>            6       3<- \/2   0     FB7_14  59    I/O     O
+RAM_AX<17>            6       2<- \/1   0     FB7_15  60    I/O     O
+load_addr<3>          9       4<-   0   0     FB7_16        (b)     (b)
+RAM_AX<18>            6       4<- /\3   0     FB7_17  61    I/O     O
+Madd_address_next_12_0_add0000__and0003/Madd_address_next_12_0_add0000__and0003_D2
+                      1       0   /\4   0     FB7_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$FX_DC$271   18: BUS_DX<0>.PIN                         34: load_addr<18> 
+  2: $OpTx$INV$268     19: CDX<4>.PIN                            35: load_addr<1> 
+  3: BUS_AX<0>         20: CDX<3>.PIN                            36: load_addr<2> 
+  4: BUS_AX<1>         21: CDX<1>.PIN                            37: load_addr<3> 
+  5: BUS_AX<2>         22: CDX<0>.PIN                            38: load_addr<4> 
+  6: BUS_AX<3>         23: RAM_DX_7_IOBUFE/RAM_DX_7_IOBUFE_TRST  39: load_addr<9>/load_addr<9>_CLKF 
+  7: BUS_AX<4>         24: RAM_DX_or0000/RAM_DX_or0000_D2        40: logical_bank<2> 
+  8: CCMD<0>           25: WE                                    41: logical_bank<3> 
+  9: CCMD<1>           26: address_enable/address_enable_D2      42: logical_bank<4> 
+ 10: CCMD<2>           27: fill_mode/fill_mode_D2                43: logical_bank<5> 
+ 11: DBIN              28: giga                                  44: lookup/lookup_D2 
+ 12: GS                29: grant                                 45: offline 
+ 13: N01/N01_D2        30: load_addr<0>                          46: slot<2> 
+ 14: N11/N11_D2        31: load_addr<15>                         47: slot<3> 
+ 15: BUS_DX<4>.PIN     32: load_addr<16>                         48: slot<4> 
+ 16: BUS_DX<3>.PIN     33: load_addr<17>                         49: slot<5> 
+ 17: BUS_DX<1>.PIN    
+
+Signal                        1         2         3         4         5 FB
+Name                0----+----0----+----0----+----0----+----0----+----0 Inputs
+load_addr<4>         X..X...XXX..X.X...X......XXX.X....XXXXX.....X..... 18
+RAM_AX<3>            .....XX......X......................X......X...... 5
+$OpTx$FX_DC$281      .......XXX.................X................X..... 5
+N11/N11_D2           ...X......XX............X...X...............X..... 6
+RAM_AX<2>            ....XX.......X.....................X.......X...... 5
+RAM_AX<1>            ...XX........X....................X........X...... 5
+load_addr<0>         X..X...XXX..X....X...X...XXX.X........X.....X..... 14
+RAM_AX<0>            ..XX.........X...............X.............X...... 5
+RAM_DX<0>            .................X...XXX.......................... 4
+load_addr<1>         X..X...XXX..X...X...X....XXX.X....X...X.....X..... 15
+RAM_DX<1>            ................X...X.XX.......................... 4
+RAM_AX<15>           .............X.............X..X........X...XXX.... 7
+CDX_and0005/CDX_and0005_D2 
+                     .X.....XXX.................X................X..... 6
+RAM_AX<16>           ...X......XX............X..XX..X........X..XX.X... 11
+RAM_AX<17>           ...X......XX............X..XX...X........X.XX..X.. 11
+load_addr<3>         X..X...XXX..X..X...X.....XXX.X....XXX.X.....X..... 17
+RAM_AX<18>           ...X......XX............X..XX....X........XXX...X. 11
+Madd_address_next_12_0_add0000__and0003/Madd_address_next_12_0_add0000__and0003_D2 
+                     .............................X....XXXX............ 5
+                    0----+----1----+----2----+----3----+----4----+----5
+                              0         0         0         0         0
+*********************************** FB8  ***********************************
+Number of function block inputs used/remaining:               49/5
+Number of signals used by logic mapping into function block:  49
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+grom_mask<3>          3       0   \/1   1     FB8_1         (b)     (b)
+RAM_AX<19>            6       1<-   0   0     FB8_2   63    I/O     O
+grom_mask<2>          3       0   \/2   0     FB8_3         (b)     (b)
+load_addr<9>          7       2<-   0   0     FB8_4         (b)     (b)
+RAM_WE                3       0   \/2   0     FB8_5   64    I/O     O
+RAM_DX<3>             3       2<- \/4   0     FB8_6   65    I/O     I/O
+load_addr<5>          7       4<- \/2   0     FB8_7         (b)     (b)
+RAM_DX<2>             3       2<- \/4   0     FB8_8   66    I/O     I/O
+load_addr<6>          8       4<- \/1   0     FB8_9   67    I/O     (b)
+load_addr<10>         8       3<-   0   0     FB8_10        (b)     (b)
+load_addr<2>          8       5<- /\2   0     FB8_11  68    I/O     (b)
+(unused)              0       0   /\5   0     FB8_12  70    I/O     (b)
+(unused)              0       0   \/4   1     FB8_13        (b)     (b)
+load_addr<7>          9       4<-   0   0     FB8_14  71    I/O     (b)
+(unused)              0       0   \/5   0     FB8_15  72    I/O     (b)
+load_addr<8>         10       5<-   0   0     FB8_16        (b)     (b)
+(unused)              0       0   \/5   0     FB8_17  73    I/O     (b)
+load_addr<15>        10       5<-   0   0     FB8_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$FX_DC$271                                                                     18: BUS_DX<2>.PIN                         34: load_addr<10> 
+  2: BUS_AX<12>                                                                          19: CDX<7>.PIN                            35: load_addr<15> 
+  3: BUS_AX<1>                                                                           20: CDX<6>.PIN                            36: load_addr<19> 
+  4: CCLK                                                                                21: CDX<5>.PIN                            37: load_addr<1> 
+  5: CCMD<0>                                                                             22: CDX<3>.PIN                            38: load_addr<2> 
+  6: CCMD<1>                                                                             23: CDX<2>.PIN                            39: load_addr<5> 
+  7: CCMD<2>                                                                             24: RAM_DX_7_IOBUFE/RAM_DX_7_IOBUFE_TRST  40: load_addr<6> 
+  8: DBIN                                                                                25: RAM_DX_or0000/RAM_DX_or0000_D2        41: load_addr<7> 
+  9: GS                                                                                  26: ROMS                                  42: load_addr<8> 
+ 10: Madd_address_next_12_0_add0000__and0003/Madd_address_next_12_0_add0000__and0003_D2  27: WE                                    43: load_addr<9> 
+ 11: Madd_address_next_12_0_add0000__and0007/Madd_address_next_12_0_add0000__and0007_D2  28: address_enable/address_enable_D2      44: load_addr<9>/load_addr<9>_CLKF 
+ 12: N01/N01_D2                                                                          29: fill_mode/fill_mode_D2                45: logical_bank<6> 
+ 13: CX.PIN                                                                              30: fill_phase<1>                         46: lookup/lookup_D2 
+ 14: BUS_DX<7>.PIN                                                                       31: giga                                  47: offline 
+ 15: BUS_DX<6>.PIN                                                                       32: grant                                 48: ram_mode 
+ 16: BUS_DX<5>.PIN                                                                       33: load_addr<0>                          49: slot<6> 
+ 17: BUS_DX<3>.PIN                                                                      
+
+Signal                        1         2         3         4         5 FB
+Name                0----+----0----+----0----+----0----+----0----+----0 Inputs
+grom_mask<3>         ...XXXX...........X..X........................X... 7
+RAM_AX<19>           ..X....XX.................X...XX...X........XXX.X. 11
+grom_mask<2>         ...XXXX...........X...X.......................X... 7
+load_addr<9>         ..X.XXX...XX...............XX.X.....X.....XX..X... 13
+RAM_WE               .X.XXXXX....X............XX..XXX..............XX.. 14
+RAM_DX<3>            ................X....X.XX......................... 4
+load_addr<5>         X.X.XXX..X.X...X....X......XX.X.......X....X..X... 15
+RAM_DX<2>            .................X....XXX......................... 4
+load_addr<6>         X.X.XXX..X.X..X....X.......XX.X.......XX...X..X... 16
+load_addr<10>        ..X.XXX...XX...............XX.X..X...X....XX..X... 14
+load_addr<2>         X.X.XXX....X.....X....X....XX.X.X...XX.....X..X... 16
+load_addr<7>         X.X.XXX..X.X.X....X........XX.X.......XXX..X..X... 17
+load_addr<8>         ..X.XXX..X.X...............XX.X.X.....XXXX.X..X... 16
+load_addr<15>        ..X.XXX...........X...X.......X...X.....X..X..X... 11
+                    0----+----1----+----2----+----3----+----4----+----5
+                              0         0         0         0         0
+*******************************  Equations  ********************************
+
+********** Mapped Logic **********
+
+
+$OpTx$FX_DC$271 <= ((accepted AND NOT CCMD(2) AND NOT offline AND CCMD(1) AND 
+	fill_phase(2))
+	OR (NOT giga AND NOT offline)
+	OR (CCMD(2) AND offline AND CCMD(1) AND CCMD(0))
+	OR (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0))
+	OR (NOT CCMD(2) AND NOT offline AND CCMD(1) AND NOT CCMD(0)));
+
+
+$OpTx$FX_DC$281 <= ((CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0))
+	OR (giga AND NOT CCMD(2) AND NOT offline AND CCMD(1) AND NOT CCMD(0)));
+
+
+$OpTx$INV$268 <= ((NOT CCLK AND giga AND NOT CCMD(2) AND NOT offline AND NOT CCMD(1))
+	OR (giga AND NOT CCMD(2) AND NOT offline AND NOT CCMD(1) AND NOT CCMD(0)));
+
+
+BUS_DX_I(0) <= ((NOT request_epoch AND NOT ack_epoch AND 
+	mailbox_read/mailbox_read_D2)
+	OR (RAM_DX(0).PIN AND NOT mailbox_read/mailbox_read_D2)
+	OR (request_epoch AND ack_epoch AND 
+	mailbox_read/mailbox_read_D2));
+BUS_DX(0) <= BUS_DX_I(0) when BUS_DX_OE(0) = '1' else 'Z';
+BUS_DX_OE(0) <= BUS_DX_7_IOBUFE/BUS_DX_7_IOBUFE_TRST;
+
+
+BUS_DX_I(1) <= ((request_epoch AND mailbox_read/mailbox_read_D2)
+	OR (RAM_DX(1).PIN AND NOT mailbox_read/mailbox_read_D2));
+BUS_DX(1) <= BUS_DX_I(1) when BUS_DX_OE(1) = '1' else 'Z';
+BUS_DX_OE(1) <= BUS_DX_7_IOBUFE/BUS_DX_7_IOBUFE_TRST;
+
+
+BUS_DX_I(2) <= ((ack_epoch AND mailbox_read/mailbox_read_D2)
+	OR (RAM_DX(2).PIN AND NOT mailbox_read/mailbox_read_D2));
+BUS_DX(2) <= BUS_DX_I(2) when BUS_DX_OE(2) = '1' else 'Z';
+BUS_DX_OE(2) <= BUS_DX_7_IOBUFE/BUS_DX_7_IOBUFE_TRST;
+
+
+BUS_DX_I(3) <= (RAM_DX(3).PIN AND NOT mailbox_read/mailbox_read_D2);
+BUS_DX(3) <= BUS_DX_I(3) when BUS_DX_OE(3) = '1' else 'Z';
+BUS_DX_OE(3) <= BUS_DX_7_IOBUFE/BUS_DX_7_IOBUFE_TRST;
+
+
+BUS_DX_I(4) <= (RAM_DX(4).PIN AND NOT mailbox_read/mailbox_read_D2);
+BUS_DX(4) <= BUS_DX_I(4) when BUS_DX_OE(4) = '1' else 'Z';
+BUS_DX_OE(4) <= BUS_DX_7_IOBUFE/BUS_DX_7_IOBUFE_TRST;
+
+
+BUS_DX_I(5) <= (RAM_DX(5).PIN AND NOT mailbox_read/mailbox_read_D2);
+BUS_DX(5) <= BUS_DX_I(5) when BUS_DX_OE(5) = '1' else 'Z';
+BUS_DX_OE(5) <= BUS_DX_7_IOBUFE/BUS_DX_7_IOBUFE_TRST;
+
+
+BUS_DX_I(6) <= (RAM_DX(6).PIN AND NOT mailbox_read/mailbox_read_D2);
+BUS_DX(6) <= BUS_DX_I(6) when BUS_DX_OE(6) = '1' else 'Z';
+BUS_DX_OE(6) <= BUS_DX_7_IOBUFE/BUS_DX_7_IOBUFE_TRST;
+
+
+BUS_DX_I(7) <= ((RAM_DX(7).PIN AND NOT mailbox_read/mailbox_read_D2)
+	OR (fault AND mailbox_read/mailbox_read_D2));
+BUS_DX(7) <= BUS_DX_I(7) when BUS_DX_OE(7) = '1' else 'Z';
+BUS_DX_OE(7) <= BUS_DX_7_IOBUFE/BUS_DX_7_IOBUFE_TRST;
+
+
+BUS_DX_7_IOBUFE/BUS_DX_7_IOBUFE_TRST <= ((mailbox_read/mailbox_read_D2)
+	OR (NOT grant AND valid AND NOT offline AND NOT fault AND NOT ROMS AND DBIN)
+	OR (NOT grant AND WE AND NOT BUS_AX(1) AND grom_sel AND NOT offline AND 
+	DBIN AND GR AND NOT GS)
+	OR (NOT grant AND NOT giga AND NOT offline AND NOT ROMS AND DBIN));
+
+
+CDX_I(0) <= ((logical_bank(0) AND NOT giga AND NOT offline)
+	OR (logical_bank(8) AND giga AND NOT $OpTx$INV$268)
+	OR (logical_bank(8) AND offline AND NOT $OpTx$INV$268)
+	OR (CCLK AND logical_bank(0) AND NOT CCMD(2) AND NOT offline AND 
+	NOT CCMD(1) AND NOT CCMD(0))
+	OR (NOT CCLK AND request_epoch AND giga AND NOT CCMD(2) AND 
+	NOT offline AND NOT CCMD(1) AND NOT CCMD(0)));
+CDX(0) <= CDX_I(0) when CDX_OE(0) = '1' else 'Z';
+CDX_OE(0) <= CDX_and0005/CDX_and0005_D2;
+
+
+CDX_I(1) <= ((logical_bank(1) AND NOT giga AND NOT offline)
+	OR (logical_bank(9) AND giga AND NOT $OpTx$INV$268)
+	OR (CCLK AND logical_bank(1) AND NOT CCMD(2) AND NOT offline AND 
+	NOT CCMD(1) AND NOT CCMD(0))
+	OR (NOT CCLK AND ack_epoch AND giga AND NOT CCMD(2) AND NOT offline AND 
+	NOT CCMD(1) AND NOT CCMD(0))
+	OR (logical_bank(9) AND offline AND NOT $OpTx$INV$268));
+CDX(1) <= CDX_I(1) when CDX_OE(1) = '1' else 'Z';
+CDX_OE(1) <= CDX_and0005/CDX_and0005_D2;
+
+
+CDX_I(2) <= ((logical_bank(10) AND giga AND NOT $OpTx$INV$268)
+	OR (CCLK AND logical_bank(2) AND NOT CCMD(2) AND NOT offline AND 
+	NOT CCMD(1) AND NOT CCMD(0))
+	OR (logical_bank(2) AND NOT giga AND NOT offline)
+	OR (logical_bank(10) AND offline AND NOT $OpTx$INV$268));
+CDX(2) <= CDX_I(2) when CDX_OE(2) = '1' else 'Z';
+CDX_OE(2) <= CDX_and0005/CDX_and0005_D2;
+
+
+CDX_I(3) <= ((logical_bank(3) AND NOT CCMD(2) AND NOT offline AND NOT CCMD(1) AND 
+	NOT CCMD(0))
+	OR (NOT CCLK AND giga AND NOT CCMD(2) AND NOT offline AND NOT CCMD(1) AND 
+	NOT CCMD(0))
+	OR (logical_bank(3) AND NOT giga AND NOT offline)
+	OR (logical_bank(11) AND giga AND NOT $OpTx$INV$268)
+	OR (logical_bank(11) AND offline AND NOT $OpTx$INV$268));
+CDX(3) <= CDX_I(3) when CDX_OE(3) = '1' else 'Z';
+CDX_OE(3) <= CDX_and0005/CDX_and0005_D2;
+
+
+CDX_I(4) <= ((logical_bank(4) AND NOT giga AND NOT offline)
+	OR (logical_bank(12) AND giga AND NOT $OpTx$INV$268)
+	OR (logical_bank(12) AND offline AND NOT $OpTx$INV$268)
+	OR (CCLK AND logical_bank(4) AND NOT CCMD(2) AND NOT offline AND 
+	NOT CCMD(1) AND NOT CCMD(0)));
+CDX(4) <= CDX_I(4) when CDX_OE(4) = '1' else 'Z';
+CDX_OE(4) <= CDX_and0005/CDX_and0005_D2;
+
+
+CDX_I(5) <= ((NOT CCLK AND giga AND NOT CCMD(2) AND NOT offline AND NOT CCMD(1) AND 
+	NOT CCMD(0))
+	OR (logical_bank(5) AND NOT giga AND NOT offline)
+	OR (logical_bank(13) AND giga AND NOT $OpTx$INV$268)
+	OR (logical_bank(13) AND offline AND NOT $OpTx$INV$268)
+	OR (logical_bank(5) AND NOT CCMD(2) AND NOT offline AND NOT CCMD(1) AND 
+	NOT CCMD(0)));
+CDX(5) <= CDX_I(5) when CDX_OE(5) = '1' else 'Z';
+CDX_OE(5) <= CDX_and0005/CDX_and0005_D2;
+
+
+CDX_I(6) <= ((NOT CCLK AND valid AND giga AND NOT CCMD(2) AND NOT offline AND 
+	NOT CCMD(1) AND CCMD(0))
+	OR (logical_bank(6) AND NOT giga AND NOT offline)
+	OR (CCLK AND logical_bank(6) AND NOT CCMD(2) AND NOT offline AND 
+	NOT CCMD(1) AND NOT CCMD(0)));
+CDX(6) <= CDX_I(6) when CDX_OE(6) = '1' else 'Z';
+CDX_OE(6) <= CDX_and0005/CDX_and0005_D2;
+
+
+CDX_I(7) <= ((NOT CCLK AND giga AND NOT CCMD(2) AND NOT offline AND NOT CCMD(1) AND 
+	NOT CCMD(0))
+	OR (logical_bank(7) AND NOT giga AND NOT offline)
+	OR (logical_bank(7) AND NOT CCMD(2) AND NOT offline AND NOT CCMD(1) AND 
+	NOT CCMD(0))
+	OR (NOT CCLK AND giga AND NOT CCMD(2) AND NOT offline AND NOT CCMD(1) AND 
+	fault));
+CDX(7) <= CDX_I(7) when CDX_OE(7) = '1' else 'Z';
+CDX_OE(7) <= CDX_and0005/CDX_and0005_D2;
+
+
+CDX_and0005/CDX_and0005_D2 <= (($OpTx$INV$268)
+	OR (NOT CCMD(2) AND NOT offline AND NOT CCMD(1) AND CCMD(0))
+	OR (NOT giga AND NOT offline));
+
+
+CX_I <= ((logical_bank(8) AND NOT giga AND NOT offline)
+	OR (accepted AND giga AND fill_mode/fill_mode_D2)
+	OR (accepted AND offline AND fill_mode/fill_mode_D2)
+	OR (giga AND fault AND NOT fill_mode/fill_mode_D2)
+	OR (offline AND fault AND NOT fill_mode/fill_mode_D2));
+CX <= CX_I when CX_OE = '1' else 'Z';
+CX_OE <= NOT offline;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Madd_address_next_12_0_add0000__and0003/Madd_address_next_12_0_add0000__and0003_D2 <= (load_addr(0) AND load_addr(1) AND load_addr(2) AND 
+	load_addr(3) AND load_addr(4));
+
+
+Madd_address_next_12_0_add0000__and0007/Madd_address_next_12_0_add0000__and0007_D2 <= (load_addr(6) AND load_addr(5) AND load_addr(7) AND 
+	load_addr(8) AND 
+	Madd_address_next_12_0_add0000__and0003/Madd_address_next_12_0_add0000__and0003_D2);
+
+
+N01/N01_D2 <= ((NOT BUS_AX(1) AND NOT giga AND NOT offline)
+	OR (CCMD(2) AND offline AND CCMD(1) AND CCMD(0))
+	OR (accepted AND giga AND NOT CCMD(2) AND NOT offline AND CCMD(1) AND 
+	CCMD(0) AND fill_phase(2)));
+
+
+N11/N11_D2 <= ((grant)
+	OR (offline)
+	OR (WE AND NOT BUS_AX(1) AND DBIN AND NOT GS));
+
+
+RAM_AX(0) <= ((load_addr(0) AND N11/N11_D2)
+	OR (BUS_AX(1) AND NOT N11/N11_D2 AND lookup/lookup_D2)
+	OR (BUS_AX(0) AND NOT N11/N11_D2 AND NOT lookup/lookup_D2));
+
+
+RAM_AX(1) <= ((load_addr(1) AND N11/N11_D2)
+	OR (BUS_AX(1) AND NOT N11/N11_D2 AND NOT lookup/lookup_D2)
+	OR (BUS_AX(2) AND NOT N11/N11_D2 AND lookup/lookup_D2));
+
+
+RAM_AX(2) <= ((load_addr(2) AND N11/N11_D2)
+	OR (BUS_AX(2) AND NOT N11/N11_D2 AND NOT lookup/lookup_D2)
+	OR (BUS_AX(3) AND NOT N11/N11_D2 AND lookup/lookup_D2));
+
+
+RAM_AX(3) <= ((load_addr(3) AND N11/N11_D2)
+	OR (BUS_AX(4) AND NOT N11/N11_D2 AND lookup/lookup_D2)
+	OR (BUS_AX(3) AND NOT N11/N11_D2 AND NOT lookup/lookup_D2));
+
+
+RAM_AX(4) <= ((load_addr(4) AND N11/N11_D2)
+	OR (BUS_AX(5) AND NOT N11/N11_D2 AND lookup/lookup_D2)
+	OR (BUS_AX(4) AND NOT N11/N11_D2 AND NOT lookup/lookup_D2));
+
+
+RAM_AX(5) <= ((load_addr(5) AND N11/N11_D2)
+	OR (BUS_AX(5) AND NOT N11/N11_D2 AND NOT lookup/lookup_D2)
+	OR (BUS_AX(6) AND NOT N11/N11_D2 AND lookup/lookup_D2));
+
+
+RAM_AX(6) <= ((load_addr(6) AND N11/N11_D2)
+	OR (BUS_AX(7) AND NOT N11/N11_D2 AND lookup/lookup_D2)
+	OR (BUS_AX(6) AND NOT N11/N11_D2 AND NOT lookup/lookup_D2));
+
+
+RAM_AX(7) <= ((load_addr(7) AND N11/N11_D2)
+	OR (BUS_AX(8) AND NOT N11/N11_D2 AND lookup/lookup_D2)
+	OR (BUS_AX(7) AND NOT N11/N11_D2 AND NOT lookup/lookup_D2));
+
+
+RAM_AX(8) <= ((load_addr(8) AND N11/N11_D2)
+	OR (BUS_AX(9) AND NOT N11/N11_D2 AND lookup/lookup_D2)
+	OR (BUS_AX(8) AND NOT N11/N11_D2 AND NOT lookup/lookup_D2));
+
+
+RAM_AX(9) <= ((load_addr(9) AND N11/N11_D2)
+	OR (BUS_AX(10) AND NOT N11/N11_D2 AND lookup/lookup_D2)
+	OR (BUS_AX(9) AND NOT N11/N11_D2 AND NOT lookup/lookup_D2));
+
+
+RAM_AX(10) <= ((BUS_AX(10) AND NOT N11/N11_D2 AND NOT lookup/lookup_D2)
+	OR (load_addr(10) AND N11/N11_D2)
+	OR (BUS_AX(11) AND NOT N11/N11_D2 AND lookup/lookup_D2));
+
+
+RAM_AX(11) <= ((load_addr(11) AND N11/N11_D2)
+	OR (BUS_AX(12) AND NOT N11/N11_D2 AND lookup/lookup_D2)
+	OR (BUS_AX(11) AND NOT N11/N11_D2 AND NOT lookup/lookup_D2));
+
+
+RAM_AX(12) <= ((load_addr(12) AND N11/N11_D2)
+	OR (BUS_AX(12) AND NOT N11/N11_D2 AND NOT lookup/lookup_D2)
+	OR (BUS_DX(0).PIN AND NOT N11/N11_D2 AND lookup/lookup_D2));
+
+
+RAM_AX(13) <= NOT (((NOT load_addr(13) AND N11/N11_D2)
+	OR (NOT slot(0) AND NOT N11/N11_D2 AND NOT lookup/lookup_D2)
+	OR (NOT BUS_DX(1).PIN AND NOT N11/N11_D2 AND lookup/lookup_D2)
+	OR (NOT logical_bank(0) AND NOT giga AND NOT offline AND NOT N11/N11_D2 AND 
+	NOT lookup/lookup_D2)));
+
+
+RAM_AX(14) <= NOT (((NOT load_addr(14) AND N11/N11_D2)
+	OR (NOT slot(1) AND NOT N11/N11_D2 AND NOT lookup/lookup_D2)
+	OR (NOT logical_bank(1) AND NOT giga AND NOT offline AND NOT N11/N11_D2 AND 
+	NOT lookup/lookup_D2)));
+
+
+RAM_AX(15) <= NOT (((NOT load_addr(15) AND N11/N11_D2)
+	OR (NOT slot(2) AND NOT N11/N11_D2 AND NOT lookup/lookup_D2)
+	OR (NOT logical_bank(2) AND NOT giga AND NOT offline AND NOT N11/N11_D2 AND 
+	NOT lookup/lookup_D2)));
+
+
+RAM_AX(16) <= ((NOT grant AND logical_bank(3) AND NOT offline AND slot(3))
+	OR (NOT grant AND giga AND NOT offline AND slot(3))
+	OR (NOT grant AND WE AND NOT BUS_AX(1) AND NOT offline AND DBIN AND NOT GS)
+	OR (grant AND load_addr(16))
+	OR (NOT grant AND lookup/lookup_D2)
+	OR (load_addr(16) AND offline));
+
+
+RAM_AX(17) <= ((NOT grant AND giga AND NOT offline AND slot(4))
+	OR (NOT grant AND WE AND NOT BUS_AX(1) AND NOT offline AND DBIN AND NOT GS)
+	OR (grant AND load_addr(17))
+	OR (NOT grant AND lookup/lookup_D2)
+	OR (load_addr(17) AND offline)
+	OR (NOT grant AND logical_bank(4) AND NOT offline AND slot(4)));
+
+
+RAM_AX(18) <= ((load_addr(18) AND offline)
+	OR (NOT grant AND logical_bank(5) AND NOT offline AND slot(5))
+	OR (NOT grant AND giga AND NOT offline AND slot(5))
+	OR (NOT grant AND WE AND NOT BUS_AX(1) AND NOT offline AND DBIN AND NOT GS)
+	OR (grant AND load_addr(18))
+	OR (NOT grant AND lookup/lookup_D2));
+
+
+RAM_AX(19) <= ((NOT grant AND WE AND NOT BUS_AX(1) AND NOT offline AND DBIN AND NOT GS)
+	OR (grant AND load_addr(19))
+	OR (NOT grant AND lookup/lookup_D2)
+	OR (load_addr(19) AND offline)
+	OR (NOT grant AND logical_bank(6) AND NOT offline AND slot(6))
+	OR (NOT grant AND giga AND NOT offline AND slot(6)));
+
+
+RAM_DX_I(0) <= ((CDX(0).PIN AND RAM_DX_or0000/RAM_DX_or0000_D2)
+	OR (BUS_DX(0).PIN AND NOT RAM_DX_or0000/RAM_DX_or0000_D2));
+RAM_DX(0) <= RAM_DX_I(0) when RAM_DX_OE(0) = '1' else 'Z';
+RAM_DX_OE(0) <= RAM_DX_7_IOBUFE/RAM_DX_7_IOBUFE_TRST;
+
+
+RAM_DX_I(1) <= ((CDX(1).PIN AND RAM_DX_or0000/RAM_DX_or0000_D2)
+	OR (BUS_DX(1).PIN AND NOT RAM_DX_or0000/RAM_DX_or0000_D2));
+RAM_DX(1) <= RAM_DX_I(1) when RAM_DX_OE(1) = '1' else 'Z';
+RAM_DX_OE(1) <= RAM_DX_7_IOBUFE/RAM_DX_7_IOBUFE_TRST;
+
+
+RAM_DX_I(2) <= ((CDX(2).PIN AND RAM_DX_or0000/RAM_DX_or0000_D2)
+	OR (BUS_DX(2).PIN AND NOT RAM_DX_or0000/RAM_DX_or0000_D2));
+RAM_DX(2) <= RAM_DX_I(2) when RAM_DX_OE(2) = '1' else 'Z';
+RAM_DX_OE(2) <= RAM_DX_7_IOBUFE/RAM_DX_7_IOBUFE_TRST;
+
+
+RAM_DX_I(3) <= ((CDX(3).PIN AND RAM_DX_or0000/RAM_DX_or0000_D2)
+	OR (BUS_DX(3).PIN AND NOT RAM_DX_or0000/RAM_DX_or0000_D2));
+RAM_DX(3) <= RAM_DX_I(3) when RAM_DX_OE(3) = '1' else 'Z';
+RAM_DX_OE(3) <= RAM_DX_7_IOBUFE/RAM_DX_7_IOBUFE_TRST;
+
+
+RAM_DX_I(4) <= ((CDX(4).PIN AND RAM_DX_or0000/RAM_DX_or0000_D2)
+	OR (BUS_DX(4).PIN AND NOT RAM_DX_or0000/RAM_DX_or0000_D2));
+RAM_DX(4) <= RAM_DX_I(4) when RAM_DX_OE(4) = '1' else 'Z';
+RAM_DX_OE(4) <= RAM_DX_7_IOBUFE/RAM_DX_7_IOBUFE_TRST;
+
+
+RAM_DX_I(5) <= ((CDX(5).PIN AND RAM_DX_or0000/RAM_DX_or0000_D2)
+	OR (BUS_DX(5).PIN AND NOT RAM_DX_or0000/RAM_DX_or0000_D2));
+RAM_DX(5) <= RAM_DX_I(5) when RAM_DX_OE(5) = '1' else 'Z';
+RAM_DX_OE(5) <= RAM_DX_7_IOBUFE/RAM_DX_7_IOBUFE_TRST;
+
+
+RAM_DX_I(6) <= ((CDX(6).PIN AND RAM_DX_or0000/RAM_DX_or0000_D2)
+	OR (BUS_DX(6).PIN AND NOT RAM_DX_or0000/RAM_DX_or0000_D2));
+RAM_DX(6) <= RAM_DX_I(6) when RAM_DX_OE(6) = '1' else 'Z';
+RAM_DX_OE(6) <= RAM_DX_7_IOBUFE/RAM_DX_7_IOBUFE_TRST;
+
+
+RAM_DX_I(7) <= ((CDX(7).PIN AND RAM_DX_or0000/RAM_DX_or0000_D2)
+	OR (BUS_DX(7).PIN AND NOT RAM_DX_or0000/RAM_DX_or0000_D2));
+RAM_DX(7) <= RAM_DX_I(7) when RAM_DX_OE(7) = '1' else 'Z';
+RAM_DX_OE(7) <= RAM_DX_7_IOBUFE/RAM_DX_7_IOBUFE_TRST;
+
+
+RAM_DX_7_IOBUFE/RAM_DX_7_IOBUFE_TRST <= ((RAM_DX_or0000/RAM_DX_or0000_D2)
+	OR (NOT giga AND NOT offline AND NOT ROMS AND ram_mode AND NOT DBIN AND 
+	BUS_AX(12)));
+
+
+RAM_DX_or0000/RAM_DX_or0000_D2 <= ((data_drive)
+	OR (CCMD(2) AND offline AND CCMD(1) AND CCMD(0)));
+
+
+RAM_OE <= ((grant)
+	OR (CCMD(2) AND offline AND CCMD(1) AND CCMD(0))
+	OR (NOT giga AND NOT offline AND NOT ROMS AND ram_mode AND NOT DBIN AND 
+	BUS_AX(12)));
+
+
+RAM_WE <= NOT (((NOT CCLK AND CCMD(2) AND offline AND CCMD(1) AND CCMD(0) AND 
+	NOT CX.PIN)
+	OR (NOT WE AND NOT giga AND NOT offline AND NOT ROMS AND ram_mode AND NOT DBIN AND 
+	BUS_AX(12))
+	OR (NOT CCLK AND grant AND giga AND NOT CCMD(2) AND NOT offline AND 
+	CCMD(1) AND CCMD(0) AND fill_phase(1))));
+
+FDCPE_accepted: FDCPE port map (accepted,accepted_D,CCLK,NOT fill_mode/fill_mode_D2,'0');
+accepted_D <= ((grant AND NOT fill_phase(0) AND fill_phase(1))
+	OR (accepted AND NOT fill_phase(0) AND NOT fill_phase(1)));
+
+FDCPE_ack_epoch: FDCPE port map (ack_epoch,request_epoch,CCLK,offline,'0',ack_epoch_CE);
+ack_epoch_CE <= (giga AND NOT CCMD(2) AND NOT CCMD(1) AND CCMD(0));
+
+
+address_enable/address_enable_D2 <= ((CCMD(2) AND offline AND CCMD(1) AND CCMD(0))
+	OR (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0))
+	OR (accepted AND NOT CCMD(2) AND NOT offline AND CCMD(1) AND 
+	fill_phase(2))
+	OR (NOT giga AND NOT offline)
+	OR (NOT CCMD(2) AND NOT offline AND CCMD(1) AND NOT CCMD(0)));
+
+FDCPE_data_drive: FDCPE port map (data_drive,data_drive_D,NOT CCLK,NOT data_drive/data_drive_RSTF,'0');
+data_drive_D <= (grant AND fill_phase(1));
+
+
+data_drive/data_drive_RSTF <= (NOT fill_phase(2) AND fill_mode/fill_mode_D2);
+
+FDCPE_fault: FDCPE port map (fault,'1',fault_C,offline,'0',fault_CE);
+fault_C <= (NOT offline AND NOT ROMS AND DBIN AND 
+	NOT mailbox_read/mailbox_read_D2);
+fault_CE <= (NOT valid AND giga);
+
+
+fill_mode/fill_mode_D2 <= (giga AND NOT CCMD(2) AND NOT offline AND CCMD(1) AND CCMD(0));
+
+FDCPE_fill_phase0: FDCPE port map (fill_phase(0),fill_phase(2),CCLK,'0',NOT fill_mode/fill_mode_D2);
+
+FDCPE_fill_phase1: FDCPE port map (fill_phase(1),fill_phase(0),CCLK,NOT fill_mode/fill_mode_D2,'0');
+
+FDCPE_fill_phase2: FDCPE port map (fill_phase(2),fill_phase(1),CCLK,NOT fill_mode/fill_mode_D2,'0');
+
+FDCPE_giga: FDCPE port map (giga,CDX(2).PIN,GC,'0','0',giga_CE);
+giga_CE <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FDCPE_grant: FDCPE port map (grant,idle_sample,CCLK,grant/grant_RSTF,'0',fill_phase(0));
+
+
+grant/grant_RSTF <= ((NOT fill_mode/fill_mode_D2)
+	OR (NOT data_drive AND NOT data_drive/data_drive_RSTF));
+
+FDCPE_grit: FDCPE port map (grit,'0',NOT GR,'0',BUS_AX(1),NOT DBIN);
+
+FDCPE_grom_mask0: FDCPE port map (grom_mask(0),CDX(0).PIN,CCLK,'0','0',grom_mask_CE(0));
+grom_mask_CE(0) <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0) AND 
+	CDX(7).PIN);
+
+FDCPE_grom_mask1: FDCPE port map (grom_mask(1),CDX(1).PIN,CCLK,'0','0',grom_mask_CE(1));
+grom_mask_CE(1) <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0) AND 
+	CDX(7).PIN);
+
+FDCPE_grom_mask2: FDCPE port map (grom_mask(2),CDX(2).PIN,CCLK,'0','0',grom_mask_CE(2));
+grom_mask_CE(2) <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0) AND 
+	CDX(7).PIN);
+
+FDCPE_grom_mask3: FDCPE port map (grom_mask(3),CDX(3).PIN,CCLK,'0','0',grom_mask_CE(3));
+grom_mask_CE(3) <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0) AND 
+	CDX(7).PIN);
+
+FDCPE_grom_mask4: FDCPE port map (grom_mask(4),CDX(4).PIN,CCLK,'0','0',grom_mask_CE(4));
+grom_mask_CE(4) <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0) AND 
+	CDX(7).PIN);
+
+FDCPE_grom_sel: FDCPE port map (grom_sel,grom_sel_D,grom_sel/grom_sel_CLKF,grom_sel_CLR,'0',BUS_AX(1));
+grom_sel_D <= ((load_addr(6) AND load_addr(5) AND load_addr(7) AND 
+	grom_mask(4))
+	OR (load_addr(6) AND NOT load_addr(5) AND load_addr(7) AND 
+	grom_mask(3))
+	OR (NOT load_addr(6) AND load_addr(5) AND load_addr(7) AND 
+	grom_mask(2))
+	OR (load_addr(6) AND load_addr(5) AND NOT load_addr(7) AND 
+	grom_mask(0))
+	OR (NOT load_addr(6) AND NOT load_addr(5) AND load_addr(7) AND 
+	grom_mask(1)));
+grom_sel_CLR <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0) AND 
+	CDX(7).PIN AND NOT CDX(6).PIN);
+
+
+grom_sel/grom_sel_CLKF <= ((NOT grit)
+	OR (NOT WE AND BUS_AX(1) AND NOT DBIN AND NOT GS));
+
+FDCPE_idle_sample: FDCPE port map (idle_sample,idle_sample_D,NOT CCLK,NOT fill_mode/fill_mode_D2,'0');
+idle_sample_D <= (ROMS AND GS);
+
+FDCPE_load_addr0: FDCPE port map (load_addr(0),load_addr_D(0),load_addr(9)/load_addr(9)_CLKF,load_addr_CLR(0),'0');
+load_addr_D(0) <= ((giga AND NOT CCMD(2) AND NOT offline AND CCMD(1) AND 
+	CDX(0).PIN AND address_enable/address_enable_D2 AND 
+	NOT fill_mode/fill_mode_D2)
+	OR (load_addr(0) AND NOT $OpTx$FX_DC$271)
+	OR (NOT load_addr(0) AND address_enable/address_enable_D2 AND 
+	N01/N01_D2)
+	OR (BUS_AX(1) AND NOT giga AND NOT offline AND BUS_DX(0).PIN AND 
+	address_enable/address_enable_D2));
+load_addr_CLR(0) <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FDCPE_load_addr1: FDCPE port map (load_addr(1),load_addr_D(1),load_addr(9)/load_addr(9)_CLKF,load_addr_CLR(1),'0');
+load_addr_D(1) <= ((BUS_AX(1) AND NOT giga AND NOT offline AND BUS_DX(1).PIN AND 
+	address_enable/address_enable_D2)
+	OR (giga AND NOT CCMD(2) AND NOT offline AND CCMD(1) AND 
+	CDX(1).PIN AND address_enable/address_enable_D2 AND 
+	NOT fill_mode/fill_mode_D2)
+	OR (load_addr(1) AND NOT $OpTx$FX_DC$271)
+	OR (NOT load_addr(0) AND load_addr(1) AND N01/N01_D2)
+	OR (load_addr(0) AND NOT load_addr(1) AND 
+	address_enable/address_enable_D2 AND N01/N01_D2));
+load_addr_CLR(1) <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FDCPE_load_addr2: FDCPE port map (load_addr(2),load_addr_D(2),load_addr(9)/load_addr(9)_CLKF,load_addr_CLR(2),'0');
+load_addr_D(2) <= ((NOT load_addr(0) AND load_addr(2) AND N01/N01_D2)
+	OR (NOT load_addr(1) AND load_addr(2) AND N01/N01_D2)
+	OR (load_addr(0) AND load_addr(1) AND NOT load_addr(2) AND 
+	address_enable/address_enable_D2 AND N01/N01_D2)
+	OR (BUS_AX(1) AND NOT giga AND NOT offline AND BUS_DX(2).PIN AND 
+	address_enable/address_enable_D2)
+	OR (CDX(2).PIN AND giga AND NOT CCMD(2) AND NOT offline AND 
+	CCMD(1) AND address_enable/address_enable_D2 AND 
+	NOT fill_mode/fill_mode_D2)
+	OR (load_addr(2) AND NOT $OpTx$FX_DC$271));
+load_addr_CLR(2) <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FDCPE_load_addr3: FDCPE port map (load_addr(3),load_addr_D(3),load_addr(9)/load_addr(9)_CLKF,load_addr_CLR(3),'0');
+load_addr_D(3) <= ((NOT load_addr(2) AND load_addr(3) AND N01/N01_D2)
+	OR (BUS_AX(1) AND NOT giga AND NOT offline AND BUS_DX(3).PIN AND 
+	address_enable/address_enable_D2)
+	OR (load_addr(0) AND load_addr(1) AND load_addr(2) AND 
+	NOT load_addr(3) AND address_enable/address_enable_D2 AND N01/N01_D2)
+	OR (giga AND NOT CCMD(2) AND NOT offline AND CCMD(1) AND 
+	CDX(3).PIN AND address_enable/address_enable_D2 AND 
+	NOT fill_mode/fill_mode_D2)
+	OR (load_addr(3) AND NOT $OpTx$FX_DC$271)
+	OR (NOT load_addr(0) AND load_addr(3) AND N01/N01_D2)
+	OR (NOT load_addr(1) AND load_addr(3) AND N01/N01_D2));
+load_addr_CLR(3) <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FDCPE_load_addr4: FDCPE port map (load_addr(4),load_addr_D(4),load_addr(9)/load_addr(9)_CLKF,load_addr_CLR(4),'0');
+load_addr_D(4) <= ((NOT load_addr(1) AND load_addr(4) AND N01/N01_D2)
+	OR (NOT load_addr(2) AND load_addr(4) AND N01/N01_D2)
+	OR (BUS_AX(1) AND NOT giga AND NOT offline AND BUS_DX(4).PIN AND 
+	address_enable/address_enable_D2)
+	OR (load_addr(0) AND load_addr(1) AND load_addr(2) AND 
+	load_addr(3) AND NOT load_addr(4) AND address_enable/address_enable_D2 AND 
+	N01/N01_D2)
+	OR (giga AND NOT CCMD(2) AND NOT offline AND CCMD(1) AND 
+	CDX(4).PIN AND address_enable/address_enable_D2 AND 
+	NOT fill_mode/fill_mode_D2)
+	OR (load_addr(4) AND NOT $OpTx$FX_DC$271)
+	OR (NOT load_addr(0) AND load_addr(4) AND N01/N01_D2)
+	OR (NOT load_addr(3) AND load_addr(4) AND N01/N01_D2));
+load_addr_CLR(4) <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FDCPE_load_addr5: FDCPE port map (load_addr(5),load_addr_D(5),load_addr(9)/load_addr(9)_CLKF,load_addr_CLR(5),'0');
+load_addr_D(5) <= ((load_addr(5) AND N01/N01_D2 AND 
+	NOT Madd_address_next_12_0_add0000__and0003/Madd_address_next_12_0_add0000__and0003_D2)
+	OR (NOT load_addr(5) AND address_enable/address_enable_D2 AND 
+	N01/N01_D2 AND 
+	Madd_address_next_12_0_add0000__and0003/Madd_address_next_12_0_add0000__and0003_D2)
+	OR (BUS_AX(1) AND NOT giga AND NOT offline AND BUS_DX(5).PIN AND 
+	address_enable/address_enable_D2)
+	OR (giga AND NOT CCMD(2) AND NOT offline AND CCMD(1) AND 
+	CDX(5).PIN AND address_enable/address_enable_D2 AND 
+	NOT fill_mode/fill_mode_D2)
+	OR (load_addr(5) AND NOT $OpTx$FX_DC$271));
+load_addr_CLR(5) <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FDCPE_load_addr6: FDCPE port map (load_addr(6),load_addr_D(6),load_addr(9)/load_addr(9)_CLKF,load_addr_CLR(6),'0');
+load_addr_D(6) <= ((load_addr(6) AND NOT load_addr(5) AND N01/N01_D2)
+	OR (NOT load_addr(6) AND load_addr(5) AND 
+	address_enable/address_enable_D2 AND N01/N01_D2 AND 
+	Madd_address_next_12_0_add0000__and0003/Madd_address_next_12_0_add0000__and0003_D2)
+	OR (BUS_AX(1) AND NOT giga AND NOT offline AND BUS_DX(6).PIN AND 
+	address_enable/address_enable_D2)
+	OR (giga AND NOT CCMD(2) AND NOT offline AND CCMD(1) AND 
+	CDX(6).PIN AND address_enable/address_enable_D2 AND 
+	NOT fill_mode/fill_mode_D2)
+	OR (load_addr(6) AND NOT $OpTx$FX_DC$271)
+	OR (load_addr(6) AND N01/N01_D2 AND 
+	NOT Madd_address_next_12_0_add0000__and0003/Madd_address_next_12_0_add0000__and0003_D2));
+load_addr_CLR(6) <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FDCPE_load_addr7: FDCPE port map (load_addr(7),load_addr_D(7),load_addr(9)/load_addr(9)_CLKF,load_addr_CLR(7),'0');
+load_addr_D(7) <= ((NOT load_addr(6) AND load_addr(7) AND N01/N01_D2)
+	OR (BUS_AX(1) AND NOT giga AND NOT offline AND BUS_DX(7).PIN AND 
+	address_enable/address_enable_D2)
+	OR (load_addr(6) AND load_addr(5) AND NOT load_addr(7) AND 
+	address_enable/address_enable_D2 AND N01/N01_D2 AND 
+	Madd_address_next_12_0_add0000__and0003/Madd_address_next_12_0_add0000__and0003_D2)
+	OR (giga AND NOT CCMD(2) AND NOT offline AND CCMD(1) AND 
+	CDX(7).PIN AND address_enable/address_enable_D2 AND 
+	NOT fill_mode/fill_mode_D2)
+	OR (load_addr(7) AND NOT $OpTx$FX_DC$271)
+	OR (NOT load_addr(5) AND load_addr(7) AND N01/N01_D2)
+	OR (load_addr(7) AND N01/N01_D2 AND 
+	NOT Madd_address_next_12_0_add0000__and0003/Madd_address_next_12_0_add0000__and0003_D2));
+load_addr_CLR(7) <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FDCPE_load_addr8: FDCPE port map (load_addr(8),load_addr_D(8),load_addr(9)/load_addr(9)_CLKF,load_addr_CLR(8),'0');
+load_addr_D(8) <= ((NOT load_addr(6) AND load_addr(8) AND N01/N01_D2)
+	OR (NOT load_addr(5) AND load_addr(8) AND N01/N01_D2)
+	OR (load_addr(0) AND BUS_AX(1) AND NOT giga AND NOT offline AND 
+	address_enable/address_enable_D2)
+	OR (load_addr(6) AND load_addr(5) AND load_addr(7) AND 
+	NOT load_addr(8) AND address_enable/address_enable_D2 AND N01/N01_D2 AND 
+	Madd_address_next_12_0_add0000__and0003/Madd_address_next_12_0_add0000__and0003_D2)
+	OR (load_addr(0) AND giga AND NOT CCMD(2) AND NOT offline AND 
+	CCMD(1) AND address_enable/address_enable_D2 AND 
+	NOT fill_mode/fill_mode_D2)
+	OR (load_addr(8) AND NOT address_enable/address_enable_D2)
+	OR (NOT load_addr(7) AND load_addr(8) AND N01/N01_D2)
+	OR (load_addr(8) AND N01/N01_D2 AND 
+	NOT Madd_address_next_12_0_add0000__and0003/Madd_address_next_12_0_add0000__and0003_D2));
+load_addr_CLR(8) <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+
+load_addr(9)/load_addr(9)_CLKF <= ((CCLK AND offline AND NOT native_address_clock)
+	OR (native_address_clock AND grom_sel/grom_sel_CLKF)
+	OR (CCLK AND giga AND NOT native_address_clock)
+	OR (NOT giga AND NOT offline AND grom_sel/grom_sel_CLKF));
+
+FDCPE_load_addr9: FDCPE port map (load_addr(9),load_addr_D(9),load_addr(9)/load_addr(9)_CLKF,load_addr_CLR(9),'0');
+load_addr_D(9) <= ((load_addr(1) AND BUS_AX(1) AND NOT giga AND NOT offline AND 
+	address_enable/address_enable_D2)
+	OR (load_addr(1) AND giga AND NOT CCMD(2) AND NOT offline AND 
+	CCMD(1) AND address_enable/address_enable_D2 AND 
+	NOT fill_mode/fill_mode_D2)
+	OR (load_addr(9) AND NOT address_enable/address_enable_D2)
+	OR (load_addr(9) AND N01/N01_D2 AND 
+	NOT Madd_address_next_12_0_add0000__and0007/Madd_address_next_12_0_add0000__and0007_D2)
+	OR (NOT load_addr(9) AND address_enable/address_enable_D2 AND 
+	N01/N01_D2 AND 
+	Madd_address_next_12_0_add0000__and0007/Madd_address_next_12_0_add0000__and0007_D2));
+load_addr_CLR(9) <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FDCPE_load_addr10: FDCPE port map (load_addr(10),load_addr_D(10),load_addr(9)/load_addr(9)_CLKF,load_addr_CLR(10),'0');
+load_addr_D(10) <= ((NOT load_addr(10) AND load_addr(9) AND 
+	address_enable/address_enable_D2 AND N01/N01_D2 AND 
+	Madd_address_next_12_0_add0000__and0007/Madd_address_next_12_0_add0000__and0007_D2)
+	OR (load_addr(2) AND BUS_AX(1) AND NOT giga AND NOT offline AND 
+	address_enable/address_enable_D2)
+	OR (load_addr(2) AND giga AND NOT CCMD(2) AND NOT offline AND 
+	CCMD(1) AND address_enable/address_enable_D2 AND 
+	NOT fill_mode/fill_mode_D2)
+	OR (load_addr(10) AND NOT address_enable/address_enable_D2)
+	OR (load_addr(10) AND NOT load_addr(9) AND N01/N01_D2)
+	OR (load_addr(10) AND N01/N01_D2 AND 
+	NOT Madd_address_next_12_0_add0000__and0007/Madd_address_next_12_0_add0000__and0007_D2));
+load_addr_CLR(10) <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FDCPE_load_addr11: FDCPE port map (load_addr(11),load_addr_D(11),load_addr(9)/load_addr(9)_CLKF,load_addr_CLR(11),'0');
+load_addr_D(11) <= ((load_addr(11) AND NOT load_addr(9) AND N01/N01_D2)
+	OR (load_addr(3) AND BUS_AX(1) AND NOT giga AND NOT offline AND 
+	address_enable/address_enable_D2)
+	OR (load_addr(10) AND NOT load_addr(11) AND load_addr(9) AND 
+	address_enable/address_enable_D2 AND N01/N01_D2 AND 
+	Madd_address_next_12_0_add0000__and0007/Madd_address_next_12_0_add0000__and0007_D2)
+	OR (load_addr(3) AND giga AND NOT CCMD(2) AND NOT offline AND 
+	CCMD(1) AND address_enable/address_enable_D2 AND 
+	NOT fill_mode/fill_mode_D2)
+	OR (load_addr(11) AND NOT address_enable/address_enable_D2)
+	OR (NOT load_addr(10) AND load_addr(11) AND N01/N01_D2)
+	OR (load_addr(11) AND N01/N01_D2 AND 
+	NOT Madd_address_next_12_0_add0000__and0007/Madd_address_next_12_0_add0000__and0007_D2));
+load_addr_CLR(11) <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FDCPE_load_addr12: FDCPE port map (load_addr(12),load_addr_D(12),load_addr(9)/load_addr(9)_CLKF,load_addr_CLR(12),'0');
+load_addr_D(12) <= ((NOT load_addr(9) AND load_addr(12) AND N01/N01_D2)
+	OR (load_addr(12) AND N01/N01_D2 AND 
+	NOT Madd_address_next_12_0_add0000__and0007/Madd_address_next_12_0_add0000__and0007_D2)
+	OR (load_addr(4) AND BUS_AX(1) AND NOT giga AND NOT offline AND 
+	address_enable/address_enable_D2)
+	OR (load_addr(10) AND load_addr(11) AND load_addr(9) AND 
+	NOT load_addr(12) AND address_enable/address_enable_D2 AND N01/N01_D2 AND 
+	Madd_address_next_12_0_add0000__and0007/Madd_address_next_12_0_add0000__and0007_D2)
+	OR (load_addr(4) AND giga AND NOT CCMD(2) AND NOT offline AND 
+	CCMD(1) AND address_enable/address_enable_D2 AND 
+	NOT fill_mode/fill_mode_D2)
+	OR (load_addr(12) AND NOT address_enable/address_enable_D2)
+	OR (NOT load_addr(10) AND load_addr(12) AND N01/N01_D2)
+	OR (NOT load_addr(11) AND load_addr(12) AND N01/N01_D2));
+load_addr_CLR(12) <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FTCPE_load_addr13: FTCPE port map (load_addr(13),load_addr_T(13),load_addr(9)/load_addr(9)_CLKF,load_addr_CLR(13),'0');
+load_addr_T(13) <= ((load_addr(5) AND NOT load_addr(13) AND giga AND NOT CCMD(2) AND 
+	NOT offline AND CCMD(1) AND NOT CCMD(0))
+	OR (NOT load_addr(5) AND load_addr(13) AND giga AND NOT CCMD(2) AND 
+	NOT offline AND CCMD(1) AND NOT CCMD(0))
+	OR (NOT load_addr(13) AND giga AND CCMD(2) AND offline AND 
+	NOT CCMD(1) AND NOT CCMD(0) AND CDX(0).PIN)
+	OR (load_addr(13) AND NOT giga AND CCMD(2) AND offline AND 
+	NOT CCMD(1) AND NOT CCMD(0) AND NOT CDX(7).PIN)
+	OR (load_addr(13) AND CCMD(2) AND offline AND NOT CCMD(1) AND 
+	NOT CCMD(0) AND NOT CDX(7).PIN AND NOT CDX(0).PIN)
+	OR (load_addr(5) AND NOT load_addr(13) AND BUS_AX(1) AND NOT giga AND 
+	NOT offline)
+	OR (NOT load_addr(5) AND load_addr(13) AND BUS_AX(1) AND NOT giga AND 
+	NOT offline)
+	OR (NOT load_addr(13) AND CCMD(2) AND offline AND NOT CCMD(1) AND 
+	NOT CCMD(0) AND CDX(7).PIN));
+load_addr_CLR(13) <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FTCPE_load_addr14: FTCPE port map (load_addr(14),load_addr_T(14),load_addr(9)/load_addr(9)_CLKF,load_addr_CLR(14),'0');
+load_addr_T(14) <= ((NOT load_addr(6) AND load_addr(14) AND giga AND NOT CCMD(2) AND 
+	NOT offline AND CCMD(1) AND NOT CCMD(0))
+	OR (load_addr(14) AND NOT giga AND CCMD(2) AND offline AND 
+	NOT CCMD(1) AND NOT CCMD(0) AND NOT CDX(7).PIN)
+	OR (load_addr(14) AND CCMD(2) AND offline AND NOT CCMD(1) AND 
+	NOT CCMD(0) AND NOT CDX(7).PIN AND NOT CDX(1).PIN)
+	OR (load_addr(6) AND NOT load_addr(14) AND giga AND NOT CCMD(2) AND 
+	NOT offline AND CCMD(1) AND NOT CCMD(0))
+	OR (NOT load_addr(14) AND giga AND CCMD(2) AND offline AND 
+	NOT CCMD(1) AND NOT CCMD(0) AND CDX(1).PIN)
+	OR (load_addr(6) AND NOT load_addr(14) AND BUS_AX(1) AND NOT giga AND 
+	NOT offline)
+	OR (NOT load_addr(6) AND load_addr(14) AND BUS_AX(1) AND NOT giga AND 
+	NOT offline)
+	OR (NOT load_addr(14) AND CCMD(2) AND offline AND NOT CCMD(1) AND 
+	NOT CCMD(0) AND CDX(7).PIN));
+load_addr_CLR(14) <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FTCPE_load_addr15: FTCPE port map (load_addr(15),load_addr_T(15),load_addr(9)/load_addr(9)_CLKF,load_addr_CLR(15),'0');
+load_addr_T(15) <= ((load_addr(15) AND NOT CDX(2).PIN AND CCMD(2) AND offline AND 
+	NOT CCMD(1) AND NOT CCMD(0))
+	OR (load_addr(15) AND CCMD(2) AND offline AND NOT CCMD(1) AND 
+	NOT CCMD(0) AND CDX(7).PIN)
+	OR (load_addr(7) AND NOT load_addr(15) AND giga AND NOT CCMD(2) AND 
+	NOT offline AND CCMD(1) AND NOT CCMD(0))
+	OR (NOT load_addr(7) AND load_addr(15) AND giga AND NOT CCMD(2) AND 
+	NOT offline AND CCMD(1) AND NOT CCMD(0))
+	OR (NOT load_addr(15) AND CDX(2).PIN AND giga AND CCMD(2) AND 
+	offline AND NOT CCMD(1) AND NOT CCMD(0) AND NOT CDX(7).PIN)
+	OR (load_addr(7) AND NOT load_addr(15) AND BUS_AX(1) AND NOT giga AND 
+	NOT offline)
+	OR (NOT load_addr(7) AND load_addr(15) AND BUS_AX(1) AND NOT giga AND 
+	NOT offline)
+	OR (load_addr(15) AND NOT giga AND CCMD(2) AND offline AND 
+	NOT CCMD(1) AND NOT CCMD(0)));
+load_addr_CLR(15) <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FDCPE_load_addr16: FDCPE port map (load_addr(16),load_addr_D(16),load_addr(9)/load_addr(9)_CLKF,load_addr_CLR(16),'0');
+load_addr_D(16) <= ((load_addr(8) AND giga AND NOT CCMD(2) AND NOT offline AND 
+	CCMD(1) AND NOT CCMD(0))
+	OR (load_addr(16) AND NOT $OpTx$FX_DC$281)
+	OR (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0) AND 
+	CDX(7).PIN)
+	OR (giga AND CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0) AND 
+	CDX(3).PIN));
+load_addr_CLR(16) <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FDCPE_load_addr17: FDCPE port map (load_addr(17),load_addr_D(17),load_addr(9)/load_addr(9)_CLKF,load_addr_CLR(17),'0');
+load_addr_D(17) <= ((load_addr(9) AND giga AND NOT CCMD(2) AND NOT offline AND 
+	CCMD(1) AND NOT CCMD(0))
+	OR (load_addr(17) AND NOT $OpTx$FX_DC$281)
+	OR (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0) AND 
+	CDX(7).PIN)
+	OR (giga AND CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0) AND 
+	CDX(4).PIN));
+load_addr_CLR(17) <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FDCPE_load_addr18: FDCPE port map (load_addr(18),load_addr_D(18),load_addr(9)/load_addr(9)_CLKF,load_addr_CLR(18),'0');
+load_addr_D(18) <= ((load_addr(10) AND giga AND NOT CCMD(2) AND NOT offline AND 
+	CCMD(1) AND NOT CCMD(0))
+	OR (giga AND CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0) AND 
+	CDX(5).PIN)
+	OR (load_addr(18) AND NOT $OpTx$FX_DC$281)
+	OR (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0) AND 
+	CDX(7).PIN));
+load_addr_CLR(18) <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FDCPE_load_addr19: FDCPE port map (load_addr(19),load_addr_D(19),load_addr(9)/load_addr(9)_CLKF,load_addr_CLR(19),'0');
+load_addr_D(19) <= ((load_addr(11) AND giga AND NOT CCMD(2) AND NOT offline AND 
+	CCMD(1) AND NOT CCMD(0))
+	OR (load_addr(19) AND NOT $OpTx$FX_DC$281)
+	OR (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0) AND 
+	CDX(7).PIN)
+	OR (giga AND CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0) AND 
+	CDX(6).PIN));
+load_addr_CLR(19) <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FDCPE_logical_bank0: FDCPE port map (logical_bank(0),logical_bank_D(0),WE,logical_bank_CLR(0),'0');
+logical_bank_D(0) <= ((giga AND BUS_DX(0).PIN AND 
+	logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (logical_bank(0) AND 
+	NOT logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (BUS_AX(1) AND NOT giga AND 
+	logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (BUS_AX(1) AND 
+	NOT logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_0_not0001/logical_bank_0_not0001_D2));
+logical_bank_CLR(0) <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0));
+
+FDCPE_logical_bank1: FDCPE port map (logical_bank(1),logical_bank_D(1),WE,logical_bank_CLR(1),'0');
+logical_bank_D(1) <= ((NOT giga AND BUS_AX(2) AND 
+	logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (BUS_AX(2) AND 
+	NOT logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (giga AND BUS_DX(1).PIN AND 
+	logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (logical_bank(1) AND 
+	NOT logical_bank_0_not0001/logical_bank_0_not0001_D2));
+logical_bank_CLR(1) <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0));
+
+FDCPE_logical_bank2: FDCPE port map (logical_bank(2),logical_bank_D(2),WE,logical_bank_CLR(2),'0');
+logical_bank_D(2) <= ((giga AND BUS_DX(2).PIN AND 
+	logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (logical_bank(2) AND 
+	NOT logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (NOT giga AND BUS_AX(3) AND 
+	logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (BUS_AX(3) AND 
+	NOT logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_0_not0001/logical_bank_0_not0001_D2));
+logical_bank_CLR(2) <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0));
+
+FDCPE_logical_bank3: FDCPE port map (logical_bank(3),logical_bank_D(3),WE,logical_bank_CLR(3),'0');
+logical_bank_D(3) <= ((giga AND BUS_DX(3).PIN AND 
+	logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (logical_bank(3) AND 
+	NOT logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (NOT giga AND BUS_AX(4) AND 
+	logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (BUS_AX(4) AND 
+	NOT logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_0_not0001/logical_bank_0_not0001_D2));
+logical_bank_CLR(3) <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0));
+
+FDCPE_logical_bank4: FDCPE port map (logical_bank(4),logical_bank_D(4),WE,logical_bank_CLR(4),'0');
+logical_bank_D(4) <= ((BUS_AX(5) AND 
+	NOT logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (giga AND BUS_DX(4).PIN AND 
+	logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (logical_bank(4) AND 
+	NOT logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (BUS_AX(5) AND NOT giga AND 
+	logical_bank_0_not0001/logical_bank_0_not0001_D2));
+logical_bank_CLR(4) <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0));
+
+FDCPE_logical_bank5: FDCPE port map (logical_bank(5),logical_bank_D(5),WE,logical_bank_CLR(5),'0');
+logical_bank_D(5) <= ((BUS_AX(6) AND 
+	NOT logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (giga AND BUS_DX(5).PIN AND 
+	logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (logical_bank(5) AND 
+	NOT logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (NOT giga AND BUS_AX(6) AND 
+	logical_bank_0_not0001/logical_bank_0_not0001_D2));
+logical_bank_CLR(5) <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0));
+
+FDCPE_logical_bank6: FDCPE port map (logical_bank(6),logical_bank_D(6),WE,logical_bank_CLR(6),'0');
+logical_bank_D(6) <= ((giga AND BUS_DX(6).PIN AND 
+	logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (logical_bank(6) AND 
+	NOT logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (NOT giga AND BUS_AX(7) AND 
+	logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (BUS_AX(7) AND 
+	NOT logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_0_not0001/logical_bank_0_not0001_D2));
+logical_bank_CLR(6) <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0));
+
+FDCPE_logical_bank7: FDCPE port map (logical_bank(7),logical_bank_D(7),WE,logical_bank_CLR(7),'0');
+logical_bank_D(7) <= ((BUS_AX(8) AND 
+	NOT logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (giga AND BUS_DX(7).PIN AND 
+	logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (logical_bank(7) AND 
+	NOT logical_bank_0_not0001/logical_bank_0_not0001_D2)
+	OR (NOT giga AND BUS_AX(8) AND 
+	logical_bank_0_not0001/logical_bank_0_not0001_D2));
+logical_bank_CLR(7) <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0));
+
+FDCPE_logical_bank8: FDCPE port map (logical_bank(8),logical_bank_D(8),WE,logical_bank_CLR(8),'0');
+logical_bank_D(8) <= ((giga AND BUS_AX(9) AND 
+	NOT logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_13_not0001/logical_bank_13_not0001_D2)
+	OR (giga AND BUS_DX(0).PIN AND 
+	logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_13_not0001/logical_bank_13_not0001_D2)
+	OR (logical_bank(8) AND 
+	NOT logical_bank_13_not0001/logical_bank_13_not0001_D2)
+	OR (NOT giga AND BUS_AX(12) AND 
+	logical_bank_13_not0001/logical_bank_13_not0001_D2));
+logical_bank_CLR(8) <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0));
+
+FDCPE_logical_bank9: FDCPE port map (logical_bank(9),logical_bank_D(9),WE,logical_bank_CLR(9),'0');
+logical_bank_D(9) <= ((logical_bank(9) AND 
+	NOT logical_bank_13_not0001/logical_bank_13_not0001_D2)
+	OR (giga AND BUS_AX(10) AND 
+	NOT logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_13_not0001/logical_bank_13_not0001_D2)
+	OR (giga AND BUS_DX(1).PIN AND 
+	logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_13_not0001/logical_bank_13_not0001_D2));
+logical_bank_CLR(9) <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0));
+
+FDCPE_logical_bank10: FDCPE port map (logical_bank(10),logical_bank_D(10),WE,logical_bank_CLR(10),'0');
+logical_bank_D(10) <= ((logical_bank(10) AND 
+	NOT logical_bank_13_not0001/logical_bank_13_not0001_D2)
+	OR (giga AND BUS_AX(11) AND 
+	NOT logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_13_not0001/logical_bank_13_not0001_D2)
+	OR (giga AND BUS_DX(2).PIN AND 
+	logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_13_not0001/logical_bank_13_not0001_D2));
+logical_bank_CLR(10) <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0));
+
+FDCPE_logical_bank11: FDCPE port map (logical_bank(11),logical_bank_D(11),WE,logical_bank_CLR(11),'0');
+logical_bank_D(11) <= ((giga AND BUS_AX(12) AND 
+	NOT logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_13_not0001/logical_bank_13_not0001_D2)
+	OR (giga AND BUS_DX(3).PIN AND 
+	logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_13_not0001/logical_bank_13_not0001_D2)
+	OR (logical_bank(11) AND 
+	NOT logical_bank_13_not0001/logical_bank_13_not0001_D2));
+logical_bank_CLR(11) <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0));
+
+FDCPE_logical_bank12: FDCPE port map (logical_bank(12),logical_bank_D(12),WE,logical_bank_CLR(12),'0');
+logical_bank_D(12) <= ((giga AND BUS_DX(0).PIN AND 
+	NOT logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_13_not0001/logical_bank_13_not0001_D2)
+	OR (giga AND BUS_DX(4).PIN AND 
+	logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_13_not0001/logical_bank_13_not0001_D2)
+	OR (logical_bank(12) AND 
+	NOT logical_bank_13_not0001/logical_bank_13_not0001_D2));
+logical_bank_CLR(12) <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0));
+
+FDCPE_logical_bank13: FDCPE port map (logical_bank(13),logical_bank_D(13),WE,logical_bank_CLR(13),'0');
+logical_bank_D(13) <= ((logical_bank(13) AND 
+	NOT logical_bank_13_not0001/logical_bank_13_not0001_D2)
+	OR (giga AND BUS_DX(1).PIN AND 
+	NOT logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_13_not0001/logical_bank_13_not0001_D2)
+	OR (giga AND BUS_DX(5).PIN AND 
+	logical_bank_13_and0005/logical_bank_13_and0005_D2 AND logical_bank_13_not0001/logical_bank_13_not0001_D2));
+logical_bank_CLR(13) <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0));
+
+
+logical_bank_0_not0001/logical_bank_0_not0001_D2 <= ((NOT giga AND NOT offline AND NOT ram_mode AND 
+	logical_bank_13_not0001/logical_bank_13_not0001_D2)
+	OR (NOT giga AND NOT offline AND NOT BUS_AX(12) AND 
+	logical_bank_13_not0001/logical_bank_13_not0001_D2)
+	OR (select_armed AND giga AND NOT offline AND NOT BUS_AX(0) AND 
+	NOT ROMS)
+	OR (request_epoch AND ack_epoch AND BUS_AX(5) AND giga AND 
+	NOT offline AND NOT BUS_AX(0) AND NOT ROMS AND NOT BUS_AX(2) AND BUS_AX(12) AND 
+	BUS_AX(11) AND BUS_AX(10) AND BUS_AX(9) AND BUS_AX(4) AND BUS_AX(3) AND 
+	BUS_AX(8) AND BUS_AX(7) AND BUS_AX(6) AND 
+	NOT logical_bank_13_not0001/logical_bank_13_not0001_D2)
+	OR (NOT request_epoch AND NOT ack_epoch AND BUS_AX(5) AND giga AND 
+	NOT offline AND NOT BUS_AX(0) AND NOT ROMS AND NOT BUS_AX(2) AND BUS_AX(12) AND 
+	BUS_AX(11) AND BUS_AX(10) AND BUS_AX(9) AND BUS_AX(4) AND BUS_AX(3) AND 
+	BUS_AX(8) AND BUS_AX(7) AND BUS_AX(6) AND 
+	NOT logical_bank_13_not0001/logical_bank_13_not0001_D2));
+
+
+logical_bank_13_and0005/logical_bank_13_and0005_D2 <= ((NOT select_armed AND request_epoch AND ack_epoch AND 
+	BUS_AX(5) AND giga AND NOT offline AND NOT BUS_AX(0) AND BUS_AX(12) AND 
+	BUS_AX(11) AND BUS_AX(10) AND BUS_AX(9) AND BUS_AX(4) AND BUS_AX(3) AND 
+	BUS_AX(8) AND BUS_AX(7) AND BUS_AX(6))
+	OR (NOT select_armed AND NOT request_epoch AND NOT ack_epoch AND 
+	BUS_AX(5) AND giga AND NOT offline AND NOT BUS_AX(0) AND BUS_AX(12) AND 
+	BUS_AX(11) AND BUS_AX(10) AND BUS_AX(9) AND BUS_AX(4) AND BUS_AX(3) AND 
+	BUS_AX(8) AND BUS_AX(7) AND BUS_AX(6)));
+
+
+logical_bank_13_not0001/logical_bank_13_not0001_D2 <= ((NOT giga AND NOT offline AND NOT ROMS AND NOT ram_mode)
+	OR (NOT giga AND NOT offline AND NOT ROMS AND NOT BUS_AX(12))
+	OR (select_armed AND giga AND NOT offline AND NOT BUS_AX(0) AND 
+	NOT ROMS)
+	OR (request_epoch AND ack_epoch AND BUS_AX(5) AND 
+	BUS_AX(1) AND giga AND NOT offline AND NOT BUS_AX(0) AND NOT ROMS AND NOT BUS_AX(2) AND 
+	BUS_AX(12) AND BUS_AX(11) AND BUS_AX(10) AND BUS_AX(9) AND BUS_AX(4) AND 
+	BUS_AX(3) AND BUS_AX(8) AND BUS_AX(7) AND BUS_AX(6))
+	OR (NOT request_epoch AND NOT ack_epoch AND BUS_AX(5) AND 
+	BUS_AX(1) AND giga AND NOT offline AND NOT BUS_AX(0) AND NOT ROMS AND NOT BUS_AX(2) AND 
+	BUS_AX(12) AND BUS_AX(11) AND BUS_AX(10) AND BUS_AX(9) AND BUS_AX(4) AND 
+	BUS_AX(3) AND BUS_AX(8) AND BUS_AX(7) AND BUS_AX(6)));
+
+
+lookup/lookup_D2 <= (NOT WE AND select_armed AND giga AND NOT offline AND NOT ROMS);
+
+
+mailbox_read/mailbox_read_D2 <= ((select_armed AND giga AND NOT offline AND NOT ROMS AND DBIN)
+	OR (mailbox_session AND BUS_AX(5) AND giga AND NOT offline AND 
+	NOT ROMS AND DBIN AND BUS_AX(12) AND BUS_AX(11) AND BUS_AX(10) AND 
+	BUS_AX(9) AND BUS_AX(4) AND BUS_AX(3) AND BUS_AX(8) AND BUS_AX(7) AND 
+	BUS_AX(6)));
+
+FTCPE_mailbox_session: FTCPE port map (mailbox_session,mailbox_session_T,WE,offline,'0');
+mailbox_session_T <= ((NOT select_armed AND NOT mailbox_session AND NOT BUS_AX(1) AND 
+	NOT ROMS AND NOT BUS_AX(2) AND 
+	logical_bank_13_and0005/logical_bank_13_and0005_D2)
+	OR (NOT mailbox_session AND NOT BUS_AX(1) AND NOT BUS_AX(0) AND NOT ROMS AND 
+	NOT BUS_AX(2) AND logical_bank_13_and0005/logical_bank_13_and0005_D2)
+	OR (select_armed AND mailbox_session AND BUS_AX(0) AND 
+	logical_bank_13_and0005/logical_bank_13_and0005_D2)
+	OR (select_armed AND mailbox_session AND ROMS AND 
+	logical_bank_13_and0005/logical_bank_13_and0005_D2)
+	OR (mailbox_session AND NOT BUS_AX(1) AND NOT ROMS AND BUS_AX(2) AND 
+	logical_bank_13_and0005/logical_bank_13_and0005_D2));
+
+FDCPE_native_address_clock: FDCPE port map (native_address_clock,NOT giga,NOT offline,native_address_clock_CLR,'0');
+native_address_clock_CLR <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FTCPE_offline: FTCPE port map (offline,offline_T,GC,'0','0');
+offline_T <= ((CCMD(2) AND NOT offline AND previous_offline)
+	OR (NOT CCMD(2) AND offline AND NOT previous_offline));
+
+FDCPE_previous_offline: FDCPE port map (previous_offline,CCMD(2),GC,'0','0');
+
+FDCPE_ram_mode: FDCPE port map (ram_mode,CDX(0).PIN,GC,'0','0',ram_mode_CE);
+ram_mode_CE <= (CCMD(2) AND offline AND NOT CCMD(1) AND CCMD(0));
+
+FTCPE_request_epoch: FTCPE port map (request_epoch,request_epoch_T,WE,offline,'0');
+request_epoch_T <= (mailbox_session AND BUS_AX(1) AND NOT ROMS AND BUS_AX(2) AND 
+	logical_bank_13_and0005/logical_bank_13_and0005_D2);
+
+FDCPE_select_armed: FDCPE port map (select_armed,select_armed_D,WE,offline,'0');
+select_armed_D <= ((select_armed AND BUS_AX(0))
+	OR (select_armed AND ROMS)
+	OR (NOT BUS_AX(1) AND NOT ROMS AND BUS_AX(2) AND 
+	logical_bank_13_and0005/logical_bank_13_and0005_D2));
+
+FDCPE_slot0: FDCPE port map (slot(0),slot_D(0),slot(6)/slot(6)_CLKF,'0','0');
+slot_D(0) <= ((slot(0) AND NOT slot_enable/slot_enable_D2)
+	OR (NOT offline AND RAM_DX(0).PIN AND 
+	slot_enable/slot_enable_D2)
+	OR (NOT giga AND offline AND NOT CDX(7).PIN AND CDX(0).PIN AND 
+	slot_enable/slot_enable_D2));
+
+FDCPE_slot1: FDCPE port map (slot(1),slot_D(1),slot(6)/slot(6)_CLKF,'0','0');
+slot_D(1) <= ((slot(1) AND NOT slot_enable/slot_enable_D2)
+	OR (NOT offline AND RAM_DX(1).PIN AND 
+	slot_enable/slot_enable_D2)
+	OR (NOT giga AND offline AND NOT CDX(7).PIN AND CDX(1).PIN AND 
+	slot_enable/slot_enable_D2));
+
+FDCPE_slot2: FDCPE port map (slot(2),slot_D(2),slot(6)/slot(6)_CLKF,'0','0');
+slot_D(2) <= ((slot(2) AND NOT slot_enable/slot_enable_D2)
+	OR (NOT offline AND RAM_DX(2).PIN AND 
+	slot_enable/slot_enable_D2)
+	OR (CDX(2).PIN AND NOT giga AND offline AND NOT CDX(7).PIN AND 
+	slot_enable/slot_enable_D2));
+
+FDCPE_slot3: FDCPE port map (slot(3),slot_D(3),slot(6)/slot(6)_CLKF,'0','0');
+slot_D(3) <= ((slot(3) AND NOT slot_enable/slot_enable_D2)
+	OR (RAM_DX(3).PIN AND NOT offline AND 
+	slot_enable/slot_enable_D2)
+	OR (NOT giga AND offline AND NOT CDX(7).PIN AND CDX(3).PIN AND 
+	slot_enable/slot_enable_D2));
+
+FDCPE_slot4: FDCPE port map (slot(4),slot_D(4),slot(6)/slot(6)_CLKF,'0','0');
+slot_D(4) <= ((slot(4) AND NOT slot_enable/slot_enable_D2)
+	OR (RAM_DX(4).PIN AND NOT offline AND 
+	slot_enable/slot_enable_D2)
+	OR (NOT giga AND offline AND NOT CDX(7).PIN AND CDX(4).PIN AND 
+	slot_enable/slot_enable_D2));
+
+FDCPE_slot5: FDCPE port map (slot(5),slot_D(5),slot(6)/slot(6)_CLKF,'0','0');
+slot_D(5) <= ((slot(5) AND NOT slot_enable/slot_enable_D2)
+	OR (RAM_DX(5).PIN AND NOT offline AND 
+	slot_enable/slot_enable_D2)
+	OR (NOT giga AND offline AND NOT CDX(7).PIN AND CDX(5).PIN AND 
+	slot_enable/slot_enable_D2));
+
+
+slot(6)/slot(6)_CLKF <= ((CCLK AND offline)
+	OR (WE AND NOT offline));
+
+FDCPE_slot6: FDCPE port map (slot(6),slot_D(6),slot(6)/slot(6)_CLKF,'0','0');
+slot_D(6) <= ((slot(6) AND NOT slot_enable/slot_enable_D2)
+	OR (RAM_DX(6).PIN AND NOT offline AND 
+	slot_enable/slot_enable_D2)
+	OR (NOT giga AND offline AND NOT CDX(7).PIN AND CDX(6).PIN AND 
+	slot_enable/slot_enable_D2));
+
+
+slot_enable/slot_enable_D2 <= ((CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0))
+	OR (select_armed AND giga AND NOT offline AND NOT BUS_AX(0) AND 
+	NOT ROMS));
+
+FDCPE_valid: FDCPE port map (valid,valid_D,WE,'0',valid_PRE,valid_CE);
+valid_D <= ((NOT RAM_DX(7).PIN)
+	OR (RAM_DX(3).PIN AND RAM_DX(4).PIN AND RAM_DX(5).PIN AND 
+	RAM_DX(6).PIN AND RAM_DX(2).PIN AND RAM_DX(0).PIN)
+	OR (RAM_DX(3).PIN AND RAM_DX(4).PIN AND RAM_DX(5).PIN AND 
+	RAM_DX(6).PIN AND RAM_DX(2).PIN AND RAM_DX(1).PIN));
+valid_PRE <= (CCMD(2) AND offline AND NOT CCMD(1) AND NOT CCMD(0));
+valid_CE <= (select_armed AND giga AND NOT offline AND NOT BUS_AX(0) AND 
+	NOT ROMS);
+
+Register Legend:
+ FDCPE (Q,D,C,CLR,PRE,CE); 
+ FTCPE (Q,D,C,CLR,PRE,CE); 
+ LDCP  (Q,D,G,CLR,PRE); 
+
+******************************  Device Pin Out *****************************
+
+Device : XC95144XL-10-TQ100
+
+
+   --------------------------------------------------  
+  /100 98  96  94  92  90  88  86  84  82  80  78  76  \
+ |   99  97  95  93  91  89  87  85  83  81  79  77    |
+ | 1                                               75  | 
+ | 2                                               74  | 
+ | 3                                               73  | 
+ | 4                                               72  | 
+ | 5                                               71  | 
+ | 6                                               70  | 
+ | 7                                               69  | 
+ | 8                                               68  | 
+ | 9                                               67  | 
+ | 10                                              66  | 
+ | 11                                              65  | 
+ | 12                                              64  | 
+ | 13              XC95144XL-10-TQ100              63  | 
+ | 14                                              62  | 
+ | 15                                              61  | 
+ | 16                                              60  | 
+ | 17                                              59  | 
+ | 18                                              58  | 
+ | 19                                              57  | 
+ | 20                                              56  | 
+ | 21                                              55  | 
+ | 22                                              54  | 
+ | 23                                              53  | 
+ | 24                                              52  | 
+ | 25                                              51  | 
+ |   27  29  31  33  35  37  39  41  43  45  47  49    |
+  \26  28  30  32  34  36  38  40  42  44  46  48  50  /
+   --------------------------------------------------  
+
+
+Pin Signal                         Pin Signal                        
+No. Name                           No. Name                          
+  1 BUS_AX<9>                        51 VCC                           
+  2 DBIN                             52 RAM_AX<2>                     
+  3 BUS_AX<12>                       53 RAM_AX<1>                     
+  4 BUS_AX<1>                        54 RAM_AX<0>                     
+  5 VCC                              55 RAM_DX<0>                     
+  6 BUS_AX<8>                        56 RAM_DX<1>                     
+  7 GS                               57 VCC                           
+  8 BUS_AX<7>                        58 RAM_AX<15>                    
+  9 BUS_AX<6>                        59 RAM_AX<16>                    
+ 10 BUS_DX<7>                        60 RAM_AX<17>                    
+ 11 BUS_AX<5>                        61 RAM_AX<18>                    
+ 12 BUS_DX<6>                        62 GND                           
+ 13 BUS_AX<4>                        63 RAM_AX<19>                    
+ 14 BUS_DX<5>                        64 RAM_WE                        
+ 15 BUS_AX<3>                        65 RAM_DX<3>                     
+ 16 BUS_DX<4>                        66 RAM_DX<2>                     
+ 17 BUS_AX<2>                        67 KPR                           
+ 18 BUS_DX<3>                        68 KPR                           
+ 19 BUS_AX<0>                        69 GND                           
+ 20 BUS_DX<2>                        70 KPR                           
+ 21 GND                              71 KPR                           
+ 22 KPR                              72 KPR                           
+ 23 KPR                              73 KPR                           
+ 24 BUS_DX<1>                        74 KPR                           
+ 25 BUS_DX<0>                        75 GND                           
+ 26 VCC                              76 CDX<7>                        
+ 27 KPR                              77 CDX<6>                        
+ 28 RAM_DX<6>                        78 CDX<5>                        
+ 29 RAM_DX<5>                        79 CDX<4>                        
+ 30 RAM_DX<4>                        80 CDX<3>                        
+ 31 GND                              81 CDX<2>                        
+ 32 RAM_AX<9>                        82 CDX<1>                        
+ 33 RAM_AX<10>                       83 TDO                           
+ 34 RAM_AX<11>                       84 GND                           
+ 35 RAM_AX<12>                       85 CDX<0>                        
+ 36 RAM_AX<13>                       86 CCMD<0>                       
+ 37 RAM_AX<14>                       87 CX                            
+ 38 VCC                              88 VCC                           
+ 39 RAM_DX<7>                        89 CCLK                          
+ 40 RAM_AX<8>                        90 CCMD<2>                       
+ 41 RAM_OE                           91 CCMD<1>                       
+ 42 RAM_AX<7>                        92 ROMS                          
+ 43 RAM_AX<6>                        93 WE                            
+ 44 GND                              94 GR                            
+ 45 TDI                              95 BUS_AX<11>                    
+ 46 RAM_AX<5>                        96 BUS_AX<10>                    
+ 47 TMS                              97 GC                            
+ 48 TCK                              98 VCC                           
+ 49 RAM_AX<4>                        99 KPR                           
+ 50 RAM_AX<3>                       100 GND                           
+
+
+Legend :  NC  = Not Connected, unbonded pin
+         PGND = Unused I/O configured as additional Ground pin
+         TIE  = Unused I/O floating -- must tie to VCC, GND or other signal
+         KPR  = Unused I/O with weak keeper (leave unconnected)
+         VCC  = Dedicated Power Pin
+         GND  = Dedicated Ground Pin
+         TDI  = Test Data In, JTAG pin
+         TDO  = Test Data Out, JTAG pin
+         TCK  = Test Clock, JTAG pin
+         TMS  = Test Mode Select, JTAG pin
+  PROHIBITED  = User reserved pin
+****************************  Compiler Options  ****************************
+
+Following is a list of all global compiler options used by the fitter run.
+
+Device(s) Specified                         : xc95144xl-10-tq100
+Optimization Method                         : DENSITY
+Multi-Level Logic Optimization              : ON
+Ignore Timing Specifications                : OFF
+Default Register Power Up Value             : LOW
+Keep User Location Constraints              : ON
+What-You-See-Is-What-You-Get                : OFF
+Exhaustive Fitting                          : OFF
+Keep Unused Inputs                          : OFF
+Slew Rate                                   : FAST
+Power Mode                                  : STD
+Ground on Unused IOs                        : OFF
+Set I/O Pin Termination                     : KEEPER
+Global Clock Optimization                   : ON
+Global Set/Reset Optimization               : ON
+Global Ouput Enable Optimization            : ON
+Input Limit                                 : 40
+Pterm Limit                                 : 25

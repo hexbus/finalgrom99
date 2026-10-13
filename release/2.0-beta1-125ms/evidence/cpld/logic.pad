@@ -1,0 +1,129 @@
+Release 8.1i - Fit P.20131013
+Copyright(c) 1995-2003 Xilinx Inc. All rights reserved
+
+ 9-15-2026 11:03PM
+
+NOTE: This file is designed to be imported into a spreadsheet program
+such as Microsoft Excel for viewing, printing and sorting. The pipe '|'
+character is used as the data field separator.
+This file is also designed to support parsing.
+
+Input file:  logic.ngd
+output file: logic.pad
+Part type:   xc95144xl
+Speed grade: -10
+Package:     tq100
+
+Pinout by Pin Number:
+
+-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+Pin Number|Signal Name|Pin Usage|Pin Name|Direction|IO Standard|IO Bank Number|{blank}|Slew Rate|Termination|{blank}|Voltage|Constraint|
+P1|BUS_AX<9>|I|I/O/GTS3|INPUT|||||||||
+P2|DBIN|I|I/O/GTS4|INPUT|||||||||
+P3|BUS_AX<12>|I|I/O/GTS1|INPUT|||||||||
+P4|BUS_AX<1>|I|I/O/GTS2|INPUT|||||||||
+P5|VCC||VCCINT||||||||||
+P6|BUS_AX<8>|I|I/O|INPUT|||||||||
+P7|GS|I|I/O|INPUT|||||||||
+P8|BUS_AX<7>|I|I/O|INPUT|||||||||
+P9|BUS_AX<6>|I|I/O|INPUT|||||||||
+P10|BUS_DX<7>|I/O|I/O|BIDIR|||||||||
+P11|BUS_AX<5>|I|I/O|INPUT|||||||||
+P12|BUS_DX<6>|I/O|I/O|BIDIR|||||||||
+P13|BUS_AX<4>|I|I/O|INPUT|||||||||
+P14|BUS_DX<5>|I/O|I/O|BIDIR|||||||||
+P15|BUS_AX<3>|I|I/O|INPUT|||||||||
+P16|BUS_DX<4>|I/O|I/O|BIDIR|||||||||
+P17|BUS_AX<2>|I|I/O|INPUT|||||||||
+P18|BUS_DX<3>|I/O|I/O|BIDIR|||||||||
+P19|BUS_AX<0>|I|I/O|INPUT|||||||||
+P20|BUS_DX<2>|I/O|I/O|BIDIR|||||||||
+P21|GND||GND||||||||||
+P22|TIE||I/O/GCK1||||||||||
+P23|TIE||I/O/GCK2||||||||||
+P24|BUS_DX<1>|I/O|I/O|BIDIR|||||||||
+P25|BUS_DX<0>|I/O|I/O|BIDIR|||||||||
+P26|VCC||VCCIO||||||||||
+P27|TIE||I/O/GCK3||||||||||
+P28|RAM_DX<6>|I/O|I/O|BIDIR|||||||||
+P29|RAM_DX<5>|I/O|I/O|BIDIR|||||||||
+P30|RAM_DX<4>|I/O|I/O|BIDIR|||||||||
+P31|GND||GND||||||||||
+P32|RAM_AX<9>|O|I/O|OUTPUT|||||||||
+P33|RAM_AX<10>|O|I/O|OUTPUT|||||||||
+P34|RAM_AX<11>|O|I/O|OUTPUT|||||||||
+P35|RAM_AX<12>|O|I/O|OUTPUT|||||||||
+P36|RAM_AX<13>|O|I/O|OUTPUT|||||||||
+P37|RAM_AX<14>|O|I/O|OUTPUT|||||||||
+P38|VCC||VCCIO||||||||||
+P39|RAM_DX<7>|I/O|I/O|BIDIR|||||||||
+P40|RAM_AX<8>|O|I/O|OUTPUT|||||||||
+P41|RAM_OE|O|I/O|OUTPUT|||||||||
+P42|RAM_AX<7>|O|I/O|OUTPUT|||||||||
+P43|RAM_AX<6>|O|I/O|OUTPUT|||||||||
+P44|GND||GND||||||||||
+P45|TDI||TDI||||||||||
+P46|RAM_AX<5>|O|I/O|OUTPUT|||||||||
+P47|TMS||TMS||||||||||
+P48|TCK||TCK||||||||||
+P49|RAM_AX<4>|O|I/O|OUTPUT|||||||||
+P50|RAM_AX<3>|O|I/O|OUTPUT|||||||||
+P51|VCC||VCCIO||||||||||
+P52|RAM_AX<2>|O|I/O|OUTPUT|||||||||
+P53|RAM_AX<1>|O|I/O|OUTPUT|||||||||
+P54|RAM_AX<0>|O|I/O|OUTPUT|||||||||
+P55|RAM_DX<0>|I/O|I/O|BIDIR|||||||||
+P56|RAM_DX<1>|I/O|I/O|BIDIR|||||||||
+P57|VCC||VCCINT||||||||||
+P58|RAM_AX<15>|O|I/O|OUTPUT|||||||||
+P59|RAM_AX<16>|O|I/O|OUTPUT|||||||||
+P60|RAM_AX<17>|O|I/O|OUTPUT|||||||||
+P61|RAM_AX<18>|O|I/O|OUTPUT|||||||||
+P62|GND||GND||||||||||
+P63|RAM_AX<19>|O|I/O|OUTPUT|||||||||
+P64|RAM_WE|O|I/O|OUTPUT|||||||||
+P65|RAM_DX<3>|I/O|I/O|BIDIR|||||||||
+P66|RAM_DX<2>|I/O|I/O|BIDIR|||||||||
+P67|TIE||I/O||||||||||
+P68|TIE||I/O||||||||||
+P69|GND||GND||||||||||
+P70|TIE||I/O||||||||||
+P71|TIE||I/O||||||||||
+P72|TIE||I/O||||||||||
+P73|TIE||I/O||||||||||
+P74|TIE||I/O||||||||||
+P75|GND||GND||||||||||
+P76|CDX<7>|I/O|I/O|BIDIR|||||||||
+P77|CDX<6>|I/O|I/O|BIDIR|||||||||
+P78|CDX<5>|I/O|I/O|BIDIR|||||||||
+P79|CDX<4>|I/O|I/O|BIDIR|||||||||
+P80|CDX<3>|I/O|I/O|BIDIR|||||||||
+P81|CDX<2>|I/O|I/O|BIDIR|||||||||
+P82|CDX<1>|I/O|I/O|BIDIR|||||||||
+P83|TDO||TDO||||||||||
+P84|GND||GND||||||||||
+P85|CDX<0>|I/O|I/O|BIDIR|||||||||
+P86|CCMD<0>|I|I/O|INPUT|||||||||
+P87|CX|I/O|I/O|BIDIR|||||||||
+P88|VCC||VCCIO||||||||||
+P89|CCLK|I|I/O|INPUT|||||||||
+P90|CCMD<2>|I|I/O|INPUT|||||||||
+P91|CCMD<1>|I|I/O|INPUT|||||||||
+P92|ROMS|I|I/O|INPUT|||||||||
+P93|WE|I|I/O|INPUT|||||||||
+P94|GR|I|I/O|INPUT|||||||||
+P95|BUS_AX<11>|I|I/O|INPUT|||||||||
+P96|BUS_AX<10>|I|I/O|INPUT|||||||||
+P97|GC|I|I/O|INPUT|||||||||
+P98|VCC||VCCINT||||||||||
+P99|TIE||I/O/GSR||||||||||
+P100|GND||GND||||||||||
+
+To preserve the pinout above for future design iterations in
+Project Navigator simply execute the (Lock Pins) process
+located under the (Implement Design) process in a toolbox named
+(Optional Implementation Tools) or invoke PIN2UCF from the
+command line. The location constraints will be written into your
+specified UCF file
+
+

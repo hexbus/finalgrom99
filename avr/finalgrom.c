@@ -24,6 +24,7 @@
 #include <stdint.h>
 
 #include "loader.h"
+#include "wire.h"
 
 
 extern uint8_t selection[];
@@ -45,18 +46,14 @@ int main(void)
     sel = selectImage(0);
     if (sel == SEL_PROGRAM)
       break;  // load program
+    else if (sel == SEL_GIGA) { prepareGigacart(); regen=1; }
     else if (sel == SEL_HELP)
-      regen = loadHelp();  // show help file
-    else
+      regen = 1;  // show help file
+    else if (sel == SEL_FOLDER)
       regen = changeDir();  // cd into selected folder
   }
 
-  // load selected image, and wait for potential reload or dump
-  while (1) {
-    if (sel == SEL_DUMP)
-      dumpImage();
-    else
-      loadImage();
-    sel = selectImage(1);
-  }
+  loadImage();
+  receiveBegin();  // Publish the native cartridge; stock selectImage(1) did this.
+  for (;;) {}
 }

@@ -1,0 +1,21 @@
+{
+  "compiled": true,
+  "compiler": "avr-gcc (GCC) 15.2.0",
+  "program_bytes": 28428,
+  "sha256": "041bd157a71deeb9141e676ea945a940e8a011fb8e9d5a674ec0eeb40118849f",
+  "byte_identical_to_release": true,
+  "changed_inputs": [],
+  "menu_rebuild": {
+    "passed": true,
+    "byte_identical": true,
+    "bytes": 2310,
+    "sha256": "b3f699665acbb62880bcca745571aed15dd9191659316abdaaa04b1a2ef8d130",
+    "crc32": "54f4b98a",
+    "status_offset": 890,
+    "detail_offset": 920,
+    "assembler_sha256": "bd35499be17c391da6e3dcc0c81a1c00be6afa964b1604a5221a8e19f2e4895e",
+    "hardware_programmed": false
+  },
+  "hardware_programmed": false,
+  "cpld_rebuilt": false
+}

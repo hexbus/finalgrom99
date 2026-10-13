@@ -1,0 +1,11 @@
+{
+  "compiled": true,
+  "compiler": "avr-gcc (GCC) 15.2.0",
+  "program_bytes": 28428,
+  "sha256": "041bd157a71deeb9141e676ea945a940e8a011fb8e9d5a674ec0eeb40118849f",
+  "byte_identical_to_release": true,
+  "changed_inputs": [],
+  "menu_rebuild": null,
+  "hardware_programmed": false,
+  "cpld_rebuilt": false
+}

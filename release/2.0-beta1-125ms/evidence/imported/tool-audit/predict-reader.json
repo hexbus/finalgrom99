@@ -1,0 +1,30 @@
+{
+  "hardware_tested": false,
+  "session_integrated": false,
+  "models": [
+    {
+      "model": "candidate",
+      "bytes": 24576,
+      "sha256": "153b8031ed53039eb8f274561d19c388cabfa592b6c91d006ad23c53a030021c",
+      "lookups": 16384,
+      "reuse_window_boundary_checks": 32592,
+      "clipped_branch_lookups": 176,
+      "maximum_metadata_sectors": 6,
+      "mean_metadata_sectors": 1.0443115234375
+    }
+  ],
+  "corruption_rejections": 8,
+  "metadata_read_failures": 5,
+  "avr_object_size": "   text\t   data\t    bss\t    dec\t    hex\tfilename\n   1613\t      0\t      0\t   1613\t    64d\tE:\\git\\finalgrom-gigacart\\output\\beta-tool-audit-20260917\\predict-reader\\giga-predict.o\n",
+  "avr_state": "         U __do_clear_bss\n0000003e a __SP_H__\n0000003d a __SP_L__\n0000003f a __SREG__\n00000000 a __tmp_reg__\n00000001 a __zero_reg__\n00000000 00000039 B state_size\n",
+  "avr_stack": "giga-predict.c:8:6:giga_predict_open\t29\tstatic\ngiga-predict.c:29:6:giga_predict_begin\t2\tstatic\ngiga-predict.c:34:6:giga_predict_step\t10\tstatic\ngiga-predict.c:84:6:giga_predict_targets\t4\tstatic\n",
+  "limits": "Component test. Prefetch policy is eight sequential banks plus up to eight unique successors; misses remain demand waits. No measured AVR/SD latency.",
+  "sources": {
+    "giga-predict.c": "511e4e0479578d0367ccf26c5a870af4918892bd368a7921bfbe9ba974bff715",
+    "giga-predict.h": "62e0b9bd30c757cfe45829f6574e3d0fca11431d4884335357414f69df9db9d3",
+    "giga-aux.h": "c96dfee289c7f0e7ef43f143932b32ac6fd1ec7a284fe546ad386ba934a879e4",
+    "giga.h": "140c6e12ee002445c8af8357a22c4608dd50a294ba4a670d3167b3c16374f53c",
+    "crc32.h": "8b2238928086ed3b75f6b5c24157fd7b89a8bf076553eea43350026d25a529e9"
+  },
+  "scope_note": "Candidate is the shipped STLSRV2 GPR; omitted historical model records are not part of this pack."
+}

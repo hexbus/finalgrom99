@@ -1,0 +1,11 @@
+{
+  "evidence": "user report",
+  "result": "menu startup pass",
+  "initial_symptom": "three flashes before FinalGROM menu",
+  "resolution": "user confirmed replacing menu file as instructed worked",
+  "firmware_readback": false,
+  "full_regression_test": false,
+  "avr_sha256": "70d9bdd23588b171ce2e522f9cfbb617f516a4c8368d19289d648940d76ac14d",
+  "menu_sha256": "b3f699665acbb62880bcca745571aed15dd9191659316abdaaa04b1a2ef8d130",
+  "identity_note": "Intended package identities, not new hardware readback."
+}

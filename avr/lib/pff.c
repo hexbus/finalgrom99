@@ -1117,3 +1117,44 @@ FRESULT pf_readdir (
 
 #endif /* _USE_DIR */
 
+
+/* SPDX-License-Identifier: GPL-3.0-or-later
+ * Included at the end of Petit FatFs. Locates an existing short-name entry or
+ * a free slot in its existing parent directory. Never grows directories.
+ */
+FRESULT pf_giga_slot(const char *path, DWORD *sector, WORD *offset,
+                     BYTE *name, BYTE *entry)
+{
+    DIR dj;
+    BYTE fn[12];
+    dj.fn = fn;
+    FRESULT r = follow_path(&dj, entry, path);
+    if (r == FR_OK) {
+        *sector = dj.sect; *offset = (dj.index % 16) * 32;
+        for (BYTE i=0; i<11; ++i) name[i]=fn[i];
+        return FR_OK;
+    }
+    if (r != FR_NO_FILE || !fn[11]) return r;
+    for (BYTE i=0; i<11; ++i) name[i]=fn[i];
+    r = dir_rewind(&dj);
+    while (r == FR_OK && dj.sect) {
+        WORD off = (dj.index % 16) * 32;
+        if (disk_readp(entry, dj.sect, off, 32)) return FR_DISK_ERR;
+        /* A following end marker must fit in the same sector. A deleted
+         * slot does not require a new end marker. */
+        if (entry[0] == 0xE5 || (!entry[0] && off < 480)) {
+            *sector=dj.sect; *offset=off;
+            return FR_NO_FILE;
+        }
+        if (!entry[0]) return FR_NOT_READY; /* no directory extension here */
+        r=dir_next(&dj);
+    }
+    return r == FR_DISK_ERR ? r : FR_NOT_READY;
+}
+
+/* SPDX-License-Identifier: GPL-3.0-or-later
+ * Append to the pinned Petit FatFs; reuse its existing FAT decoder.
+ * No changes to the upstream snapshot or normal filesystem operations. */
+DWORD pf_giga_fat(FATFS *fs,DWORD cluster) {
+    return fs==FatFs?get_fat(cluster):1;
+}

@@ -1,0 +1,15 @@
+{
+  "date": "2026-09-18",
+  "trial_delay_ms": 125,
+  "source": "Owner report in this conversation",
+  "quote": "great, that is showing the FinalGROM menu consistently after 5 cold shutdowns",
+  "cold_start_attempts_reported": 5,
+  "finalgrom_menu_successes_reported": 5,
+  "result": "PASS for reported cold-start menu availability",
+  "configuration": "Ongoing PicoPEB-connected startup comparison; exact installed PPEB firmware unknown",
+  "avr_sha256": "041bd157a71deeb9141e676ea945a940e8a011fb8e9d5a674ec0eeb40118849f",
+  "archive_sha256": "436c198730373b9630d3951c4f9a0345ba1aa4407fd9c0118de312d40d89ef06",
+  "instrumented_timing": false,
+  "scope": "Current startup candidate on the tested setup; not broad hardware qualification or proof the shared GROM tracking hazard is repaired",
+  "issued_artifacts_changed": false
+}

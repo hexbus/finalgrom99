@@ -26,6 +26,7 @@
 
 #include "pffconf.h"
 #include "diskio.h"
+#include "../sd-receive.inc"
 #include "../wire.h"
 
 /*-------------------------------------------------------------------------*/
@@ -45,10 +46,21 @@
 #define DO		(PINB & (1 << PB4))	/* Test for MMC DO */  // -> MISO
 
 
+
+static BYTE spi_byte(BYTE value)
+{
+    SPDR = value;
+    while (!(SPSR & _BV(SPIF))) { }
+    return SPDR;
+}
+
 static void init_port (void)
 {
   DDRB = (DDRB & ~(1 << PB4)) | 0x2e; // all but JTAG and SDI(MISO)
   PORTB = (PORTB & ~(1 << PB5)) | 1 << PB2 | 1 << PB6 | 1 << PB7;
+    /* 250 kHz during initialization: fosc/32, within SD's 400 kHz limit. */
+    SPCR = _BV(SPE) | _BV(MSTR) | _BV(SPR1);
+    SPSR = _BV(SPI2X);
 	        /* CS=H, SCK=L, DI=H, DO=pu */
 }
 
@@ -92,22 +104,7 @@ void xmit_mmc (
 	BYTE d			/* Data to be sent */
 )
 {
-	if (d & 0x80) DI_H(); else DI_L();	/* bit7 */
-	CK_H(); CK_L();
-	if (d & 0x40) DI_H(); else DI_L();	/* bit6 */
-	CK_H(); CK_L();
-	if (d & 0x20) DI_H(); else DI_L();	/* bit5 */
-	CK_H(); CK_L();
-	if (d & 0x10) DI_H(); else DI_L();	/* bit4 */
-	CK_H(); CK_L();
-	if (d & 0x08) DI_H(); else DI_L();	/* bit3 */
-	CK_H(); CK_L();
-	if (d & 0x04) DI_H(); else DI_L();	/* bit2 */
-	CK_H(); CK_L();
-	if (d & 0x02) DI_H(); else DI_L();	/* bit1 */
-	CK_H(); CK_L();
-	if (d & 0x01) DI_H(); else DI_L();	/* bit0 */
-	CK_H(); CK_L();
+	(void)spi_byte(d);
 }
 
 
@@ -119,28 +116,7 @@ void xmit_mmc (
 static
 BYTE rcvr_mmc (void)
 {
-	BYTE r;
-
-
-	DI_H();	/* Send 0xFF */
-	r = 0;   if (DO) r++;	/* bit7 */
-	CK_H(); CK_L();
-	r <<= 1; if (DO) r++;	/* bit6 */
-	CK_H(); CK_L();
-	r <<= 1; if (DO) r++;	/* bit5 */
-	CK_H(); CK_L();
-	r <<= 1; if (DO) r++;	/* bit4 */
-	CK_H(); CK_L();
-	r <<= 1; if (DO) r++;	/* bit3 */
-	CK_H(); CK_L();
-	r <<= 1; if (DO) r++;	/* bit2 */
-	CK_H(); CK_L();
-	r <<= 1; if (DO) r++;	/* bit1 */
-	CK_H(); CK_L();
-	r <<= 1; if (DO) r++;	/* bit0 */
-	CK_H(); CK_L();
-
-	return r;
+	return spi_byte(0xff);
 }
 
 
@@ -154,17 +130,7 @@ void skip_mmc (
 	UINT n		/* Number of bytes to skip */
 )
 {
-	DI_H();	/* Send 0xFF */
-	do {
-		CK_H(); CK_L();
-		CK_H(); CK_L();
-		CK_H(); CK_L();
-		CK_H(); CK_L();
-		CK_H(); CK_L();
-		CK_H(); CK_L();
-		CK_H(); CK_L();
-		CK_H(); CK_L();
-	} while (--n);
+	while (n--) (void)spi_byte(0xff);
 }
 
 
@@ -277,7 +243,13 @@ DSTATUS disk_initialize (void)
 	CardType = ty;
 	release_spi();
 
-	return ty ? 0 : STA_NOINIT;
+
+    if (ty) {
+        /* Card deselected; 4 MHz only after successful initialization. */
+        SPCR = _BV(SPE) | _BV(MSTR);
+        SPSR = _BV(SPI2X);
+    }
+    return ty ? 0 : STA_NOINIT;
 }
 
 
@@ -317,9 +289,7 @@ DRESULT disk_readp (
 
 			/* Receive a part of the sector */
 			if (buff) {	/* Store data to the memory */
-				do
-					*buff++ = rcvr_mmc();
-				while (--count);
+				sd_receive(buff,count);
 			} else {	/* Forward data to the outgoing stream */
 				do {
 					d = rcvr_mmc();

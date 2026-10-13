@@ -1,0 +1,13 @@
+{
+  "evidence": "User-reported physical TI regression tests",
+  "candidate_context": "1.4 Beta 2 Mini Memory; no device readback",
+  "source_quote": "ROM and grom works. ROM works. Multi bank rom works. 32K Lasso works. Division 1 auto starts. 5 GROM game starts. I noticed the Great Word Race that is over the limit didn’t show up here. Up and down directory levels work. Buttons work. Games 1 and games 2 spot checks work. Spaceballs works. Cinema works both versions - regular and frame refresh. Stealth Runner OEM has glitches like normal with speech. STLSRV2 speech works better.",
+  "canonical_document": "docs/mini-memory-candidate.md",
+  "limits": [
+    "Games results are spot checks",
+    "Five-GROM report establishes launch only",
+    "Stealth speech improvement is not complete qualification",
+    "SD card unavailable; Great Word Race short alias unverified",
+    "No new firmware or SD changes made"
+  ]
+}

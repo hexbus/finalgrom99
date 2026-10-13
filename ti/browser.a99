@@ -34,6 +34,27 @@ sorted_page_items:
 help_send_data:
        equ  >83c4             ; 12 + 2 bytes to be sent
 
+       ; Preserve the stock stripe unless a startup error needs it.
+       cb   @giga_status, @beta_space
+       jeq  beta_status_done
+
+       ; Clear the stripe and both status rows, including their end columns.
+       li   r0, 3 * 32
+       li   r1, '  '
+       li   r2, 64
+       bl   @vsbmw
+
+       li   r0, 3 * 32 + 1
+       li   r1, giga_status
+       li   r2, 30
+       bl   @vmbw
+
+       li   r0, 4 * 32 + 1
+       li   r1, giga_detail
+       li   r2, 30
+       bl   @vmbw
+
+beta_status_done:
        ; show sorting message
        li   r0, 5 * 32 + 5
        li   r1, wait_text
@@ -125,7 +146,14 @@ next_item:
 
        ; show page status
 screen_done:
-       li   r0, 32 + 24
+       ; Preview: diagnostics retain both complete status lines.
+       cb   @giga_status, @beta_space
+       jne  screen_help
+       li   r0, 4 * 32 + 19
+       li   r1, page_text
+       li   r2, 9
+       bl   @vmbw
+       li   r0, 4 * 32 + 22
        mov  @page_status, r1
        bl   @vsbw
        inct r0
@@ -146,7 +174,7 @@ input:
        mov  r7, @more_items
        li   r0, >9e7e
        mov  r0, @>8372        ; restore stack pointers for SCAN
-       li   r0, >05ff
+       li   r0, >00ff         : changed from >05ff for /4
        mov  r0, @keymode
 wait_key:
        clr  r0
@@ -262,3 +290,8 @@ wait_text:
        text 'SORTING ...'
 none_text:
        text 'NO IMAGES FOUND'
+
+giga_status:
+       text 'SELECT GIGACART TO PREPARE    '
+giga_detail:
+       text 'GIGACART DETAILS              '

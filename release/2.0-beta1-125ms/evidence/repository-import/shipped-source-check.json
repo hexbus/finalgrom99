@@ -1,0 +1,7 @@
+{
+  "matched_shipped_SOURCE_zip": true,
+  "avr_inputs": 113,
+  "cpld_files": 5,
+  "permitted_source_change": "text line endings only",
+  "firmware_bytes_unchanged": true
+}

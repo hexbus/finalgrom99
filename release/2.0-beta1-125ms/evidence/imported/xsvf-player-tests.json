@@ -1,0 +1,74 @@
+{
+  "evidence": "Original upstream XSVF C interpreter, modeled TDO and host ports; no hardware.",
+  "passed": true,
+  "streams": [
+    {
+      "file": "output\\cpld-fit-native-ram-v2\\gigatiming.xsvf",
+      "sha256": "99067ca40906eaf0515c519e9bad92989bb7b0677dc7d6b461e3486ae2c507b1",
+      "cases": [
+        {
+          "error": 0,
+          "complete": 1,
+          "bytes": 80961,
+          "commands": 3843,
+          "clocks": 291737,
+          "max_shift_bits": 82
+        },
+        {
+          "error": 3,
+          "complete": 0,
+          "bytes": 33,
+          "commands": 8,
+          "clocks": 1248,
+          "max_shift_bits": 32
+        }
+      ]
+    },
+    {
+      "file": "E:\\git\\finalgrom-gigacart\\upstream\\finalgrom99\\updates\\firmware.pld",
+      "sha256": "21bb44c52c18b38290e8a3fe1fb7cf472c9ba5ce6457d089e85fdd1287ee4e32",
+      "cases": [
+        {
+          "error": 0,
+          "complete": 1,
+          "bytes": 80961,
+          "commands": 3843,
+          "clocks": 291737,
+          "max_shift_bits": 82
+        },
+        {
+          "error": 3,
+          "complete": 0,
+          "bytes": 33,
+          "commands": 8,
+          "clocks": 1248,
+          "max_shift_bits": 32
+        }
+      ]
+    },
+    {
+      "file": "E:\\git\\finalgrom-gigacart\\upstream\\finalgrom99\\updates\\firmware_qi.pld",
+      "sha256": "1115997afa2df30eb660679787c1b99a0988c49693951620f6e4dfc42067f6af",
+      "cases": [
+        {
+          "error": 0,
+          "complete": 1,
+          "bytes": 80961,
+          "commands": 3843,
+          "clocks": 291737,
+          "max_shift_bits": 82
+        },
+        {
+          "error": 3,
+          "complete": 0,
+          "bytes": 33,
+          "commands": 8,
+          "clocks": 1248,
+          "max_shift_bits": 32
+        }
+      ]
+    }
+  ],
+  "truncation_detected": true,
+  "hardware_programmed": false
+}

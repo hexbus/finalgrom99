@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "held_out_score": "2/3",
+  "independent_binary_decode": true,
+  "invalid_trace_rejected": true,
+  "same_file_validation_rejected": true
+}

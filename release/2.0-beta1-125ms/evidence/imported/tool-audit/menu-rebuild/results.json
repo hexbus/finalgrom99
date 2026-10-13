@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "byte_identical": true,
+  "bytes": 2310,
+  "sha256": "b3f699665acbb62880bcca745571aed15dd9191659316abdaaa04b1a2ef8d130",
+  "crc32": "54f4b98a",
+  "status_offset": 890,
+  "detail_offset": 920,
+  "assembler_sha256": "bd35499be17c391da6e3dcc0c81a1c00be6afa964b1604a5221a8e19f2e4895e",
+  "hardware_programmed": false
+}

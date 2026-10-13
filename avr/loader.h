@@ -16,3 +16,11 @@ void dumpImage(void);
 
 #define MODE_RAM     0x10
 #define MODE_GRAM    0x20
+
+#define SEL_GIGA 5
+void prepareGigacart(void);
+
+#define SEL_COMPILATION 6
+void prepareCompilation(void);
+
+void prepareRegular(void);

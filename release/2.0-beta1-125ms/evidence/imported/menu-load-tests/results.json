@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "offline_menu_loads": 2,
+  "stale_menu_publication_reproduced": true,
+  "reset_before_clear_prevents_publication": true,
+  "source_sha256": "7b28b6ecb355fc77ee809f62ad0596163f922cf6ce4a3ab8aafde3338acf3aec",
+  "hardware_tested": false
+}

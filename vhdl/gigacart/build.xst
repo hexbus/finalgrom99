@@ -1,0 +1,9 @@
+run
+-ifn project.prj
+-ifmt mixed
+-ofn logic
+-ofmt NGC
+-p xc95144xl-10-tq100
+-top logic
+-opt_mode Area
+-opt_level 2

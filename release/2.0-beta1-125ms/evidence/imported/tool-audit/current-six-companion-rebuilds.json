@@ -1,0 +1,132 @@
+[
+  {
+    "image": "BABUFFER.GCR",
+    "byte_identical_recompile": true,
+    "companions": {
+      "BABUFFER.GLP": "ee53e866881d331fb0924870ced8043e5260e139df2e6a6b19103a2935be66ed",
+      "BABUFFER.GOV": "732d99e5671f93a7af9d33f2d6c2fb995e44b4816836bf58f38797a7b66e7063",
+      "BABUFFER.GPR": "1ab7d4270d533bcaea2b3b9eb28431dbba72af1972a58182cb06150f484e69b9"
+    },
+    "verification": {
+      "image": "BABUFFER.GCR",
+      "image_bytes": 5079040,
+      "image_sha256": "58170b1dd2e8a6e1a6c3710328974f6e8c30741f2efb94764d657d75420a8bc7",
+      "verified": true,
+      "startup_jobs": 6,
+      "fixed_banks": 1,
+      "dynamic_slots": 80,
+      "patched_sectors": 0,
+      "prediction_records": 1,
+      "hardware_tested_by_this_check": false
+    },
+    "limitation": "Rebuilds companions for the already-prepared image; not an original-ROM adapter or new gameplay validation."
+  },
+  {
+    "image": "CINFRAME.GCS",
+    "byte_identical_recompile": true,
+    "companions": {
+      "CINFRAME.GLP": "8860623f49b4881d2f0cdc236797f030b3752b5346a439b4f4f84ca092518401",
+      "CINFRAME.GOV": "3a6f3a2586fb76f577d5f0090ce22bf4e7c2370caeeb43905ed1663f08932bd5",
+      "CINFRAME.GPR": "12ac813b8a1ca75bb3485889c0fed7ee65670bd181adfaf14d569aab59526fae"
+    },
+    "verification": {
+      "image": "CINFRAME.GCS",
+      "image_bytes": 134217728,
+      "image_sha256": "33c4a88a263d56cbe024da1cb1731ec1656aab87b7c4aaaa18391ac14103c977",
+      "verified": true,
+      "startup_jobs": 6,
+      "fixed_banks": 1,
+      "dynamic_slots": 80,
+      "patched_sectors": 0,
+      "prediction_records": 1,
+      "hardware_tested_by_this_check": false
+    },
+    "limitation": "Rebuilds companions for the already-prepared image; not an original-ROM adapter or new gameplay validation."
+  },
+  {
+    "image": "GAMES1M.GCR",
+    "byte_identical_recompile": true,
+    "companions": {
+      "GAMES1M.GLP": "d3556baf93a41750eb94f67aa8af69a1af62ce07f50a27da44eb4a7540312980",
+      "GAMES1M.GOV": "74b96ae856387aa83333cc3f9b4a89d1afe0b2243d5699624cf89c401a9e3f4d"
+    },
+    "verification": {
+      "image": "GAMES1M.GCR",
+      "image_bytes": 1056768,
+      "image_sha256": "886e2256bc6fc8d2ef135ce58f218e3c571d9bcea8c01da9bb896970ff258275",
+      "verified": true,
+      "startup_jobs": 10,
+      "fixed_banks": 3,
+      "dynamic_slots": 80,
+      "patched_sectors": 13,
+      "prediction_records": 0,
+      "hardware_tested_by_this_check": false
+    },
+    "limitation": "Rebuilds companions for the already-prepared image; not an original-ROM adapter or new gameplay validation."
+  },
+  {
+    "image": "GAMES2M.GCR",
+    "byte_identical_recompile": true,
+    "companions": {
+      "GAMES2M.GLP": "d8a4a5139c757fe79ff3b1853bddbf0b74950aa4260cc1911d3855caf5a4b81f",
+      "GAMES2M.GOV": "fbd33793ea905b7033c5305963d6e6aa4d327e09916a029baff24416034f605d"
+    },
+    "verification": {
+      "image": "GAMES2M.GCR",
+      "image_bytes": 2105344,
+      "image_sha256": "952d6a3e7af10e1d1f2b808d2dcb852704aa1f50835ebfc528ac28f3eec8e28b",
+      "verified": true,
+      "startup_jobs": 12,
+      "fixed_banks": 4,
+      "dynamic_slots": 80,
+      "patched_sectors": 26,
+      "prediction_records": 0,
+      "hardware_tested_by_this_check": false
+    },
+    "limitation": "Rebuilds companions for the already-prepared image; not an original-ROM adapter or new gameplay validation."
+  },
+  {
+    "image": "SPACE.GCR",
+    "byte_identical_recompile": true,
+    "companions": {
+      "SPACE.GLP": "a423e18a6126983b6ddd3a132bb44ada7abdfecdf527038749d9de155c127f9a",
+      "SPACE.GOV": "46af6d78f56910814e9c5094007608f5895a90f3b2b1c951160a4d3860116af0",
+      "SPACE.GPR": "8b382a3d6de50f2d3fec5136ecac44602375ef2ca414f92793b7e633ac1fc1ce"
+    },
+    "verification": {
+      "image": "SPACE.GCR",
+      "image_bytes": 2105344,
+      "image_sha256": "24521ae973c3b1bd5ae96851e97755a71ef861127684166e5b7645f9cb94b07a",
+      "verified": true,
+      "startup_jobs": 8,
+      "fixed_banks": 2,
+      "dynamic_slots": 80,
+      "patched_sectors": 2,
+      "prediction_records": 1,
+      "hardware_tested_by_this_check": false
+    },
+    "limitation": "Rebuilds companions for the already-prepared image; not an original-ROM adapter or new gameplay validation."
+  },
+  {
+    "image": "STLSRV2.GCR",
+    "byte_identical_recompile": true,
+    "companions": {
+      "STLSRV2.GLP": "09632fd9b7d231b1fafa5c365fdafeaa703db4a21129ae3aebe48e954524c425",
+      "STLSRV2.GOV": "5fd000e056b90bfcbb4c7bb4228eb08a2754561f7fcb496487e41fcedb7b53e0",
+      "STLSRV2.GPR": "153b8031ed53039eb8f274561d19c388cabfa592b6c91d006ad23c53a030021c"
+    },
+    "verification": {
+      "image": "STLSRV2.GCR",
+      "image_bytes": 2105344,
+      "image_sha256": "4db16dc7e437c13c08da31988caf067835163f7d5fd8435fccaf58075b036dd7",
+      "verified": true,
+      "startup_jobs": 96,
+      "fixed_banks": 46,
+      "dynamic_slots": 78,
+      "patched_sectors": 11,
+      "prediction_records": 177,
+      "hardware_tested_by_this_check": false
+    },
+    "limitation": "Rebuilds companions for the already-prepared image; not an original-ROM adapter or new gameplay validation."
+  }
+]

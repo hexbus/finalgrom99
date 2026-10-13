@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "dragon_startup_byte_identical": true,
+  "dragon_overlay_byte_identical": true,
+  "invalid_recipes_rejected": 14,
+  "generic_small_image_passed": true,
+  "hardware_tested": false,
+  "compiler_sha256": "da4127e5ae8333f96aee0b1ad13a3d6d1e8cf2ecf97301f0585bce0be4b73b0d"
+}

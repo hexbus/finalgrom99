@@ -1,3 +1,4 @@
+#include "giga-status.h"
 /*
  * loader.c: image loader and menu creator
  */
@@ -80,14 +81,14 @@ static uint8_t rom_dump_bank, grom_dump_bank;
 // internal functions
 static uint8_t genFolderEntry(const uint8_t *);
 static uint8_t genProgEntries(uint8_t *);
-static uint8_t genAutostartEntry(uint8_t *);
+static uint8_t genAutostartEntry(uint8_t *,uint16_t);
 static void genMenuCode(void);
 static void genMenuGROM(void);
 static void saveFile(void);
-static uint32_t loadFile(uint8_t *);
+static uint32_t loadFile(uint8_t *,uint8_t);
 static uint8_t *buildPath(char *);
 static void dumpBank(uint8_t, uint8_t);
-static void jtag(void);
+static void jtag(void) __attribute__((noinline));
 static void genFileEntry(uint8_t *, uint16_t, uint16_t, uint8_t);
 
 // bootloader
@@ -98,7 +99,7 @@ static void (*bootloader)(void) = (void *)0x3800;  // word address for m328
  * initialize cart
  */
 
-void setup()
+__attribute__((noinline)) void setup()
 {
   init();
 
@@ -106,7 +107,7 @@ void setup()
   path_len = 0;
 
   // open SD card
-  _delay_ms(5);  // wait for SD cards to settle
+  _delay_ms(125);  // Startup-only sequencing trial; cartridge remains offline.
   if (pf_mount(&sd_fs))
     flash_error(1);
 }
@@ -116,15 +117,21 @@ void setup()
  * build menu by scanning directory for dirs and *.BIN files
  */
 
-uint8_t genMenu()
+#include "loader-giga.inc"
+#include "compilation-session.inc"
+
+
+__attribute__((noinline)) uint8_t genMenu()
 {
-  uint8_t total_images = 0;
+  uint8_t total_images = 0, has_folder = 0;
+  has_giga = 0;
   total_entries = 0;
   subprograms = 0;
 
   // disable cart
   led(1);
   writeBegin();
+  setConfig(0);  // AVR reset does not reset the CPLD personality.
 
   // write GROM wrapper
   genMenuGROM();
@@ -142,7 +149,7 @@ uint8_t genMenu()
 
   // folder up entry
   if (path_len > 0)
-    genFolderEntry((const uint8_t *)"..");
+    total_entries += genFolderEntry((const uint8_t *)"..");
 
   // entries for SD card
   while (total_entries < MAX_ENTRIES) {
@@ -159,8 +166,10 @@ uint8_t genMenu()
       genProgEntries((uint8_t *)sd_fno.fname);
     total_entries += added;
 
-    if (added)
+    if (added) {
       ++total_images;
+      if(sd_fno.fattrib & AM_DIR) has_folder=1;
+    }
   }
 
   // mark end of entries
@@ -172,7 +181,7 @@ uint8_t genMenu()
   led(0);
 
   // if only one image/subprograms found in "/", load file directly
-  return total_images + subprograms == 1 && path_len == 0;
+  return total_images + subprograms == 1 && path_len == 0 && !has_giga && !has_folder;
 }
 
 static uint8_t genFolderEntry(const uint8_t *fn)
@@ -205,7 +214,7 @@ static uint8_t genFolderEntry(const uint8_t *fn)
   while (i-- > 0)
     writeByte(' ');
 
-  ++total_entries;  // takes up one slot
+  /* The caller counts each folder exactly once. */
 
   return 1;
 }
@@ -223,17 +232,10 @@ static uint8_t genProgEntries(uint8_t *fn)
   uint8_t *q = fn;
   while (*++q);  // end of filename
 
-  // check for ATmega update file
-  p = q;
-  if (p - fn > 4 &&
-      *--p == 'R' && *--p == 'V' && *--p == 'A' && *--p == '.')
-    bootloader();  // no return
-
-  // check for CPLD update
-  p = q;
-  if (p - fn > 4 &&
-      *--p == 'D' && *--p == 'L' && *--p == 'P' && *--p == '.')
-    jtag();  // no return
+  if (!path_len && !strcmp((char *)fn,"UPDATE.AVR")) { cli(); SPCR=0; bootloader(); }
+  if (!path_len && !strcmp((char *)fn,"UPDATE.PLD")) jtag();
+  if (q-fn>=5 && !memcmp(q-4,".GC",3) && (q[-1]=='S' || q[-1]=='R'))
+    return genGigaEntry(fn);
 
   // check if file ends in ".BIN"
   if (q - fn < 5 ||
@@ -244,6 +246,8 @@ static uint8_t genProgEntries(uint8_t *fn)
   // check image size
   if (sd_fno.fsize > 1024L * 1024L)  // 1 MB max.
     return 0;
+
+  if (*q=='G' && sd_fno.fsize>40960UL) return 0;
 
   // skip secondary bank D
   if (*q == 'D' && sd_fno.fsize == 8192)
@@ -259,22 +263,23 @@ static uint8_t genProgEntries(uint8_t *fn)
   // search for metadata
   uint16_t pos = 0x0000;
   while (1) {
-    if (pf_read(buffer, 12, &bytes_read))
+    if (pf_read(buffer, 24, &bytes_read))
       return 0;  // bad file
-    if (bytes_read < 8)
+    if (bytes_read < 24)
       return 0;  // corrupt image
     if (*q != 'G' && (buffer[0] != 0xaa || buffer[6] < 0x60 || buffer[6] >= 0x80))
       return 0;  // invalid ROM image
     if (*q == 'G' && buffer[0] == 0xaa) {  // GROM image
       if (buffer[1] >= 0x80)
-        return genAutostartEntry(fn);  // autostart image
+        return genAutostartEntry(fn,pos);  // autostart image
     }
     next = ((uint16_t)buffer[6] << 8) + buffer[7];  // first menu entry
     if (*q != 'G' ||  // valid ROM image
         (buffer[0] == 0xaa && next >= 0x6000))  // valid GROM image
       break;
+    if ((uint32_t)pos + 0x2000 >= sd_fno.fsize) return 0;
     pos += 0x2000;
-    pf_lseek(pos);  // check higher GROM for start menu
+    if(pf_lseek(pos)) return 0;  // check higher GROM for start menu
   }
 
   // check for subprograms
@@ -297,13 +302,13 @@ static uint8_t genProgEntries(uint8_t *fn)
     uint16_t offset = next - 0x6000;
     if (offset > sd_fno.fsize)
       break;  // corrupt image
-    if (total_entries >= MAX_ENTRIES)
+    if (total_entries + entries_sent >= MAX_ENTRIES)
       break;  // too many entries
 
     // analyze metadata
     if (pf_lseek(offset))
       break;  // corrupt
-    pf_read(buffer, 6 + ENTRY_NAME_LEN, &bytes_read);
+    if(pf_read(buffer, 6 + ENTRY_NAME_LEN, &bytes_read) || bytes_read<5) break;
     p = buffer;
 
     next = (*p++ << 8);  // save next entry
@@ -321,12 +326,16 @@ static uint8_t genProgEntries(uint8_t *fn)
     writeByte(*p++);
 
     uint8_t len = *p++;  // length and name
-    if (*p == '"' && *(p + len - 1) == '"') {  // remove "'s
+    if(len>bytes_read-5) len=bytes_read-5;
+    if (len>=2 && *p == '"' && *(p + len - 1) == '"') {  // remove "'s
       ++p;
       len -= 2;
     }
     for (i = 0; i < ENTRY_NAME_LEN; ++i)  // always pad name
-      writeByte(i < len ? *p++ : ' ');
+    {
+      uint8_t c=i<len?*p++:' ';
+      writeByte(c>='a' && c<='z'?c-32:c);
+    }
 
     ++entries_sent;
   }
@@ -336,27 +345,21 @@ static uint8_t genProgEntries(uint8_t *fn)
 
 
 // generate menu entry without image entry
-static uint8_t genAutostartEntry(uint8_t *fn)
+static uint8_t genAutostartEntry(uint8_t *fn,uint16_t pos)
 {
   // GROM or GRAM?
   uint16_t type = buffer[3] == 'G' ? 0xff00 | MODE_GRAM : 0x0000;
-
-  // get extended header data
-  if (pf_read(buffer, 16, &bytes_read))  // 8 bytes already read
-    return 0;
-  if (bytes_read < 16)
-    return 0;  // unknown format
 
   // save address
   saveFile();  // needed if single image
 
   // check autostart addresses for data
-  uint8_t *q = buffer + 8;  // >6010 module autostart
+  uint8_t *q = buffer + 16;  // >6010 module autostart
   if (!*q)
     q += 3;  // >6013 menu autostart
   if (*q == 0)
     return 0;  // no start address found
-  uint16_t start = 0x6008 + (q - buffer);
+  uint16_t start = 0x6000 + pos + (q - buffer);
 
   // generate entry
   genFileEntry(fn, type, start, '*');
@@ -394,15 +397,31 @@ static void genFileEntry(uint8_t *fn, uint16_t type, uint16_t addr, uint8_t suff
 // generate fixed part of menu program
 static void genMenuCode()
 {
-  const uint8_t *p = menu;
-  for (uint16_t i = sizeof(menu); i > 0; --i, ++p)
-    writeByte(pgm_read_byte(p));
-
-  // pad memory up to >6A00
-  for (uint16_t i = MENU_PROG_SIZE - sizeof(menu); i > 0; --i)
-    writeByte(0);
+  /* Exact generated menu, kept on SD to restore ordinary cartridge support.
+   * Validate before receiveBegin publishes the cartridge to the console. */
+  if (pf_open("FGMENU.BIN") || sd_fs.fsize!=2310) flash_error(3);
+  uint16_t pos=0;
+  uint32_t sum=0xffffffffUL;
+  while (pos<2310) {
+    UINT got, count=2310-pos;
+    if(count>512) count=512;
+    if(pf_read(buffer,count,&got) || got!=count) flash_error(3);
+    sum=crc(sum,buffer,got);
+    for(UINT n=0;n<got;++n,++pos) {
+      uint8_t b=buffer[n];
+      if(pos>=GIGA_STATUS_OFFSET && pos<GIGA_STATUS_OFFSET+30) {
+        uint8_t k=pos-GIGA_STATUS_OFFSET;
+        b=k<strlen(giga_status)?giga_status[k]:' ';
+      } else if(pos>=GIGA_DETAIL_OFFSET && pos<GIGA_DETAIL_OFFSET+30) {
+        uint8_t k=pos-GIGA_DETAIL_OFFSET;
+        b=k<strlen(giga_detail)?giga_detail[k]:' ';
+      }
+      writeByte(b);
+    }
+  }
+  if((sum^0xffffffffUL)!=0x54f4b98aUL) flash_error(3);
+  for(;pos<MENU_PROG_SIZE;++pos) writeByte(0);
 }
-
 
 // generate GROM wrapper
 static void genMenuGROM()
@@ -429,6 +448,9 @@ uint8_t selectImage(uint8_t listen)
   case 0x1:  return SEL_FOLDER;
   case 0x2:  return SEL_HELP;
   case 0x3:  return SEL_DUMP;
+  case 0x5:  return SEL_GIGA;
+  case 0x6:  return SEL_COMPILATION;
+  case 0x7:  return 7;
   default:   return SEL_PROGRAM;
   }
 }
@@ -486,7 +508,7 @@ static void saveFile()
  * load selected image from SD card
  */
 
-void loadImage()
+__attribute__((noinline)) void loadImage()
 {
   uint8_t banks;
   uint32_t size, grom_size = 0, rom_size = 0;
@@ -494,19 +516,22 @@ void loadImage()
   // begin transmission
   led(1);
   writeBegin();
+  setConfig(4);  // Bank-addressed offline loading; CPU remains offline.
 
   // build path
   uint8_t *p = buildPath("BIN");  // p at '.'
   uint8_t *q = p - 1;  // q at last name char == bank indicator
 
   // get config
-  uint8_t config = selection[9];  // RAM/GRAM mode?
+  uint8_t config = selection[9];
+  if(config & MODE_GRAM) flash_error(4);  // GRAM is not implemented in this experiment.
   rom_dump_bank = grom_dump_bank = 0;  // no dumps per default
 
   // load GROM image file
+  grom_mask=0x80;
   writeSize(0x80);  // clear and open GROMs
   if (*q == 'G') {  // could also use selection[8]
-    size = loadFile(path);
+    size = loadFile(path,123);
     if (size)
       grom_dump_bank = config & MODE_GRAM ? *q : 0;  // GRAM bank to dump
     banks = (size + 8191) / 8192;  // round up
@@ -520,7 +545,11 @@ void loadImage()
   writeSize(0x00);  // open ROM
   uint8_t cnt = 0;  // at most two banks C and D
   while (cnt < 2) {
-    size = loadFile(path);
+    if(cnt && (rom_size & 8191)) {
+      if(!pf_open((char *)path)) flash_error(4);
+      break;
+    }
+    size = loadFile(path,rom_size/8192);
     if (size == 0)
       break;
     rom_dump_bank = config & MODE_RAM && cnt == 0 ? *q : 0;  // RAM bank to dump
@@ -528,6 +557,8 @@ void loadImage()
     if ((*q)++ - cnt++ != 'C')
       break;  // no multi-file
   }
+
+  if ((config & MODE_RAM) && rom_size>8192) flash_error(4);  // single-bank RAM experiment
 
   // set ROM bank mask
   banks = (rom_size + 8191) / 8192;  // round up
@@ -537,11 +568,14 @@ void loadImage()
     banks += banks - 1;  // round up again
     while ((banks >>= 1)) ++i; // find left-most bit
     rom_mask = (1 << i) - 1;
+    setConfig(0);
     writeSize(rom_mask);  // set ROM bank mask (binary)
   } else {
     // write bogus bytes for end-of-load detection instead
     writeByte(0x99);
     writeByte(0x99);
+    setConfig(0);
+    writeSize(0);
   }
 
   image_size = grom_size + rom_size;
@@ -559,7 +593,7 @@ void loadImage()
 
 
 // load file and return number of banks occupied
-static uint32_t loadFile(uint8_t *fn)
+static uint32_t loadFile(uint8_t *fn,uint8_t bank)
 {
   UINT bytes_read;
   uint32_t size = 0;
@@ -567,9 +601,12 @@ static uint32_t loadFile(uint8_t *fn)
   if (pf_open((const char *)fn))
     return 0;
 
-  while (1) {
+  uint8_t limit=bank==123?128:((grom_mask&31)?120:128);
+  if(sd_fs.fsize>(uint32_t)(limit-bank)*8192) flash_error(4);
+  while (bank<128) {
+    writeSize(bank++);
     if (pf_read(0, BANK_SIZE, &bytes_read))
-      break;
+      flash_error(3);
     size += bytes_read;
     if (bytes_read < BANK_SIZE)
       break;

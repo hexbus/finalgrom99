@@ -1,0 +1,98 @@
+{
+  "passed": true,
+  "ui": "PASS actual generated menu: root, nested, parent, counts, limits, hidden, failed-launch recovery",
+  "preparation": [
+    {
+      "fat32": false,
+      "target": "GAMES/TEST.GCR",
+      "status": 0,
+      "reused": 0,
+      "extents": 2,
+      "fat_sector_reads": 3,
+      "disk_reads": 109,
+      "disk_writes": 72,
+      "verified_bytes": 40960
+    },
+    {
+      "fat32": false,
+      "target": "TEST.GCR",
+      "status": 0,
+      "reused": 0,
+      "extents": 2,
+      "fat_sector_reads": 3,
+      "disk_reads": 105,
+      "disk_writes": 72,
+      "verified_bytes": 40960
+    },
+    {
+      "fat32": false,
+      "target": "GAMES/TEST.GCR",
+      "status": 0,
+      "reused": 1,
+      "extents": 2,
+      "fat_sector_reads": 2,
+      "disk_reads": 100,
+      "disk_writes": 0,
+      "verified_bytes": 40960
+    },
+    {
+      "fat32": false,
+      "target": "TEST.GCR",
+      "status": 0,
+      "reused": 1,
+      "extents": 2,
+      "fat_sector_reads": 2,
+      "disk_reads": 96,
+      "disk_writes": 0,
+      "verified_bytes": 40960
+    },
+    {
+      "fat32": true,
+      "target": "GAMES/TEST.GCR",
+      "status": 0,
+      "reused": 0,
+      "extents": 128,
+      "fat_sector_reads": 48,
+      "disk_reads": 260,
+      "disk_writes": 4171,
+      "verified_bytes": 40960
+    },
+    {
+      "fat32": true,
+      "target": "TEST.GCR",
+      "status": 0,
+      "reused": 0,
+      "extents": 128,
+      "fat_sector_reads": 80,
+      "disk_reads": 288,
+      "disk_writes": 4171,
+      "verified_bytes": 40960
+    },
+    {
+      "fat32": true,
+      "target": "GAMES/TEST.GCR",
+      "status": 0,
+      "reused": 1,
+      "extents": 128,
+      "fat_sector_reads": 37,
+      "disk_reads": 143,
+      "disk_writes": 0,
+      "verified_bytes": 40960
+    },
+    {
+      "fat32": true,
+      "target": "TEST.GCR",
+      "status": 0,
+      "reused": 1,
+      "extents": 128,
+      "fat_sector_reads": 37,
+      "disk_reads": 139,
+      "disk_writes": 0,
+      "verified_bytes": 40960
+    }
+  ],
+  "hardware_tested": false,
+  "build_sha256": "70d9bdd23588b171ce2e522f9cfbb617f516a4c8368d19289d648940d76ac14d",
+  "ordinary_parser_tested_separately": true,
+  "limitation": "Host execution of generated C and actual Petit FatFs, not linked AVR or physical startup timing."
+}

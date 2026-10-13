@@ -1,0 +1,37 @@
+{
+  "fitted": true,
+  "device": "XC95144XL-10-TQ100",
+  "source_sha256": "7b28b6ecb355fc77ee809f62ad0596163f922cf6ce4a3ab8aafde3338acf3aec",
+  "constraints_sha256": "fe338f35ce7dc625d14b65c377d2dac7aaa2e26e3ab35b7b50aace8ba71e9662",
+  "settings": {
+    "xst_mode": "Area",
+    "xst_level": 2,
+    "fitter_mode": "density",
+    "input_limit": 40,
+    "product_term_limit": 25,
+    "exhaust": false,
+    "pin_locations_enforced": true
+  },
+  "retrieved": [
+    "xst.log",
+    "ngd.log",
+    "fit.log",
+    "logic.rpt",
+    "logic.pad",
+    "logic.vm6",
+    "logic.vhdl",
+    "logic.ngd",
+    "logic.ngc",
+    "timing.txt",
+    "timing.log",
+    "tsim.log",
+    "netgen.log",
+    "fitted.vhd",
+    "fitted.sdf",
+    "logic.jed",
+    "jedec.log"
+  ],
+  "hardware_programmed": false,
+  "macrocells": 137,
+  "registers": 66
+}

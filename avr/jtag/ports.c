@@ -26,7 +26,7 @@
 // SD card handling
 static UINT buf_avail;
 static uint16_t buf_idx;
-extern uint8_t buffer[512];
+extern uint8_t buffer[1024];
 static uint32_t buf_len;
 void flash_error(const uint8_t count);
 

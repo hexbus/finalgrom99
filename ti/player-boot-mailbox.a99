@@ -1,0 +1,123 @@
+* SPDX-License-Identifier: GPL-3.0-or-later
+* External profile bridge for a self-initializing player in logical bank 0.
+* Restore saved console scratchpad, preserving GPL R10..R15. The RAM waiter
+* then occupies >8300..; only suitable for entries which initialize it.
+       .ifndef ENTRY
+ENTRY  equ >6040
+       .endif
+       .ifndef BANK
+BANK   equ 0
+       .endif
+BADDR  equ BANK*2+>6000
+       .ifndef CHOICES
+CHOICES equ 0
+       .endif
+       aorg >6000
+       data >9999
+       bss  >1e
+boot   li   r0,>0010
+       movb r0,@>8c02
+       swpb r0
+       movb r0,@>8c02
+       li   r6,restore
+       li   r7,>83e0
+       mov  *r6+,*r7+
+       mov  *r6+,*r7+
+       mov  *r6+,*r7+
+       mov  *r6+,*r7+
+       li   r6,>8300
+       li   r7,>00e0
+       li   r8,prepare
+       li   r9,>8800
+       b    @>83e0
+restore
+       movb *r9,*r6+
+       dec  r7
+       jne  restore
+       b    *r8
+prepare
+       limi 0
+       .ifne CHOICES,0
+* Optional two-entry chooser for the pinned Bad Apple player. Keep directory
+* generation free of ROM-header reads. The player initializes its own RAM.
+       li r0,>4100
+       swpb r0
+       movb r0,@>8c02
+       swpb r0
+       movb r0,@>8c02
+       li r1,choicetext
+       li r2,choiceend-choicetext
+show   movb *r1+,@>8c00
+       dec r2
+       jne show
+scan   li r0,>9e7e
+       mov r0,@>8372
+       li r0,>00ff
+       mov r0,@>8374
+       clr @>837c
+       bl @>000e
+       movb @>8375,r0
+       andi r0,>ff00
+       ci r0,>3100
+       jeq music
+       ci r0,>3200
+       jne scan
+       li r9,>6040
+       jmp chosen
+music  li r9,>6034
+chosen
+       .endif
+       .ifeq BANK,0
+       clr  @>7ff8
+       clr  @>7ffa
+       .else
+       li   r6,BANK
+       swpb r6
+       mov  r6,@>7ff8
+       swpb r6
+       mov  r6,@>7ffa
+       .endif
+       li   r6,waitsrc
+       li   r7,>8300
+       li   r8,waitend-waiter
+copy   mov  *r6+,*r7+
+       dect r8
+       jne  copy
+       b    @>8300
+       .ifne CHOICES,0
+choicetext
+       text '       BAD APPLE - SELECT        '
+       text '                                '
+       text '       1. MUSIC                 '
+       text '       2. MUSIC AND SPEECH       '
+choiceend
+       even
+       .endif
+waitsrc
+       xorg >8300
+waiter
+       clr  @>7ffe
+poll   mov  @>7ffc,r6
+       andi r6,>0100
+       jeq  poll
+       clr  @>7ffc
+       clr  @BADDR
+       .ifeq CHOICES,0
+       b    @ENTRY
+       .else
+       b    *r9
+       .endif
+waitend
+       .ifeq CHOICES,0
+       .ifne waitend-waiter,26
+       .error "Unexpected startup waiter copy size"
+       .endif
+       .else
+       .ifne waitend-waiter,24
+       .error "Unexpected chooser waiter copy size"
+       .endif
+       .endif
+       .ifgt $,>83e0
+       .error "Startup waiter overlaps GPL workspace"
+       .endif
+       end
