@@ -1,0 +1,22 @@
+{
+  "image": "CINFRAME.GCS",
+  "byte_identical_recompile": true,
+  "companions": {
+    "CINFRAME.GLP": "8860623f49b4881d2f0cdc236797f030b3752b5346a439b4f4f84ca092518401",
+    "CINFRAME.GOV": "3a6f3a2586fb76f577d5f0090ce22bf4e7c2370caeeb43905ed1663f08932bd5",
+    "CINFRAME.GPR": "12ac813b8a1ca75bb3485889c0fed7ee65670bd181adfaf14d569aab59526fae"
+  },
+  "verification": {
+    "image": "CINFRAME.GCS",
+    "image_bytes": 134217728,
+    "image_sha256": "33c4a88a263d56cbe024da1cb1731ec1656aab87b7c4aaaa18391ac14103c977",
+    "verified": true,
+    "startup_jobs": 6,
+    "fixed_banks": 1,
+    "dynamic_slots": 80,
+    "patched_sectors": 0,
+    "prediction_records": 1,
+    "hardware_tested_by_this_check": false
+  },
+  "limitation": "Rebuilds companions for the already-prepared image; not an original-ROM adapter or new gameplay validation."
+}

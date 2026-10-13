@@ -1,0 +1,22 @@
+{
+  "image": "BABUFFER.GCR",
+  "byte_identical_recompile": true,
+  "companions": {
+    "BABUFFER.GLP": "ee53e866881d331fb0924870ced8043e5260e139df2e6a6b19103a2935be66ed",
+    "BABUFFER.GOV": "732d99e5671f93a7af9d33f2d6c2fb995e44b4816836bf58f38797a7b66e7063",
+    "BABUFFER.GPR": "1ab7d4270d533bcaea2b3b9eb28431dbba72af1972a58182cb06150f484e69b9"
+  },
+  "verification": {
+    "image": "BABUFFER.GCR",
+    "image_bytes": 5079040,
+    "image_sha256": "58170b1dd2e8a6e1a6c3710328974f6e8c30741f2efb94764d657d75420a8bc7",
+    "verified": true,
+    "startup_jobs": 6,
+    "fixed_banks": 1,
+    "dynamic_slots": 80,
+    "patched_sectors": 0,
+    "prediction_records": 1,
+    "hardware_tested_by_this_check": false
+  },
+  "limitation": "Rebuilds companions for the already-prepared image; not an original-ROM adapter or new gameplay validation."
+}

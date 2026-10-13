@@ -1,0 +1,7 @@
+{
+  "image_sha256": "REPLACE_WITH_PREPARED_IMAGE_SHA256",
+  "intervals": [
+    { "first": 0, "last": 1, "successors": [2, 3] },
+    { "first": 2, "last": 3, "successors": [0] }
+  ]
+}

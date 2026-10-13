@@ -1,0 +1,17 @@
+{
+  "name": "CINFRAME",
+  "image": "input/CINFRAME.GCS",
+  "image_sha256": "33c4a88a263d56cbe024da1cb1731ec1656aab87b7c4aaaa18391ac14103c977",
+  "bridge": "bridge.bin",
+  "bridge_sha256": "62f9dfba976924f13e55cbf5ef37ed6558d18f74729cc422cedfe5b30a44d54d",
+  "patches": [],
+  "fixed_ranges": [
+    {
+      "bank": 0,
+      "count": 1,
+      "first": 1
+    }
+  ],
+  "dynamic_first": 2,
+  "dynamic_count": 80
+}

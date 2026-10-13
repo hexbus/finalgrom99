@@ -1,0 +1,46 @@
+{
+  "source": "ti/player-boot-mailbox.a99",
+  "assembler": "xdt99 xas99.py",
+  "flags": [
+    "-b",
+    "-R"
+  ],
+  "variants": {
+    "BABUFFER": {
+      "BANK": 0,
+      "ENTRY": 24640,
+      "CHOICES": 1
+    },
+    "CINFRAME": {
+      "BANK": 0,
+      "ENTRY": 24608,
+      "CHOICES": 0
+    },
+    "GAMES1M": {
+      "BANK": 128,
+      "ENTRY": 24608,
+      "CHOICES": 0
+    },
+    "GAMES2M": {
+      "BANK": 256,
+      "ENTRY": 24608,
+      "CHOICES": 0
+    },
+    "SPACE": {
+      "BANK": 256,
+      "ENTRY": 24608,
+      "CHOICES": 0
+    },
+    "STLSRV2": {
+      "BANK": 256,
+      "ENTRY": 24608,
+      "CHOICES": 0
+    },
+    "DRAGON": {
+      "MAILBOX": 1
+    }
+  },
+  "source_overrides": {
+    "DRAGON": "ti/dragon-choice.a99"
+  }
+}

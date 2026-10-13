@@ -1,0 +1,21 @@
+{
+  "image": "GAMES1M.GCR",
+  "byte_identical_recompile": true,
+  "companions": {
+    "GAMES1M.GLP": "d3556baf93a41750eb94f67aa8af69a1af62ce07f50a27da44eb4a7540312980",
+    "GAMES1M.GOV": "74b96ae856387aa83333cc3f9b4a89d1afe0b2243d5699624cf89c401a9e3f4d"
+  },
+  "verification": {
+    "image": "GAMES1M.GCR",
+    "image_bytes": 1056768,
+    "image_sha256": "886e2256bc6fc8d2ef135ce58f218e3c571d9bcea8c01da9bb896970ff258275",
+    "verified": true,
+    "startup_jobs": 10,
+    "fixed_banks": 3,
+    "dynamic_slots": 80,
+    "patched_sectors": 13,
+    "prediction_records": 0,
+    "hardware_tested_by_this_check": false
+  },
+  "limitation": "Rebuilds companions for the already-prepared image; not an original-ROM adapter or new gameplay validation."
+}

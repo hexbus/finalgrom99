@@ -1,0 +1,41 @@
+{
+  "name": "SPACE",
+  "image": "input/SPACE.GCR",
+  "image_sha256": "24521ae973c3b1bd5ae96851e97755a71ef861127684166e5b7645f9cb94b07a",
+  "bridge": "bridge.bin",
+  "bridge_sha256": "d401da5402116445b7e033e725e5f22255d8c7c801f0a0527cc203bccc970608",
+  "patches": [
+    {
+      "bank": 256,
+      "offset": 99,
+      "expected": "0e",
+      "replacement": "36"
+    },
+    {
+      "bank": 256,
+      "offset": 346,
+      "expected": "cc41",
+      "replacement": "1059"
+    },
+    {
+      "bank": 256,
+      "offset": 526,
+      "expected": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "replacement": "024161fec001091006c0d8007ff804e07ffa04e07ffec0207ffc0240010013fb04e07ffc04f11093"
+    }
+  ],
+  "fixed_ranges": [
+    {
+      "bank": 0,
+      "count": 1,
+      "first": 1
+    },
+    {
+      "bank": 256,
+      "count": 1,
+      "first": 2
+    }
+  ],
+  "dynamic_first": 3,
+  "dynamic_count": 80
+}

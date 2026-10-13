@@ -1,0 +1,13 @@
+{
+  "image_sha256": "58170b1dd2e8a6e1a6c3710328974f6e8c30741f2efb94764d657d75420a8bc7",
+  "intervals": [
+    {
+      "first": 1,
+      "last": 612,
+      "successors": [
+        0,
+        1
+      ]
+    }
+  ]
+}

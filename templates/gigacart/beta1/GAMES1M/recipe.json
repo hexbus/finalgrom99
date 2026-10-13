@@ -1,0 +1,2098 @@
+{
+  "name": "GAMES1M",
+  "image": "input/GAMES1M.GCR",
+  "image_sha256": "886e2256bc6fc8d2ef135ce58f218e3c571d9bcea8c01da9bb896970ff258275",
+  "bridge": "bridge.bin",
+  "bridge_sha256": "9ee2c0e28db76a4dc0d5c182e4177466c9adf05ac195b721fba192b223d2f0b0",
+  "patches": [
+    {
+      "bank": 0,
+      "offset": 280,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 282,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 304,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 306,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 328,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 330,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 376,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 378,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 400,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 402,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 448,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 450,
+      "expected": "07d0",
+      "replacement": "3420"
+    },
+    {
+      "bank": 0,
+      "offset": 472,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 474,
+      "expected": "07d0",
+      "replacement": "3420"
+    },
+    {
+      "bank": 0,
+      "offset": 496,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 498,
+      "expected": "07d0",
+      "replacement": "3420"
+    },
+    {
+      "bank": 0,
+      "offset": 520,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 522,
+      "expected": "07d0",
+      "replacement": "3420"
+    },
+    {
+      "bank": 0,
+      "offset": 544,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 546,
+      "expected": "07d0",
+      "replacement": "3420"
+    },
+    {
+      "bank": 0,
+      "offset": 710,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 712,
+      "expected": "07d0",
+      "replacement": "2004"
+    },
+    {
+      "bank": 0,
+      "offset": 758,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 760,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 782,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 784,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 830,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 832,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 854,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 856,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 902,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 904,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 926,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 928,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 950,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 952,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 974,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 976,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 998,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1000,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1046,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1048,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1070,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1072,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1094,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1096,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1142,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1144,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1166,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1168,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1190,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1192,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1214,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1216,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1262,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1264,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1286,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1288,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1310,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1312,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1358,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1360,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1382,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1384,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1430,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1432,
+      "expected": "07d0",
+      "replacement": "3c20"
+    },
+    {
+      "bank": 0,
+      "offset": 1454,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1456,
+      "expected": "07d0",
+      "replacement": "3c20"
+    },
+    {
+      "bank": 0,
+      "offset": 1478,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1480,
+      "expected": "07d0",
+      "replacement": "3c20"
+    },
+    {
+      "bank": 0,
+      "offset": 1502,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1504,
+      "expected": "07d0",
+      "replacement": "3c20"
+    },
+    {
+      "bank": 0,
+      "offset": 1526,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1528,
+      "expected": "07d0",
+      "replacement": "3c20"
+    },
+    {
+      "bank": 0,
+      "offset": 1574,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1576,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1598,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1600,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1622,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1624,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1646,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1648,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1694,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1696,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1718,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1720,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1742,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1744,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1790,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1792,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1814,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1816,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1862,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1864,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1886,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1888,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 1934,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1936,
+      "expected": "07d0",
+      "replacement": "3820"
+    },
+    {
+      "bank": 0,
+      "offset": 1958,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1960,
+      "expected": "07d0",
+      "replacement": "3820"
+    },
+    {
+      "bank": 0,
+      "offset": 1982,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 1984,
+      "expected": "07d0",
+      "replacement": "3820"
+    },
+    {
+      "bank": 0,
+      "offset": 2006,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2008,
+      "expected": "07d0",
+      "replacement": "3820"
+    },
+    {
+      "bank": 0,
+      "offset": 2028,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2030,
+      "expected": "07d0",
+      "replacement": "2004"
+    },
+    {
+      "bank": 0,
+      "offset": 2076,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2078,
+      "expected": "07d0",
+      "replacement": "3c20"
+    },
+    {
+      "bank": 0,
+      "offset": 2100,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2102,
+      "expected": "07d0",
+      "replacement": "3c20"
+    },
+    {
+      "bank": 0,
+      "offset": 2124,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2126,
+      "expected": "07d0",
+      "replacement": "3c20"
+    },
+    {
+      "bank": 0,
+      "offset": 2148,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2150,
+      "expected": "07d0",
+      "replacement": "3c20"
+    },
+    {
+      "bank": 0,
+      "offset": 2172,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2174,
+      "expected": "07d0",
+      "replacement": "3c20"
+    },
+    {
+      "bank": 0,
+      "offset": 2220,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2222,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 2244,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2246,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 2292,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2294,
+      "expected": "07d0",
+      "replacement": "3ec0"
+    },
+    {
+      "bank": 0,
+      "offset": 2316,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2318,
+      "expected": "07d0",
+      "replacement": "3ec0"
+    },
+    {
+      "bank": 0,
+      "offset": 2340,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2342,
+      "expected": "07d0",
+      "replacement": "3ec0"
+    },
+    {
+      "bank": 0,
+      "offset": 2364,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2366,
+      "expected": "07d0",
+      "replacement": "3ec0"
+    },
+    {
+      "bank": 0,
+      "offset": 2388,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2390,
+      "expected": "07d0",
+      "replacement": "3ec0"
+    },
+    {
+      "bank": 0,
+      "offset": 2436,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2438,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 2460,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2462,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 2484,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2486,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 2508,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2510,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 2556,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2558,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 2580,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2582,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 2604,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2606,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 2652,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2654,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 2676,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2678,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 2724,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2726,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 2748,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2750,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 2804,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2806,
+      "expected": "07d0",
+      "replacement": "3b40"
+    },
+    {
+      "bank": 0,
+      "offset": 2828,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2830,
+      "expected": "07d0",
+      "replacement": "3b40"
+    },
+    {
+      "bank": 0,
+      "offset": 2852,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2854,
+      "expected": "07d0",
+      "replacement": "3b40"
+    },
+    {
+      "bank": 0,
+      "offset": 2876,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2878,
+      "expected": "07d0",
+      "replacement": "3b40"
+    },
+    {
+      "bank": 0,
+      "offset": 2924,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2926,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 2948,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2950,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 2972,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 2974,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 3020,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 3022,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 3044,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 3046,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 3068,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 3070,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 3092,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 3094,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 3116,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 3118,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 3164,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 3166,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 3188,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 3190,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 3212,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 3214,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 3236,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 3238,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 3284,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 3286,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 3308,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 3310,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 3332,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 3334,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 3380,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 3382,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 3404,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 3406,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 3428,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 3430,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 3476,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 3478,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 0,
+      "offset": 3500,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 0,
+      "offset": 3502,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 1205,
+      "expected": "6083",
+      "replacement": "2020"
+    },
+    {
+      "bank": 64,
+      "offset": 5874,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 5876,
+      "expected": "07d0",
+      "replacement": "34a0"
+    },
+    {
+      "bank": 64,
+      "offset": 5898,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 5900,
+      "expected": "07d0",
+      "replacement": "34a0"
+    },
+    {
+      "bank": 64,
+      "offset": 5922,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 5924,
+      "expected": "07d0",
+      "replacement": "34a0"
+    },
+    {
+      "bank": 64,
+      "offset": 5946,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 5948,
+      "expected": "07d0",
+      "replacement": "34a0"
+    },
+    {
+      "bank": 64,
+      "offset": 5970,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 5972,
+      "expected": "07d0",
+      "replacement": "34a0"
+    },
+    {
+      "bank": 64,
+      "offset": 6018,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6020,
+      "expected": "07d0",
+      "replacement": "3c20"
+    },
+    {
+      "bank": 64,
+      "offset": 6042,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6044,
+      "expected": "07d0",
+      "replacement": "3c20"
+    },
+    {
+      "bank": 64,
+      "offset": 6066,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6068,
+      "expected": "07d0",
+      "replacement": "3c20"
+    },
+    {
+      "bank": 64,
+      "offset": 6114,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6116,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6138,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6140,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6162,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6164,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6186,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6188,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6234,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6236,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6258,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6260,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6282,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6284,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6306,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6308,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6354,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6356,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6378,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6380,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6426,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6428,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6450,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6452,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6498,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6500,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6522,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6524,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6546,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6548,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6570,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6572,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6618,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6620,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6642,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6644,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6666,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6668,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6690,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6692,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6738,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6740,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6762,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6764,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 6810,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6812,
+      "expected": "07d0",
+      "replacement": "c020"
+    },
+    {
+      "bank": 64,
+      "offset": 6834,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6836,
+      "expected": "07d0",
+      "replacement": "c020"
+    },
+    {
+      "bank": 64,
+      "offset": 6858,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6860,
+      "expected": "07d0",
+      "replacement": "c020"
+    },
+    {
+      "bank": 64,
+      "offset": 6906,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6908,
+      "expected": "07d0",
+      "replacement": "3c20"
+    },
+    {
+      "bank": 64,
+      "offset": 6930,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6932,
+      "expected": "07d0",
+      "replacement": "3c20"
+    },
+    {
+      "bank": 64,
+      "offset": 6954,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 6956,
+      "expected": "07d0",
+      "replacement": "3c20"
+    },
+    {
+      "bank": 64,
+      "offset": 7002,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7004,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7026,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7028,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7050,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7052,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7098,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7100,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7122,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7124,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7146,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7148,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7170,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7172,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7218,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7220,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7242,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7244,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7266,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7268,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7314,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7316,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7338,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7340,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7362,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7364,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7386,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7388,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7530,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7532,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7554,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7556,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7578,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7580,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7602,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7604,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7626,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7628,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7674,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7676,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7698,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7700,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7746,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7748,
+      "expected": "07d0",
+      "replacement": "3920"
+    },
+    {
+      "bank": 64,
+      "offset": 7770,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7772,
+      "expected": "07d0",
+      "replacement": "3920"
+    },
+    {
+      "bank": 64,
+      "offset": 7794,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7796,
+      "expected": "07d0",
+      "replacement": "3920"
+    },
+    {
+      "bank": 64,
+      "offset": 7818,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7820,
+      "expected": "07d0",
+      "replacement": "3920"
+    },
+    {
+      "bank": 64,
+      "offset": 7842,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7844,
+      "expected": "07d0",
+      "replacement": "3920"
+    },
+    {
+      "bank": 64,
+      "offset": 7890,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7892,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7914,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7916,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7938,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7940,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 7986,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 7988,
+      "expected": "07d0",
+      "replacement": "3620"
+    },
+    {
+      "bank": 64,
+      "offset": 8010,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 8012,
+      "expected": "07d0",
+      "replacement": "3620"
+    },
+    {
+      "bank": 64,
+      "offset": 8034,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 8036,
+      "expected": "07d0",
+      "replacement": "3620"
+    },
+    {
+      "bank": 64,
+      "offset": 8058,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 8060,
+      "expected": "07d0",
+      "replacement": "3620"
+    },
+    {
+      "bank": 64,
+      "offset": 8082,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 8084,
+      "expected": "07d0",
+      "replacement": "3620"
+    },
+    {
+      "bank": 64,
+      "offset": 8130,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 8132,
+      "expected": "07d0",
+      "replacement": "3020"
+    },
+    {
+      "bank": 64,
+      "offset": 8154,
+      "expected": "d8",
+      "replacement": "04"
+    },
+    {
+      "bank": 64,
+      "offset": 8156,
+      "expected": "07d0",
+      "replacement": "3020"
+    }
+  ],
+  "fixed_ranges": [
+    {
+      "bank": 0,
+      "count": 1,
+      "first": 1
+    },
+    {
+      "bank": 64,
+      "count": 1,
+      "first": 2
+    },
+    {
+      "bank": 128,
+      "count": 1,
+      "first": 3
+    }
+  ],
+  "dynamic_first": 4,
+  "dynamic_count": 80
+}

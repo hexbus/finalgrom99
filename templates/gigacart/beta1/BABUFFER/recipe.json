@@ -1,0 +1,17 @@
+{
+  "name": "BABUFFER",
+  "image": "input/BABUFFER.GCR",
+  "image_sha256": "58170b1dd2e8a6e1a6c3710328974f6e8c30741f2efb94764d657d75420a8bc7",
+  "bridge": "bridge.bin",
+  "bridge_sha256": "94c703311047578f60bb0164aafd64490f2df8ba1c3707da12c1333ff87afc35",
+  "patches": [],
+  "fixed_ranges": [
+    {
+      "bank": 0,
+      "count": 1,
+      "first": 1
+    }
+  ],
+  "dynamic_first": 2,
+  "dynamic_count": 80
+}

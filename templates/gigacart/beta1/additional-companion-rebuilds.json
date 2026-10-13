@@ -1,0 +1,30 @@
+[
+  {
+    "image": "DRAGON.GCS",
+    "byte_identical_recompile": true,
+    "companions": {
+      "DRAGON.GLP": "76b6854cd0b8e3937d0c6defc1caadbffb8403720402d62866ec14b1b4710eb8",
+      "DRAGON.GOV": "c4e8c2dfe8de4bee83bff0b98e0a472519a631138504c1c454cb83244d093b5d",
+      "DRAGON.GPR": "7a31ce094319382240d3da17f88af10dfde86f59f0012f4068b0004e9907759b"
+    },
+    "verification": {
+      "image": "DRAGON.GCS",
+      "image_bytes": 134217728,
+      "image_sha256": "30b386b6214609479507962e6abccdd13bfb20c87977a9f14a65a11b1adce568",
+      "verified": true,
+      "startup_jobs": 92,
+      "fixed_banks": 44,
+      "dynamic_slots": 80,
+      "patched_sectors": 10676,
+      "prediction_records": 821,
+      "hardware_tested_by_this_check": false
+    },
+    "limitation": "Rebuilds companions for the already-prepared image; not an original-ROM adapter or new gameplay validation.",
+    "source": {
+      "image": "references/legacy-development-20261007/output/copy-queue/DRAGON.GCS",
+      "companions": "references/legacy-development-20261007/output/copy-queue/cooperative-v23a/3-carts",
+      "recorded": "2026-10-13",
+      "scope": "Additional preserved working set; not part of the frozen six-cartridge audit."
+    }
+  }
+]

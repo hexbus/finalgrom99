@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "adapters": [
+    {
+      "id": "replace-with-reviewed-adapter-id",
+      "name": "DEMO",
+      "extension": ".GCR",
+      "default": true,
+      "input_sha256": "REPLACE_WITH_ORIGINAL_INPUT_SHA256",
+      "output_sha256": "REPLACE_WITH_PREPARED_IMAGE_SHA256",
+      "image_edits": [],
+      "companions": {
+        ".GLP": { "path": "built/DEMO.GLP", "sha256": "REPLACE_WITH_GLP_SHA256" },
+        ".GOV": { "path": "built/DEMO.GOV", "sha256": "REPLACE_WITH_GOV_SHA256" },
+        ".GPR": { "path": "built/DEMO.GPR", "sha256": "REPLACE_WITH_GPR_SHA256" }
+      },
+      "requirements": "REPLACE_WITH_MATCHED_FIRMWARE_AND_HARDWARE_REQUIREMENTS",
+      "evidence": "TEMPLATE ONLY: no cartridge compatibility or hardware qualification"
+    }
+  ]
+}

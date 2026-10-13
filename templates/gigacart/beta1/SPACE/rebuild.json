@@ -1,0 +1,22 @@
+{
+  "image": "SPACE.GCR",
+  "byte_identical_recompile": true,
+  "companions": {
+    "SPACE.GLP": "a423e18a6126983b6ddd3a132bb44ada7abdfecdf527038749d9de155c127f9a",
+    "SPACE.GOV": "46af6d78f56910814e9c5094007608f5895a90f3b2b1c951160a4d3860116af0",
+    "SPACE.GPR": "8b382a3d6de50f2d3fec5136ecac44602375ef2ca414f92793b7e633ac1fc1ce"
+  },
+  "verification": {
+    "image": "SPACE.GCR",
+    "image_bytes": 2105344,
+    "image_sha256": "24521ae973c3b1bd5ae96851e97755a71ef861127684166e5b7645f9cb94b07a",
+    "verified": true,
+    "startup_jobs": 8,
+    "fixed_banks": 2,
+    "dynamic_slots": 80,
+    "patched_sectors": 2,
+    "prediction_records": 1,
+    "hardware_tested_by_this_check": false
+  },
+  "limitation": "Rebuilds companions for the already-prepared image; not an original-ROM adapter or new gameplay validation."
+}

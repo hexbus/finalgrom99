@@ -1,0 +1,21 @@
+{
+  "name": "DEMO",
+  "image": "DEMO.GCR",
+  "image_sha256": "REPLACE_WITH_PREPARED_IMAGE_SHA256",
+  "bridge": "bridge.bin",
+  "bridge_sha256": "REPLACE_WITH_REVIEWED_BRIDGE_SHA256",
+  "fixed_ranges": [
+    { "bank": 0, "count": 1, "first": 1 },
+    { "bank": 3, "count": 1, "first": 2 }
+  ],
+  "dynamic_first": 3,
+  "dynamic_count": 80,
+  "patches": [
+    {
+      "bank": 0,
+      "offset": 16,
+      "expected": "REPLACE_WITH_EXPECTED_BYTES_IN_HEX",
+      "replacement": "REPLACE_WITH_REVIEWED_PATCH_IN_HEX"
+    }
+  ]
+}

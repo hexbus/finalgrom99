@@ -1,0 +1,22 @@
+{
+  "image": "STLSRV2.GCR",
+  "byte_identical_recompile": true,
+  "companions": {
+    "STLSRV2.GLP": "09632fd9b7d231b1fafa5c365fdafeaa703db4a21129ae3aebe48e954524c425",
+    "STLSRV2.GOV": "5fd000e056b90bfcbb4c7bb4228eb08a2754561f7fcb496487e41fcedb7b53e0",
+    "STLSRV2.GPR": "153b8031ed53039eb8f274561d19c388cabfa592b6c91d006ad23c53a030021c"
+  },
+  "verification": {
+    "image": "STLSRV2.GCR",
+    "image_bytes": 2105344,
+    "image_sha256": "4db16dc7e437c13c08da31988caf067835163f7d5fd8435fccaf58075b036dd7",
+    "verified": true,
+    "startup_jobs": 96,
+    "fixed_banks": 46,
+    "dynamic_slots": 78,
+    "patched_sectors": 11,
+    "prediction_records": 177,
+    "hardware_tested_by_this_check": false
+  },
+  "limitation": "Rebuilds companions for the already-prepared image; not an original-ROM adapter or new gameplay validation."
+}
