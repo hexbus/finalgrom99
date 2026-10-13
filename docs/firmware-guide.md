@@ -11,16 +11,16 @@ The [AVR index](../avr/index.md), [TI assembly index](../ti/index.md) and [tools
 1. [finalgrom.c](../avr/finalgrom.c) runs the menu/selection loop and dispatches the selected cartridge.
 2. [loader.c](../avr/loader.c) scans SD directories, builds the menu and loads ordinary cartridges. It includes the large-cartridge and compilation session code so they can share its small memory buffers.
 3. [loader-giga.inc](../avr/gigacart/loader-giga.inc) recognizes large-image selections and enters `profile_session()`.
-4. [cinema-session.inc](../avr/gigacart/cinema-session.inc) sets up the current cooperative session and runs its service loop. Despite its historical name, this is also the prepared-cartridge path used beyond Cinema.
+4. [video-session.inc](../avr/gigacart/video-session.inc) sets up the current cooperative session and runs its service loop. This is the shared prepared-cartridge path for video and games.
 5. [logic.vhdl](../vhdl/gigacart/logic.vhdl) implements the CPLD side: cartridge mapping, the request mailbox and transfer control.
 
-The historical `FGCINEMA` build flag selects the cooperative session. It does not mean the firmware can only play Cinema.
+The `FGVIDEO` build flag selects this cooperative session for both video and game cartridges.
 
 ## What happens when a bank is needed
 
 | Step | What happens | Main source |
 | --- | --- | --- |
-| Prepare | Open the image and companions, validate startup data and install initial banks. | `cinema-session.inc`, `giga-launch.c` |
+| Prepare | Open the image and companions, validate startup data and install initial banks. | `video-session.inc`, `giga-launch.c` |
 | Request | Prepared TI code enters safe RAM and commits a bank request to the CPLD mailbox. This releases its previous bank reservation. | Cartridge helper and CPLD logic |
 | Find or load | Reuse a ready bank, resolve a fixed bank, or load a missing bank in 512-byte sectors. Apply the prepared overlay while reading. | `giga-demand.c`, `giga-resume.c`, `giga-overlay.c` |
 | Resume | Publish the completed mapping and acknowledge the request. The TI helper can select that bank and resume. | `giga-demand.c`, `giga-wire.c` |

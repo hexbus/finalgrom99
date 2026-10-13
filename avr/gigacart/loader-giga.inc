@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "giga.h"
-#ifdef FGCINEMA
+#ifdef FGVIDEO
 static char giga_status[31]=""; /* 1.4 Beta 1: normal menu; errors remain visible. */
 #elif defined(FGREUSETEST)
 static char giga_status[31]="V14 - SELECT REUSE.GCR";
@@ -45,8 +45,8 @@ static uint32_t giga_time(void) {
 #ifdef FGREUSETEST
 #include "reuse-test.inc"
 #endif
-#ifdef FGCINEMA
-#include "cinema-session.inc"
+#ifdef FGVIDEO
+#include "video-session.inc"
 #endif
 static uint8_t genGigaEntry(uint8_t *fn) {
     uint8_t n=strlen((char *)fn);
@@ -65,7 +65,7 @@ __attribute__((noinline)) void prepareGigacart(void) {
     led(1); writeBegin(); setConfig(0);
     uint8_t kind=(selection[9]>>4)&3;
     buildPath(kind==0 ? "GCR" : kind==1 ? "GCS" : "GCG");
-#ifdef FGCINEMA
+#ifdef FGVIDEO
     {
         uint8_t result=profile_session();
         giga_format_error(giga_status,PSTR("PROFILE STARTUP ERROR "),result);

@@ -1,5 +1,5 @@
 {
-  "cinema-session.inc": "avr/gigacart/cinema-session.inc",
+  "cinema-session.inc": "avr/gigacart/video-session.inc",
   "cooperative-fault.inc": "avr/gigacart/cooperative-fault.inc",
   "giga-aux.c": "avr/gigacart/giga-aux.c",
   "giga-aux.h": "avr/gigacart/giga-aux.h",

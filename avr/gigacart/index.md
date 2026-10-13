@@ -7,7 +7,7 @@ These **25 files were added after the upstream reference** in the [TI index](../
 | File | Responsibility |
 | --- | --- |
 | [loader-giga.inc](loader-giga.inc) | Recognize large-image selections and dispatch the selected loading path. |
-| [cinema-session.inc](cinema-session.inc) | Set up and service the current cooperative session. Its historical name also covers prepared cartridges beyond Cinema. |
+| [video-session.inc](video-session.inc) | Set up and service the cooperative session for prepared video and game cartridges. |
 | [cooperative-fault.inc](cooperative-fault.inc) | Save cooperative-session fault reports to a preallocated file. |
 
 ## Storage, loading and mapping

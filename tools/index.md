@@ -38,7 +38,7 @@ Use the [build guide](../docs/building.md) for prerequisites and commands. The s
 
 | File | Role |
 | --- | --- |
-| [build-firmware.py](build-firmware.py) | Stage maintained sources under the release recipe's filenames, build the AVR, and optionally verify the release and reassemble the menu. |
+| [build-firmware.py](build-firmware.py) | Stage maintained sources under the maintained build filenames, build the AVR, and optionally verify the release and reassemble the menu. |
 | [rebuild-avr-snapshot.py](rebuild-avr-snapshot.py) | Build an exported AVR source snapshot in a new directory. |
 | [rebuild-menu-snapshot.py](rebuild-menu-snapshot.py) | Reassemble the exported TI menu and check its bytes and expected offsets. |
 | [verify-baseline.py](verify-baseline.py) | Check frozen release artifacts and mapped source hashes without compiling. |

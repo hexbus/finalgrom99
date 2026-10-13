@@ -43,12 +43,12 @@ This is a verified improvement on one reported setup, not a universal timing gua
 
 ## Known limits and requested testing
 
-Reported tests include working Cinema controls/playback, Spaceballs, Games compilation spot checks and improved patched Stealth speech. Broader testing is needed; this is not an all-games or all-hardware guarantee.
+Reported tests include working video controls/playback, Spaceballs, Games compilation spot checks and improved patched Stealth speech. Broader testing is needed; this is not an all-games or all-hardware guarantee.
 
 [Lapo Serafini's PAL report](beta-feedback.md#lapo-serafini-pal-console-report) records successful play, compilation spot checks and compatibility improvements, alongside opening-speech corruption, sprite glitches, one load freeze and audio concerns. Build identities and causes remain unconfirmed.
 
 BABUFFER vocals still have synchronization/garbling issues. STLSRV2 speech has improved but needs more testing. Music-only Bad Apple has completed a run. CINFRAME silences unused sound channels each frame; another long run is useful after the earlier version's eight-hour stray-tone report. Games compilations need results for individual games.
 
-Use 32K expansion when testing titles that require it; Cinema and Spaceballs can also run without it. A speech synthesizer is needed to assess speech. Report PAL/NTSC, video-chip changes, expansions and SD card details. Other configurations need their own evidence.
+Use 32K expansion when testing titles that require it; CINFRAME and Spaceballs can also run without it. A speech synthesizer is needed to assess speech. Report PAL/NTSC, video-chip changes, expansions and SD card details. Other configurations need their own evidence.
 
 Dragon's Lair is included in the [cartridge examples](beta-cartridge-recipes.md). See [playback feedback](beta-feedback.md#dragons-lair-playback-reports) for reported results.

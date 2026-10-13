@@ -15,7 +15,16 @@ def build_recipe(root: Path) -> dict:
     frozen = json.loads((release / 'avr-snapshot.json').read_text())
     if recipe['schema_version'] != 1 or recipe['avr_sha256'] != frozen['avr_sha256']:
         raise ValueError('Unsupported recipe or changed Beta 1 target')
-    if recipe['files'].keys() - frozen['files'].keys():
+    renames = recipe.get('input_renames', {})
+    if (renames.keys() - frozen['files'].keys()
+            or set(renames.values()) - recipe['files'].keys()
+            or len(set(renames.values())) != len(renames)
+            or renames.keys() & recipe['files'].keys()
+            or any(Path(name).name != name or '\\' in name or name in ('.', '..')
+                   for name in renames.values())):
+        raise ValueError('Invalid maintained input renames')
+    origins = {new: old for old, new in renames.items()}
+    if {origins.get(name, name) for name in recipe['files']} - frozen['files'].keys():
         raise ValueError('Unknown staged source names in maintained recipe')
     objects = set()
     links = []
@@ -46,7 +55,8 @@ def source_mapping(root: Path) -> dict[str, str]:
         raise ValueError(f'Unknown release source names: {sorted(unknown)}')
     mapping.update(relocations)
     recipe = build_recipe(root)
-    mapping = {name: mapping[name] for name in recipe['files']}
+    origins = {new: old for old, new in recipe.get('input_renames', {}).items()}
+    mapping = {name: mapping[origins.get(name, name)] for name in recipe['files']}
     for name, relative in mapping.items():
         source = (root / relative).resolve()
         if not source.is_relative_to(root) or not source.is_file():
