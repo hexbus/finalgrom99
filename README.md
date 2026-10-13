@@ -34,8 +34,10 @@ selected prepared cartridges larger than the board's 1 MiB of SRAM,
 including 128 MiB images, by loading banks from SD as needed.  Ordinary
 supported ROM/GROM images continue to use the normal loading path.
 
-**Cartridge images are user-supplied.** This repository provides firmware,
-tools, templates and companion files, but no full game or video images.
+**Cartridge images are user-supplied**, except for the separate
+[complete Cinema example download](docs/prepared-cartridges.md#copy-a-complete-set).
+The Git source tree provides firmware, tools, templates and companion files;
+full game and video images are not stored in it.
 
 Large cartridges require an adaptation for the exact image revision;
 renaming an arbitrary ROM is not sufficient.  Keep the SD card inserted

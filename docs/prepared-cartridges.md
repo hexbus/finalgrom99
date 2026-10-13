@@ -14,7 +14,7 @@ Supported ordinary ROM-only images up to 1 MB can fit entirely in SRAM. Being la
 
 ## Which files go on the card?
 
-Keep the supplied basename, such as `DRAGON`, the same across the set. Use the supplied image extension.
+Keep the supplied basename, such as `CINFRAME`, the same across the set. Use the supplied image extension.
 
 | File | In plain English | Copy to SD? |
 | --- | --- | --- |
@@ -30,22 +30,32 @@ A `.GCS` image uses a `.GIS` location index; a `.GCR` image uses `.GIR`. The sta
 
 ## Copy a complete set
 
+**Try Cinema:** [download the complete Cinema example](https://github.com/hexbus/finalgrom99/releases/download/2.0-beta1-cinema-example-r1/finalgrom-2.0-beta1-125ms-prepared-r6-CINFRAME.zip).
+It includes the 128 MiB `CINFRAME.GCS` image, its GLP/GOV/GPR helpers,
+`FGMENU.BIN`, checksums and these guides. This is a testing example created for
+the project. See its [sources, credits and player permission](../templates/gigacart/beta1/CINFRAME/README.md).
+Other cartridge images are user-supplied.
+
+Extract the ZIP on your computer. To play immediately, copy the contents of its
+`sd-card/` folder to the SD root after following the installation guide below. To learn
+how preparation works, use the image from that folder in the next section.
+
 First complete [Install and play](getting-started.md) so both devices and the menu use the matched Beta 1 release.
 
 1. Copy the image and matching GLP, GOV and supplied GPR into one folder on a supported FAT32 card. Short uppercase names avoid filename alias confusion.
 2. Leave out generated GIR/GIS/BIX indexes when moving the set from another card. Keep the other companions.
 3. Select the image in the FinalGROM menu. Initial indexing may take time; it happens automatically.
 
-For the supplied Dragon's Lair preparation, the card should look like this:
+The ZIP places the Cinema files in the card root. To organize them in a folder instead, keep the menu in the root and use this layout:
 
 ```text
 SD root/
   FGMENU.BIN
-  DRAGON/
-    DRAGON.GCS
-    DRAGON.GLP
-    DRAGON.GOV
-    DRAGON.GPR
+  CINFRAME/
+    CINFRAME.GCS
+    CINFRAME.GLP
+    CINFRAME.GOV
+    CINFRAME.GPR
 ```
 
 **Expected result:** the cartridge starts after its initial load. Keep the SD card inserted throughout play. A correctly prepared set can still pause while loading banks; predictions reduce waiting but do not guarantee native-cartridge timing.
@@ -54,22 +64,24 @@ Do not mix companions from different preparations or rename just one member. For
 
 ## Assemble a set from a supported image
 
-You need Python 3.9 or newer, a checkout of this repository, and a user-supplied image that exactly matches the catalog. The repository supplies the companion files; full game and video images are not included.
+You need Python 3.9 or newer, a checkout of this repository, and an image that exactly matches the catalog. For this walkthrough, use `CINFRAME.GCS` from the Cinema download above. Other cartridge images are user-supplied. The Git source tree contains the companion files; the complete Cinema image is a separate download.
 
 The tool is named `convert-cartridge.py`, but the built-in entries **keep your image bytes unchanged and attach the matching companions**. They recognize the already-prepared Beta 1 images. A stock ROM with the same title may not match.
 
-Run these commands in PowerShell from the repository root. Replace the input path with your image and choose an output directory that does not already exist:
+For a reproducible example, copy the extracted `sd-card/CINFRAME.GCS` to `C:/ROMs/CINFRAME.GCS`, or replace that example path below with its actual location. You only need the image as input: the converter gets its helpers from the repository.
+
+Run these commands in PowerShell from the repository root. Choose an output directory that does not already exist:
 
 ```powershell
-python tools/convert-cartridge.py "C:/ROMs/DRAGON.GCS" --inspect
-python tools/convert-cartridge.py "C:/ROMs/DRAGON.GCS" --output output/dragon
-python tools/verify-prepared-set.py output/dragon/sd-card/DRAGON.GCS
+python tools/convert-cartridge.py "C:/ROMs/CINFRAME.GCS" --inspect
+python tools/convert-cartridge.py "C:/ROMs/CINFRAME.GCS" --output output/cinframe
+python tools/verify-prepared-set.py output/cinframe/sd-card/CINFRAME.GCS
 ```
 
-1. **Inspect:** the result should list `dragon-beta1` as a match. Matching uses SHA-256, a fingerprint of the file's contents, not its name or size. If there is no match, see [image not recognized](troubleshooting.md#the-converter-does-not-recognize-my-image).
-2. **Assemble:** the second command writes the four `DRAGON` files into `output/dragon/sd-card/`, with a separate `manifest.json` on the computer.
+1. **Inspect:** the result should list `cinframe-beta1` as a match. Matching uses SHA-256, a fingerprint of the file's contents, not its name or size. If there is no match, see [image not recognized](troubleshooting.md#the-converter-does-not-recognize-my-image).
+2. **Assemble:** the second command writes the four `CINFRAME` files into `output/cinframe/sd-card/`, with a separate `manifest.json` on the computer.
 3. **Verify:** the last command should report `"verified": true`. This checks file consistency, not every gameplay sequence.
-4. Copy the four files into a `DRAGON` folder on the card, as shown above. The converter does not supply firmware or `FGMENU.BIN`; obtain those through the installation guide.
+4. Copy the four files into a `CINFRAME` folder on the card, as shown above. The converter does not supply firmware or `FGMENU.BIN`; obtain those through the installation guide.
 
 A differently named BIN with identical bytes can match. A single-BIN RPK is also accepted. For another supported image, supply its input path; the catalog chooses the output name and extension.
 
@@ -80,7 +92,7 @@ These are the output names in the [built-in catalog](../templates/gigacart/beta1
 | Example | Output image | Preparation |
 | --- | --- | --- |
 | Bad Apple variant | `BABUFFER.GCR` | Music/speech choice and predictions |
-| Video | `CINFRAME.GCS` | 128 MB image and predictions |
+| Cinema video | `CINFRAME.GCS` | 128 MB image and predictions |
 | Dragon's Lair | `DRAGON.GCS` | 128 MB image, joystick/keyboard choice and predictions |
 | Games compilation | `GAMES1M.GCR` | Added startup bank; no prediction file |
 | Games compilation | `GAMES2M.GCR` | Added startup bank; no prediction file |

@@ -16,7 +16,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 BASELINE = ROOT / 'release/2.0-beta1-125ms'
 SAMPLES = ROOT / 'templates/gigacart/beta1'
-VERSION = '2.0-beta1-125ms-prepared-r5'
+VERSION = '2.0-beta1-125ms-prepared-r6'
 
 
 def sha(data):
@@ -70,7 +70,7 @@ def package_guides():
     return guides
 
 
-def package(images, output):
+def package(images, output, cartridges=None):
     require(not output.exists(), 'Use a new output directory')
     audit_path = BASELINE / 'evidence/imported/tool-audit/current-six-companion-rebuilds.json'
     audit = json.loads(audit_path.read_text())
@@ -79,6 +79,9 @@ def package(images, output):
     records = audit + additional
     names = [Path(record['image']).stem for record in records]
     require(len(names) == len(set(names)), 'Duplicate cartridge in audits')
+    if cartridges:
+        require(set(cartridges) <= set(names), 'Unknown cartridge selection')
+        records = [record for record in records if Path(record['image']).stem in cartridges]
     provenance = json.loads((BASELINE / 'provenance.json').read_text())
     menu = checked(BASELINE / 'FGMENU.BIN', provenance['artifacts']['FGMENU.BIN'])
     guides = package_guides()
@@ -109,6 +112,8 @@ def package(images, output):
             require(compiled[filename] == data, 'Recipe rebuild differs: ' + filename)
             files['sd-card/' + filename] = data
         files.update(guides)
+        if name == 'CINFRAME':
+            files['CINEMA-CREDITS.md'] = (sample / 'README.md').read_bytes()
         instructions = (
             f'FinalGROM {VERSION} - {name}\n\n'
             'This is a repack of the existing prepared beta set, not a new game revision.\n'
@@ -124,7 +129,6 @@ def package(images, output):
             'for problems. Developer instructions are under guides/development/.\n'
             'Guide-to-guide links work locally; source and template links open GitHub.\n'
             'Existing beta limitations remain; these packages have no new hardware qualification.\n'
-            'This local archive has not been published.\n'
         )
         files['README.txt'] = instructions.encode('utf-8')
         manifest = dict(version=VERSION, cartridge=name, image=record['image'],
@@ -173,9 +177,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--images', type=Path, required=True, help='Directory of exact prepared beta images')
     parser.add_argument('--output', type=Path, required=True, help='New local package directory')
+    parser.add_argument('--cartridge', action='append', help='Package only this basename (repeatable); default: all seven')
     args = parser.parse_args()
     try:
-        package(args.images.resolve(), args.output.resolve())
+        package(args.images.resolve(), args.output.resolve(), args.cartridge)
     except (OSError, ValueError, KeyError, AssertionError, zipfile.BadZipFile) as error:
         parser.exit(2, str(error) + '\n')
 

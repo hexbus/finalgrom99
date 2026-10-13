@@ -2,7 +2,7 @@
 
 [Start here](README.md) Ã‚Â· [Large cartridges](prepared-cartridges.md) Ã‚Â· [Troubleshooting](troubleshooting.md)
 
-This guide is for an existing, working FinalGROM 99. You need a computer with an SD reader, a supported FAT32 SD card, and your user-supplied cartridge images. Full game and video images are not included in this repository. You do not need Python, an assembler, or a hardware programmer.
+This guide is for an existing, working FinalGROM 99. You need a computer with an SD reader, a supported FAT32 SD card, and a cartridge image. Use the [complete Cinema example](prepared-cartridges.md#copy-a-complete-set), or supply your own cartridge images. Full images are not stored in the Git source tree. You do not need Python, an assembler, or a hardware programmer.
 
 Read the [Beta 1 capabilities and limitations](release-notes.md) before upgrading: some original FinalGROM features are not included. Building or initially programming a new board is a separate [developer task](development/building.md).
 
@@ -45,7 +45,7 @@ These steps follow the [original update procedure](../doc/MANUAL.md#how-to-updat
 Put `FGMENU.BIN` in the SD root. Neither `UPDATE.AVR` nor `UPDATE.PLD` should remain there for normal use.
 
 - **Ordinary supported cartridge:** copy its ROM/GROM image files, keeping any matching pair together. Folders are supported.
-- **Complete prepared large cartridge:** copy the image and all its supplied companion files together. Follow the [Dragon's Lair folder example](prepared-cartridges.md#copy-a-complete-set).
+- **Complete prepared large cartridge:** copy the image and all its supplied companion files together. Follow the [Cinema folder example](prepared-cartridges.md#copy-a-complete-set).
 - **Only a large image, without companions:** use the [supported-image walkthrough](prepared-cartridges.md#assemble-a-set-from-a-supported-image). An unknown image needs an adapter before it can run this way.
 
 The complete file-role table is in [Which files go on the card?](prepared-cartridges.md#which-files-go-on-the-card).

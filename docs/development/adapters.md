@@ -16,19 +16,19 @@ The supplied recipes rebuild companions for already-prepared images. They do not
 
 ## Rebuild one example
 
-Run from the repository root with Python 3.9 or newer. This Spaceballs example uses a new working directory and copies your prepared image into it; the source image is left unchanged. Replace `C:/Prepared/SPACE.GCR` with its actual location.
+Run from the repository root with Python 3.9 or newer. This Cinema example uses a new working directory and copies your prepared image into it; the source image is left unchanged. Use `CINFRAME.GCS` from the [complete Cinema download](../prepared-cartridges.md#copy-a-complete-set) and replace `C:/Prepared/CINFRAME.GCS` with its actual location.
 
 ```powershell
-New-Item -ItemType Directory output/space-recipe -ErrorAction Stop
-Copy-Item templates/gigacart/beta1/SPACE/* output/space-recipe/ -Recurse
-New-Item -ItemType Directory output/space-recipe/input
-Copy-Item C:/Prepared/SPACE.GCR output/space-recipe/input/SPACE.GCR
-python tools/build-cooperative-profile.py output/space-recipe/recipe.json `
-  --output output/space-recipe/built
-python tools/build-giga-predict.py output/space-recipe/prediction.json `
-  output/space-recipe/built/SPACE.GPR
-Copy-Item output/space-recipe/input/SPACE.GCR output/space-recipe/built/
-python tools/verify-prepared-set.py output/space-recipe/built/SPACE.GCR
+New-Item -ItemType Directory output/cinframe-recipe -ErrorAction Stop
+Copy-Item templates/gigacart/beta1/CINFRAME/* output/cinframe-recipe/ -Recurse
+New-Item -ItemType Directory output/cinframe-recipe/input
+Copy-Item C:/Prepared/CINFRAME.GCS output/cinframe-recipe/input/CINFRAME.GCS
+python tools/build-cooperative-profile.py output/cinframe-recipe/recipe.json `
+  --output output/cinframe-recipe/built
+python tools/build-giga-predict.py output/cinframe-recipe/prediction.json `
+  output/cinframe-recipe/built/CINFRAME.GPR
+Copy-Item output/cinframe-recipe/input/CINFRAME.GCS output/cinframe-recipe/built/
+python tools/verify-prepared-set.py output/cinframe-recipe/built/CINFRAME.GCS
 ```
 
 Check that each command succeeds before continuing. Use the corresponding directory, basename and extension for another example. Skip the prediction command for GAMES1M and GAMES2M. Do not substitute a stock ROM or another beta revision when an identity check fails.
@@ -36,7 +36,7 @@ Check that each command succeeds before continuing. Use the corresponding direct
 Compare the generated companion hashes with `rebuild.json` before copying the set to SD. This command reports each comparison and stops on a mismatch:
 
 ```powershell
-$work = 'output/space-recipe'
+$work = 'output/cinframe-recipe'
 $expected = Get-Content "$work/rebuild.json" -Raw | ConvertFrom-Json
 foreach ($item in $expected.companions.PSObject.Properties) {
   $actual = (Get-FileHash "$work/built/$($item.Name)" -Algorithm SHA256).Hash
@@ -59,7 +59,7 @@ Each directory under [templates/gigacart/beta1](../../templates/gigacart/beta1/)
 | `rebuild.json` | Expected hashes and verification results |
 | `final/` | Reference GLP/GOV and available GPR outputs |
 
-Recipes refer to `input/NAME.GCR` or `input/NAME.GCS` relative to their own directory. Create that directory in your working copy, as in the example. Full cartridge images are user-supplied; the repository does not include them. Example `input/` and `built/` directories are ignored; `final/` is tracked.
+Recipes refer to `input/NAME.GCR` or `input/NAME.GCS` relative to their own directory. Create that directory in your working copy, as in the example. Use the [Cinema example download](../prepared-cartridges.md#copy-a-complete-set) for CINFRAME; other cartridge images are user-supplied. Full images are not stored in the Git source tree. Example `input/` and `built/` directories are ignored; `final/` is tracked.
 
 ### Example layouts
 
@@ -142,7 +142,7 @@ Export does not recover original-ROM preparation edits. Preserve those and the o
 
 ## Build complete packages
 
-This optional tool builds ZIPs for all seven examples. It requires the user to supply all seven exact prepared images in one directory; it does not include or download those images. Run with Python 3.9 or newer from the repository root:
+This optional tool builds ZIPs for all seven examples by default. It requires the exact prepared images in one directory; it does not download them. Add `--cartridge CINFRAME` to build only the Cinema example, using its downloaded image. For a full seven-example build, supply the other six images too. Run with Python 3.9 or newer from the repository root:
 
 ```powershell
 python tools/package-beta-cartridges.py --images C:/Prepared `

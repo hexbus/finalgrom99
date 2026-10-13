@@ -17,7 +17,7 @@ For an ordinary supported cartridge that fits in memory, you still copy its imag
 
 ## What is included?
 
-**Cartridge images are user-supplied.** The repository includes matched firmware and menu files, source code, tools, and seven adapter examples with their companion files. It does not include full game or video cartridge images. You must supply the exact image required by an example or obtain a complete prepared set separately.
+**Cartridge images are user-supplied**, with one complete example available: [download Cinema and follow the walkthrough](prepared-cartridges.md#copy-a-complete-set). The repository includes matched firmware and menu files, source code, tools, and seven adapter examples with their companion files. Full images are kept outside the Git source tree. For the other examples, supply the exact required image or obtain a complete prepared set separately.
 
 The included catalog recognizes specific prepared image versions. It cannot automatically adapt a different ROM just because the title or filename matches.
 
