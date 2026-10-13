@@ -18,7 +18,7 @@ For development, omit `--verify-release`. Modified inputs are reported and the 2
 
 `tools/firmware-build.json` selects 70 staged inputs and 19 compilation units, with the verified source hashes and compiler/link commands. `tools/source-layout.json` records retained relocations from the frozen source map. The shared `tools/source_layout.py` resolves these inputs, checks frozen metadata and validates the object list. The builder stages the maintained filenames so existing includes resolve. The recipe's `input_renames` maps frozen `cinema-session.inc` to maintained `video-session.inc`; the maintained build uses `FGVIDEO`. Frozen release records retain their original names and flags. Edit maintained sources, not staged copies.
 
-The build needs no archive checkout, ignored references, symlinks or external source paths. `avr/compilation-session.inc` remains required build support. Archived controllers and diagnostics are excluded; historical diagnostic flags are unsupported in this source set. The original 113-input recipe remains frozen evidence and can be reproduced in the reference repository described in [maintainer provenance](preservation.md#reference-repository).
+All maintained build inputs are included in this repository. The original 113-input recipe remains frozen release evidence; use the maintained recipe above for current builds. Historical diagnostic flags are unsupported in this source set.
 
 The portable companion-tool example uses synthetic data only:
 
@@ -27,6 +27,10 @@ python tools/test-cartridge-build-tools.py --output output/companion-example
 ```
 
 Choose a new output directory on each run. Its synthetic image is not executable TI software.
+
+## Required build support
+
+Keep [compilation-session.inc](../avr/compilation-session.inc) and its `prepareCompilation()` wrapper: removing the wrapper changes the generated AVR bytes and prevents exact Beta 1 reproduction. The wrapper itself is absent from the final machine code. Its presence affects the build, but does not establish runtime execution or a behavior difference; the exact compiler decision remains unresolved.
 
 ## CPLD and evidence limits
 

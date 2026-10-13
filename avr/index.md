@@ -24,7 +24,7 @@ These are shared helpers and required support for reproducing the released build
 | [offline-sector.inc](offline-sector.inc) | Sector writer used while the cartridge is offline. |
 | [compilation-session.inc](compilation-session.inc) | Required build support. Retains the wrapper needed for exact Beta 1 bytes and includes the shared sector writer. |
 
-The [compilation-session retention decision](../docs/preservation.md#compilation-session-retention-decision) explains why build-significant support remains even when its wrapper is absent from the final machine code.
+The [build guide](../docs/building.md#required-build-support) explains why build-significant support remains even when its wrapper is absent from the final machine code.
 
 ## Large-cartridge source directories
 
@@ -33,10 +33,6 @@ The [compilation-session retention decision](../docs/preservation.md#compilation
 | [gigacart/](gigacart/index.md) | Added cooperative loader and its shared interfaces. The index covers all 25 source/header files. |
 
 The [maintained recipe](../tools/firmware-build.json) selects build inputs and commands; [source-layout.json](../tools/source-layout.json) resolves relocated inputs. The frozen release manifest remains historical evidence.
-
-## Archived additions
-
-Earlier controllers, the added diagnostics and unused root-level inputs now live in a separate reference repository. See the [archive record](../docs/preservation.md#reference-repository) for recovery and evidence. They are not needed to build the maintained firmware. Historical diagnostic flags are not supported configurations of this source set.
 
 ## Original supporting directories
 

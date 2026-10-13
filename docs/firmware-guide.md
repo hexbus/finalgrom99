@@ -32,13 +32,7 @@ Prediction improves loading opportunities; it does not establish that a bank is 
 
 The [cooperative loader index](../avr/gigacart/index.md) lists every module, header and session helper with its responsibility. Headers define the interfaces and safety requirements. The session `.inc` files join these modules to the loader's shared buffers.
 
-`avr/compilation-session.inc` is **required build support for exact Beta 1 reproduction** and remains in the active sources. Only its obsolete native-compilation routines and header dependency were trimmed; the build-significant wrapper remains. See the [retention decision](preservation.md#compilation-session-retention-decision).
-
-## Earlier approaches and diagnostics
-
-Earlier controllers and diagnostics are preserved in a separate [reference repository](preservation.md#reference-repository). The maintained build excludes them and compiles 19 translation units while reproducing the released AVR bytes. Historical diagnostic flags are outside this maintained configuration.
-
-The frozen recipe records the older input set for provenance. The current [build recipe](../tools/firmware-build.json) is self-contained and does not fetch archived files. **Build significance and runtime execution remain different things**, as the retained compilation wrapper demonstrates.
+The [build guide](building.md#required-build-support) explains why `avr/compilation-session.inc` remains required for exact Beta 1 reproduction.
 
 ## Why the original grom.c is different
 

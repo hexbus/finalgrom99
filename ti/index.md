@@ -41,14 +41,9 @@ The [release source map](../release/2.0-beta1-125ms/source-map.json) records bas
 
 Current bridges become `bridge.bin`, embedded in the cartridge's GLP companion. Players do not copy them separately. The [bridge guide](../docs/beta-cartridge-recipes.md#what-is-bridgebin-and-where-did-it-come-from) explains their operation; [bridge-builds.json](../templates/gigacart/beta1/bridge-builds.json) defines sources and parameters.
 
-## Added diagnostic programs
-
-The four added diagnostic programs and earlier `cinema-boot.a99` helper have moved to the [reference repository](../docs/preservation.md#reference-repository). Their original index, source and audit evidence are preserved there. They are not required by the current menu or seven adapter bridge builds.
-
 ## Build and verification entry points
 
 - **AVR and menu:** follow the [build guide](../docs/building.md#verify-the-baseline). Include `--xdt99` to reassemble and verify the menu.
 - **Seven bridges:** the [bridge rebuild command](../docs/beta-cartridge-recipes.md#what-is-bridgebin-and-where-did-it-come-from) checks outputs against supplied binaries and recipe hashes.
-- **Archived diagnostics:** consult the reference repository; they are outside the maintained build.
 
 Update this index when adding or changing a TI program; keep commands and parameters in the linked guides.

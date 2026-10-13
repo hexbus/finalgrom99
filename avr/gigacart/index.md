@@ -31,5 +31,5 @@ Headers define interfaces and caller preconditions.
 
 | File | Responsibility |
 | --- | --- |
-| [giga-cache.h](giga-cache.h) | Shared cache status definitions used by the resumable cache. The earlier implementation is preserved in the [reference repository](../../docs/preservation.md#reference-repository). |
+| [giga-cache.h](giga-cache.h) | Shared cache status definitions used by the resumable cache. |
 | [giga-status.h](giga-status.h) | Format error messages for the menu status field. |

@@ -20,7 +20,7 @@ Each example specifies the required image identity, SRAM layout and companion fi
 
 The compilation images include an extra 8 KiB bank; their filenames do not specify their exact byte lengths. BABUFFER and CINFRAME have empty runtime patch lists because these recipes expect images already containing the required cooperation. An empty list is not a generic adaptation for another video or game.
 
-Use the filenames and extensions shown above when following the examples. Dragon's Lair produces a `DRAGON.GCS` set. [Historical provenance](preservation.md#release-and-cartridge-provenance) records the source sets and verification evidence.
+Use the filenames and extensions shown above when following the examples. Dragon's Lair produces a `DRAGON.GCS` set. Each example's `rebuild.json` records its image and companion hashes.
 
 ## Converter adapters
 
@@ -112,7 +112,7 @@ The recipe and prediction compilers plus the verifier are included in this repos
 
 ## Verification and hardware status
 
-All seven companion rebuilds match their recorded reference hashes; see [verification provenance](preservation.md#release-and-cartridge-provenance). All seven startup bridges reproduce from the included assembly sources. The converter has also been checked against all seven exact images and produces the matching companion files.
+All seven companion rebuilds match their recorded reference hashes; see the [six-example audit](../release/2.0-beta1-125ms/evidence/imported/tool-audit/current-six-companion-rebuilds.json) and [Dragon's Lair audit](../templates/gigacart/beta1/additional-companion-rebuilds.json). All seven startup bridges reproduce from the included assembly sources. The converter has also been checked against all seven exact images and produces the matching companion files.
 
 These checks establish file identity. Hardware observations and unresolved issues are recorded in [release notes](release-notes.md) and the [beta feedback log](beta-feedback.md). In particular, the Dragon's Lair development report describes **very slight stutter**, while a separate tester reports heavier jitter. See the [playback reports](beta-feedback.md#dragons-lair-playback-reports) for the distinction.
 
