@@ -1,12 +1,11 @@
-FinalGROM 99
-============
+# FinalGROM 99
 
 The *TI 99/4A FinalGROM Cartridge*, or FinalGROM 99 for short, is a
 cartridge for the TI 99/4A home computer that allows you to run ROM and GROM
 cartridge images from an SD card.  It succeeds the [FlashROM 99][3] released
 in 2016.
 
-![The FinalGROM 99 Cartridge](/doc/finalgrom99.jpg)
+![The FinalGROM 99 Cartridge](doc/finalgrom99.jpg)
 
 The FinalGROM 99 supports ROM images, GROM images, and mixed images of up to
 1 MB in size that use the write-to-ROM bank switching scheme.  The cartridge
@@ -14,16 +13,38 @@ does not require the Peripheral Expansion Box and runs on both PAL and NTSC
 consoles, including modified consoles with an F18A.  It will also run on
 v2.2 consoles and enables those to run ROM-only programs.
 
-The cartridge offers some advanced modes that provide RAM and GRAM to
-programs.  It also allows a running program to reload another program from
-SD card or to dump its state to SD card.  All firmware of the FinalGROM 99
-can be updated by SD card.
+The 2.0 beta retains Mini Memory's 4 KiB cartridge RAM.  The original
+larger RAM/GRAM modes and program-controlled reload/dump facilities are not
+included in this beta; see [release notes](docs/release-notes.md) for the
+full feature list and limitations.  Firmware can be updated by SD card.
 
 The FinalGROM 99 is released as Open Source Hardware under the
 [CERN OHL license][5] and the [GNU GPL license][6].  Both hardware design
 files and firmware sources are available on [GitHub][2].
 
 The project homepage with detailed instructions is located at [GitHub][1].
+
+
+FinalGROM 2.0 beta
+-----------------
+
+This repository contains the **2.0 Beta 1 firmware with a 125 ms startup
+delay**, based on the original FinalGROM 99 project.  It adds support for
+selected prepared cartridges larger than the board's 1 MiB of SRAM,
+including 128 MiB images, by loading banks from SD as needed.  Ordinary
+supported ROM/GROM images continue to use the normal loading path.
+
+Large cartridges require an adaptation for the exact image revision;
+renaming an arbitrary ROM is not sufficient.  Keep the SD card inserted
+while a prepared cartridge is running.  This is beta firmware, with known
+limitations and further compatibility testing needed.
+
+- [Release notes and known issues](docs/release-notes.md)
+- [Preparing and copying large cartridges](docs/cartridge-preparation.md)
+- [Supported adapter examples, including Dragon's Lair](docs/beta-cartridge-recipes.md)
+- [Building and verifying the firmware](docs/building.md)
+- [Firmware architecture](docs/firmware-guide.md) and [companion formats](docs/cartridge-formats.md)
+- File indexes: [AVR firmware](avr/index.md), [TI assembly](ti/index.md) and [host tools](tools/index.md)
 
 
 Using the FinalGROM 99
@@ -45,11 +66,13 @@ When you descend into a folder, the FinalGROM will reload its contents from
 the SD card.  To go back up to the parent folder, select the special folder
 `/ ..`.
 
-![Image selection](/doc/selection.png)
+![Image selection](doc/selection.png)
 
 Select the image you want to run.  The screen will show a loader animation
 while the image loads.  Once the image has been loaded, it will start
-automatically.  The SD card is now no longer required and may be removed.
+automatically.  For ordinary images loaded entirely into SRAM, the SD card
+is no longer required and may be removed.  Prepared large cartridges keep
+loading banks during execution, so their SD card must remain inserted.
 
 If only one image is found on the SD card, it is loaded immediately without
 the need to select it first.  This method ensures maximum compatibility.
@@ -105,7 +128,7 @@ LED.  For bright, red LEDs, 330 Ohm is a suitable value.
 Both LED and push buttons are through-hole components, so that they can be
 mounted on a cartridge shell and connected by wires to the board.
 
-![Parts Placement](/doc/placement.jpg)
+![Parts Placement](doc/placement.jpg)
 
 For the SD socket, you need a socket that has two little nubs at the bottom
 of the socket.  Your best source for these is eBay, but check the pictures
@@ -114,12 +137,12 @@ readily available online.  Make sure to pick a module that matches the
 pin-out of the reference module shown below.  Note that the 5V input is not
 used, so potential substitutes must be powered by 3.3V.
 
-![SD socket](/doc/sdsocket.jpg)
+![SD socket](doc/sdsocket.jpg)
 
 With some work, the FinalGROM 99 can be mounted in a standard TI 99
 cartridge shell.
 
-![Mounted in Cartridge Shell](/doc/cartshell.jpg)
+![Mounted in Cartridge Shell](doc/cartshell.jpg)
 
 Please note that I don't offer carts, boards, or parts myself.
 
@@ -131,69 +154,38 @@ folder contains the microcontroller logic for accessing the SD card,
 generating the image browser, loading the selected image, and controlling
 the CPLD.  The included bootloader enables firmware updates from an SD card.
 
-The `ti/` folder contains TI 99 assembly sources for the image browser, the
-GPL wrapper, and the help viewer.  The assembled machine code is embedded in
-the microcontroller and loaded into RAM during operation.
+The `ti/` folder contains TI 99 assembly sources for the image browser,
+GPL wrapper and prepared-cartridge startup helpers.  The menu machine code
+is loaded into RAM during operation; cartridge startup helpers are included
+in the prepared cartridge's companion files.  The [TI source index](ti/index.md)
+identifies original, modified and added programs and their build roles.
 
-To build the software, first run the `make.py` script in the `ti` folder.
-You will need both `xas99` and `xga99` assemblers from the [xdt Suite][4] to
-assemble the sources.  The script will also convert the generated machine
-code into C code for the microcintroller.
+Build the 2.0 application from the repository root:
 
-    $ cd ti/
-    $ ./make.py
+    python tools/build-firmware.py --verify-release --xdt99 C:/tools/xdt99
 
-The next step is to compile the microcontroller and bootloader code in
-`avr/`.  The included `Makefile`s make the compilation trivial:
+Replace the example path with the [xdt Suite][4] directory containing
+`xas99.py`.  The [build guide](docs/building.md) lists compiler requirements,
+output files and verification steps.  The current AVR Makefile delegates
+to this builder.  The original `ti/make.py` and application/bootloader
+packaging sequence is not the 2.0 release build procedure.
 
-    $ cd avr/
-    $ make
-    $ cd boot/
-    $ make
+The application builder does not install a bootloader or program a new
+board.  Initial board programming requires a suitable bootloader and the
+ATmega 328P's 8 MHz clock configuration; retain the original hardware setup
+instructions on the [project homepage][1].  This beta uses the existing
+board and clock frequency.
 
-The last build yields a `package.hex` file containing both machine code
-and bootloader.  You can flash the file to the ATmega 328P using
-[`avrdude`][8] or any other programmer:
+For an existing programmed board, the AVR bootloader accepts `UPDATE.AVR`
+from SD without replacing itself.  Use the matched AVR, CPLD and
+`FGMENU.BIN` identified by the
+[release manifest](release/2.0-beta1-125ms/provenance.json).
 
-    $ avrdude -p m328p -P /dev/ttyACM0 -c stk500 -U flash:w:package.hex
-
-Additionally, you need to program the lower fuse bits of the 328P so that it
-runs at 8 Mhz:
-
-    $ avrdude -p m328p -P /dev/ttyACM0 -c stk500 -U lfuse:w:0xe2:m
-
-If you're using a different tool chain make sure to set `CKSEL3..0` in the
-lower fuse byte to `0100`.  (Note that `0` means "programmed"/checked, and
-`1` means "unprogrammed"/unchecked).
-
-You can verify that you're running at the right clock speed by resetting
-the FinalGROM 99 with no SD card inserted: The LED should blink about once
-per second.
-
-For future updates, you may copy the file `UPDATE.AVR` generated by the
-first make in `avr/` to an SD card and start the FinalGROM 99 with it.  This
-procedure will update the microcontroller similar to `avrdude`, but it does
-not touch the bootloader.
-
-Programming the CPLD requires the Xilinx [ISE 14.7 Web Pack][9] to generate
-a JEDEC file or an XSVF file.  ISE Web Pack is freely available for Windows
-and Linux.  After the installation, open ISE and open the project in
-`vhdl/`.  Click on the little green arrow next to the process window to
-generate a JEDED file.
-
-The microcontroller contains an XSVF player to program the CPLD without JTAG
-cable.  Generate the necessary XSVF file from the JEDED file by running (you
-may have to adjust the path in `impact-batch`)
-
-    $ cd vhdl/src
-	$ ./impact-batch fg99-xsvf
-
-Copy the resulting `.XSVF` file as `UPDATE.PLD` to an SD card and start the
-FinalGROM 99 with it.  The cart will program the CPLD just like a JTAG cable
-would do.
-
-Once microcontroller and CPLD have been programmed, the assembled FinalGROM
-99 is ready to use.
+The 2.0 CPLD sources and constraints are in `vhdl/gigacart/`; the original
+basic CPLD sources remain available for reference.  Generating a new CPLD
+fit requires Xilinx [ISE 14.7][9].  Follow the [CPLD build notes](docs/building.md#cpld-and-evidence-limits)
+for the correct device and source set.  The AVR's XSVF player programs the
+CPLD from an `UPDATE.PLD` file on SD without a separate JTAG cable.
 
 
 About the Project
