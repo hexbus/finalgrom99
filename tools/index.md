@@ -1,6 +1,6 @@
 # Tools index
 
-These programs run on the development computer. Start with [cartridge preparation](../docs/cartridge-preparation.md) to prepare an SD folder, the [build guide](../docs/building.md) to build firmware, or the [recipe examples](../docs/beta-cartridge-recipes.md) to develop an adapter.
+These programs run on the development computer. Start with [cartridge preparation](../docs/prepared-cartridges.md) to prepare an SD folder, the [build guide](../docs/development/building.md) to build firmware, or the [recipe examples](../docs/development/adapters.md) to develop an adapter.
 
 There are **four unchanged upstream utilities and 17 added tools or support files**. Origin follows the [TI index's upstream reference and definitions](../ti/index.md#how-origin-is-classified); it does not establish sole authorship or hardware compatibility.
 
@@ -17,7 +17,7 @@ These unchanged utilities retain Python 2 syntax; the added preparation tools us
 
 ## Added cartridge preparation tools
 
-These tools require a reviewed adaptation; they cannot adapt an arbitrary ROM automatically. See [templates](../templates/gigacart/README.md) for editable inputs and [cartridge formats](../docs/cartridge-formats.md) for binary layouts.
+These tools require a reviewed adaptation; they cannot adapt an arbitrary ROM automatically. See [templates](../templates/gigacart/README.md) for editable inputs and [cartridge formats](../docs/reference/file-formats.md) for binary layouts.
 
 | File | Input and result |
 | --- | --- |
@@ -34,7 +34,7 @@ These tools require a reviewed adaptation; they cannot adapt an arbitrary ROM au
 
 ## Added firmware build and verification tools
 
-Use the [build guide](../docs/building.md) for prerequisites and commands. The snapshot helpers support the main builder; most developers should start with `build-firmware.py`.
+Use the [build guide](../docs/development/building.md) for prerequisites and commands. The snapshot helpers support the main builder; most developers should start with `build-firmware.py`.
 
 | File | Role |
 | --- | --- |
@@ -44,6 +44,6 @@ Use the [build guide](../docs/building.md) for prerequisites and commands. The s
 | [verify-baseline.py](verify-baseline.py) | Check frozen release artifacts and mapped source hashes without compiling. |
 | [source_layout.py](source_layout.py) | Shared path-resolution module used by the builder and baseline verifier. |
 | [source-layout.json](source-layout.json) | Map retained relocated inputs to their maintained paths. |
-| [firmware-build.json](firmware-build.json) | Maintained input hashes and compiler/link commands, targeting exact Beta 1 bytes without archived sources. See the [build guide](../docs/building.md#verify-the-baseline). |
+| [firmware-build.json](firmware-build.json) | Maintained input hashes and compiler/link commands, targeting exact Beta 1 bytes without archived sources. See the [build guide](../docs/development/building.md#verify-the-baseline). |
 
 Generated files belong under ignored `output/`; update this index when adding a tool.

@@ -39,12 +39,12 @@ renaming an arbitrary ROM is not sufficient.  Keep the SD card inserted
 while a prepared cartridge is running.  This is beta firmware, with known
 limitations and further compatibility testing needed.
 
-- [Release notes and known issues](docs/release-notes.md)
-- [Preparing and copying large cartridges](docs/cartridge-preparation.md)
-- [Supported adapter examples, including Dragon's Lair](docs/beta-cartridge-recipes.md)
-- [Building and verifying the firmware](docs/building.md)
-- [Firmware architecture](docs/firmware-guide.md) and [companion formats](docs/cartridge-formats.md)
-- File indexes: [AVR firmware](avr/index.md), [TI assembly](ti/index.md) and [host tools](tools/index.md)
+**New to 2.0? Start with the [documentation guide](docs/README.md).**
+
+- [Install and play](docs/getting-started.md): update an existing board and run a cartridge.
+- [Set up a large cartridge](docs/prepared-cartridges.md): copy a prepared set or attach companions to a supported image.
+- [Troubleshooting](docs/troubleshooting.md) and [Beta 1 limitations](docs/release-notes.md).
+- [Developer guides](docs/README.md#for-developers): adapters, firmware builds, architecture and formats.
 
 
 Using the FinalGROM 99
@@ -165,7 +165,7 @@ Build the 2.0 application from the repository root:
     python tools/build-firmware.py --verify-release --xdt99 C:/tools/xdt99
 
 Replace the example path with the [xdt Suite][4] directory containing
-`xas99.py`.  The [build guide](docs/building.md) lists compiler requirements,
+`xas99.py`.  The [build guide](docs/development/building.md) lists compiler requirements,
 output files and verification steps.  The current AVR Makefile delegates
 to this builder.  The original `ti/make.py` and application/bootloader
 packaging sequence is not the 2.0 release build procedure.
@@ -183,7 +183,7 @@ from SD without replacing itself.  Use the matched AVR, CPLD and
 
 The 2.0 CPLD sources and constraints are in `vhdl/gigacart/`; the original
 basic CPLD sources remain available for reference.  Generating a new CPLD
-fit requires Xilinx [ISE 14.7][9].  Follow the [CPLD build notes](docs/building.md#cpld-and-evidence-limits)
+fit requires Xilinx [ISE 14.7][9].  Follow the [CPLD build notes](docs/development/building.md#cpld-build-and-verification)
 for the correct device and source set.  The AVR's XSVF player programs the
 CPLD from an `UPDATE.PLD` file on SD without a separate JTAG cable.
 

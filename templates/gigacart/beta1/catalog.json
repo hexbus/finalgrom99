@@ -23,8 +23,8 @@
           "sha256": "1ab7d4270d533bcaea2b3b9eb28431dbba72af1972a58182cb06150f484e69b9"
         }
       },
-      "requirements": "Matched FinalGROM 2.0 Beta 1 125 ms AVR/CPLD and FGMENU.BIN. Supply the exact image identified by input_sha256; see docs/cartridge-preparation.md.",
-      "evidence": "Companion rebuilds match BABUFFER/rebuild.json. Existing hardware observations and unresolved issues: docs/beta-feedback.md and docs/beta-cartridge-recipes.md. No new hardware qualification.",
+      "requirements": "Matched FinalGROM 2.0 Beta 1 125 ms AVR/CPLD and FGMENU.BIN. Supply the exact image identified by input_sha256; see docs/prepared-cartridges.md.",
+      "evidence": "Companion rebuilds match BABUFFER/rebuild.json. Existing hardware observations and unresolved issues: docs/reference/test-reports.md and docs/development/adapters.md. No new hardware qualification.",
       "input_scope": "Exact preserved beta image bytes; arbitrary stock ROM revisions are not supported.",
       "example": "BABUFFER/recipe.json"
     },
@@ -50,8 +50,8 @@
           "sha256": "12ac813b8a1ca75bb3485889c0fed7ee65670bd181adfaf14d569aab59526fae"
         }
       },
-      "requirements": "Matched FinalGROM 2.0 Beta 1 125 ms AVR/CPLD and FGMENU.BIN. Supply the exact image identified by input_sha256; see docs/cartridge-preparation.md.",
-      "evidence": "Companion rebuilds match CINFRAME/rebuild.json. Existing hardware observations and unresolved issues: docs/beta-feedback.md and docs/beta-cartridge-recipes.md. No new hardware qualification.",
+      "requirements": "Matched FinalGROM 2.0 Beta 1 125 ms AVR/CPLD and FGMENU.BIN. Supply the exact image identified by input_sha256; see docs/prepared-cartridges.md.",
+      "evidence": "Companion rebuilds match CINFRAME/rebuild.json. Existing hardware observations and unresolved issues: docs/reference/test-reports.md and docs/development/adapters.md. No new hardware qualification.",
       "input_scope": "Exact preserved beta image bytes; arbitrary stock ROM revisions are not supported.",
       "example": "CINFRAME/recipe.json"
     },
@@ -77,8 +77,8 @@
           "sha256": "7a31ce094319382240d3da17f88af10dfde86f59f0012f4068b0004e9907759b"
         }
       },
-      "requirements": "Matched FinalGROM 2.0 Beta 1 125 ms AVR/CPLD and FGMENU.BIN. Supply the exact image identified by input_sha256; see docs/cartridge-preparation.md.",
-      "evidence": "Companion rebuilds match DRAGON/rebuild.json. Existing hardware observations and unresolved issues: docs/beta-feedback.md and docs/beta-cartridge-recipes.md. No new hardware qualification.",
+      "requirements": "Matched FinalGROM 2.0 Beta 1 125 ms AVR/CPLD and FGMENU.BIN. Supply the exact image identified by input_sha256; see docs/prepared-cartridges.md.",
+      "evidence": "Companion rebuilds match DRAGON/rebuild.json. Existing hardware observations and unresolved issues: docs/reference/test-reports.md and docs/development/adapters.md. No new hardware qualification.",
       "input_scope": "Exact preserved beta image bytes; arbitrary stock ROM revisions are not supported.",
       "example": "DRAGON/recipe.json"
     },
@@ -100,8 +100,8 @@
           "sha256": "74b96ae856387aa83333cc3f9b4a89d1afe0b2243d5699624cf89c401a9e3f4d"
         }
       },
-      "requirements": "Matched FinalGROM 2.0 Beta 1 125 ms AVR/CPLD and FGMENU.BIN. Supply the exact image identified by input_sha256; see docs/cartridge-preparation.md.",
-      "evidence": "Companion rebuilds match GAMES1M/rebuild.json. Existing hardware observations and unresolved issues: docs/beta-feedback.md and docs/beta-cartridge-recipes.md. No new hardware qualification.",
+      "requirements": "Matched FinalGROM 2.0 Beta 1 125 ms AVR/CPLD and FGMENU.BIN. Supply the exact image identified by input_sha256; see docs/prepared-cartridges.md.",
+      "evidence": "Companion rebuilds match GAMES1M/rebuild.json. Existing hardware observations and unresolved issues: docs/reference/test-reports.md and docs/development/adapters.md. No new hardware qualification.",
       "input_scope": "Exact preserved beta image bytes; arbitrary stock ROM revisions are not supported.",
       "example": "GAMES1M/recipe.json"
     },
@@ -123,8 +123,8 @@
           "sha256": "fbd33793ea905b7033c5305963d6e6aa4d327e09916a029baff24416034f605d"
         }
       },
-      "requirements": "Matched FinalGROM 2.0 Beta 1 125 ms AVR/CPLD and FGMENU.BIN. Supply the exact image identified by input_sha256; see docs/cartridge-preparation.md.",
-      "evidence": "Companion rebuilds match GAMES2M/rebuild.json. Existing hardware observations and unresolved issues: docs/beta-feedback.md and docs/beta-cartridge-recipes.md. No new hardware qualification.",
+      "requirements": "Matched FinalGROM 2.0 Beta 1 125 ms AVR/CPLD and FGMENU.BIN. Supply the exact image identified by input_sha256; see docs/prepared-cartridges.md.",
+      "evidence": "Companion rebuilds match GAMES2M/rebuild.json. Existing hardware observations and unresolved issues: docs/reference/test-reports.md and docs/development/adapters.md. No new hardware qualification.",
       "input_scope": "Exact preserved beta image bytes; arbitrary stock ROM revisions are not supported.",
       "example": "GAMES2M/recipe.json"
     },
@@ -150,8 +150,8 @@
           "sha256": "8b382a3d6de50f2d3fec5136ecac44602375ef2ca414f92793b7e633ac1fc1ce"
         }
       },
-      "requirements": "Matched FinalGROM 2.0 Beta 1 125 ms AVR/CPLD and FGMENU.BIN. Supply the exact image identified by input_sha256; see docs/cartridge-preparation.md.",
-      "evidence": "Companion rebuilds match SPACE/rebuild.json. Existing hardware observations and unresolved issues: docs/beta-feedback.md and docs/beta-cartridge-recipes.md. No new hardware qualification.",
+      "requirements": "Matched FinalGROM 2.0 Beta 1 125 ms AVR/CPLD and FGMENU.BIN. Supply the exact image identified by input_sha256; see docs/prepared-cartridges.md.",
+      "evidence": "Companion rebuilds match SPACE/rebuild.json. Existing hardware observations and unresolved issues: docs/reference/test-reports.md and docs/development/adapters.md. No new hardware qualification.",
       "input_scope": "Exact preserved beta image bytes; arbitrary stock ROM revisions are not supported.",
       "example": "SPACE/recipe.json"
     },
@@ -177,8 +177,8 @@
           "sha256": "153b8031ed53039eb8f274561d19c388cabfa592b6c91d006ad23c53a030021c"
         }
       },
-      "requirements": "Matched FinalGROM 2.0 Beta 1 125 ms AVR/CPLD and FGMENU.BIN. Supply the exact image identified by input_sha256; see docs/cartridge-preparation.md.",
-      "evidence": "Companion rebuilds match STLSRV2/rebuild.json. Existing hardware observations and unresolved issues: docs/beta-feedback.md and docs/beta-cartridge-recipes.md. No new hardware qualification.",
+      "requirements": "Matched FinalGROM 2.0 Beta 1 125 ms AVR/CPLD and FGMENU.BIN. Supply the exact image identified by input_sha256; see docs/prepared-cartridges.md.",
+      "evidence": "Companion rebuilds match STLSRV2/rebuild.json. Existing hardware observations and unresolved issues: docs/reference/test-reports.md and docs/development/adapters.md. No new hardware qualification.",
       "input_scope": "Exact preserved beta image bytes; arbitrary stock ROM revisions are not supported.",
       "example": "STLSRV2/recipe.json"
     }

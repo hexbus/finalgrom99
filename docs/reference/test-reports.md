@@ -1,6 +1,10 @@
-# Beta 1 hardware feedback
+# Beta 1 test reports
 
-This log preserves tester observations and open questions. Reports are evidence of behavior on the stated setup, not controlled comparisons or proof of a root cause. See [release notes](release-notes.md) for the overall release status.
+[Start here](../README.md) · [Known playback issues](../troubleshooting.md#known-playback-issues) · [Report a problem](../troubleshooting.md#report-a-problem)
+
+This is the detailed evidence behind the player-facing issue summary. Read it when comparing a particular report or investigating a cause. A reported success describes the stated setup and test scope; it is not a complete compatibility certification. Hypotheses below remain separate from observed results.
+
+The [release notes](../release-notes.md) describe feature support. File rebuild results are described in [adapter verification](../development/adapters.md#verification-and-hardware-status).
 
 ## Lapo Serafini: PAL console report
 
@@ -62,4 +66,4 @@ The supplied Beta 1 package was reported to be the same in both cases; the insta
 
 Requested follow-up testing uses a freshly formatted FAT32 card, possibly a second card type, matching companions including GPR, and the supplied menu. Let FinalGROM rebuild GIR/GIS indexes for the destination card. Confirm both firmware versions and compare the same intro or gameplay sequence; Spaceballs and other video playback provide additional comparison points. Results remain pending.
 
-The development report attributes continued correct gameplay to the overlay's waits. Cooperative software requests and waits are part of this preparation, but that observation does not establish physical TI READY wait-state control. The contribution of SD access, card layout, prediction or other causes to individual pauses remains unresolved. [Companion rebuild checks](beta-cartridge-recipes.md#verification-and-hardware-status) establish file identity, not playback latency.
+The development report attributes continued correct gameplay to the overlay's waits. Cooperative software requests and waits are part of this preparation, but that observation does not establish physical TI READY wait-state control. The contribution of SD access, card layout, prediction or other causes to individual pauses remains unresolved. [Companion rebuild checks](../development/adapters.md#verification-and-hardware-status) establish file identity, not playback latency.

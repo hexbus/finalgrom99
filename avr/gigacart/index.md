@@ -1,6 +1,6 @@
 # Cooperative loader source index
 
-These **25 files were added after the upstream reference** in the [TI index](../../ti/index.md#how-origin-is-classified). For runtime and retained-input status, read the [firmware guide](../../docs/firmware-guide.md). For staging and compilation, read the [build guide](../../docs/building.md). Other sources are in the [AVR index](../index.md).
+These **25 files were added after the upstream reference** in the [TI index](../../ti/index.md#how-origin-is-classified). For runtime and retained-input status, read the [firmware guide](../../docs/development/architecture.md). For staging and compilation, read the [build guide](../../docs/development/building.md). Other sources are in the [AVR index](../index.md).
 
 ## Session entry and control
 

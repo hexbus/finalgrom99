@@ -39,11 +39,11 @@ The [release source map](../release/2.0-beta1-125ms/source-map.json) records bas
 | [player-boot-mailbox.a99](player-boot-mailbox.a99) | Restores scratchpad state and waits in RAM for the starting bank; optional music/speech chooser. | BABUFFER, CINFRAME, GAMES1M, GAMES2M, SPACE and STLSRV2 bridges. |
 | [dragon-choice.a99](dragon-choice.a99) | Dragon's Lair chooser and startup bridge. | DRAGON uses `MAILBOX=1`. The default non-mailbox variant is an earlier path. |
 
-Current bridges become `bridge.bin`, embedded in the cartridge's GLP companion. Players do not copy them separately. The [bridge guide](../docs/beta-cartridge-recipes.md#what-is-bridgebin-and-where-did-it-come-from) explains their operation; [bridge-builds.json](../templates/gigacart/beta1/bridge-builds.json) defines sources and parameters.
+Current bridges become `bridge.bin`, embedded in the cartridge's GLP companion. Players do not copy them separately. The [bridge guide](../docs/development/adapters.md#what-is-bridgebin) explains their operation; [bridge-builds.json](../templates/gigacart/beta1/bridge-builds.json) defines sources and parameters.
 
 ## Build and verification entry points
 
-- **AVR and menu:** follow the [build guide](../docs/building.md#verify-the-baseline). Include `--xdt99` to reassemble and verify the menu.
-- **Seven bridges:** the [bridge rebuild command](../docs/beta-cartridge-recipes.md#what-is-bridgebin-and-where-did-it-come-from) checks outputs against supplied binaries and recipe hashes.
+- **AVR and menu:** follow the [build guide](../docs/development/building.md#verify-the-baseline). Include `--xdt99` to reassemble and verify the menu.
+- **Seven bridges:** the [bridge rebuild command](../docs/development/adapters.md#what-is-bridgebin) checks outputs against supplied binaries and recipe hashes.
 
 Update this index when adding or changing a TI program; keep commands and parameters in the linked guides.

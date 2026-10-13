@@ -8,13 +8,15 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+import re
+from urllib.parse import quote, urlsplit
 import zipfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
 BASELINE = ROOT / 'release/2.0-beta1-125ms'
 SAMPLES = ROOT / 'templates/gigacart/beta1'
-VERSION = '2.0-beta1-125ms-prepared-r4'
+VERSION = '2.0-beta1-125ms-prepared-r5'
 
 
 def sha(data):
@@ -43,6 +45,31 @@ def load_tool(name):
     return module
 
 
+def package_guides():
+    """Keep guide links local; link source references to the public repository."""
+    docs = ROOT / 'docs'
+    guides = {}
+    for path in sorted(docs.rglob('*.md')):
+        def link(match):
+            target = match.group(1)
+            parsed = urlsplit(target)
+            if parsed.scheme or parsed.netloc or not parsed.path:
+                return match.group(0)
+            resolved = (path.parent / parsed.path).resolve()
+            require(resolved.is_relative_to(ROOT) and resolved.exists(),
+                    'Missing guide reference: ' + str(path) + ': ' + target)
+            if resolved.is_relative_to(docs):
+                return match.group(0)
+            kind = 'tree' if resolved.is_dir() else 'blob'
+            relative = quote(resolved.relative_to(ROOT).as_posix())
+            suffix = ('#' + parsed.fragment) if parsed.fragment else ''
+            return f'](https://github.com/hexbus/finalgrom99/{kind}/beta1/{relative}{suffix})'
+        text = re.sub(r'\]\(([^)]+)\)', link, path.read_text(encoding='utf-8'))
+        guides['guides/' + path.relative_to(docs).as_posix()] = text.encode('utf-8')
+    require('guides/README.md' in guides, 'Missing guide entry point')
+    return guides
+
+
 def package(images, output):
     require(not output.exists(), 'Use a new output directory')
     audit_path = BASELINE / 'evidence/imported/tool-audit/current-six-companion-rebuilds.json'
@@ -54,8 +81,7 @@ def package(images, output):
     require(len(names) == len(set(names)), 'Duplicate cartridge in audits')
     provenance = json.loads((BASELINE / 'provenance.json').read_text())
     menu = checked(BASELINE / 'FGMENU.BIN', provenance['artifacts']['FGMENU.BIN'])
-    guides = {f'guides/{name}.md': (ROOT / f'docs/{name}.md').read_bytes()
-              for name in ('cartridge-preparation', 'release-notes', 'beta-cartridge-recipes', 'beta-feedback')}
+    guides = package_guides()
     # Check all inputs before creating any packages, including fresh recipe rebuilds.
     payloads = []
     for record in records:
@@ -93,9 +119,10 @@ def package(images, output):
             f'Select {record["image"]} in FinalGROM. It creates its own card-location index.\n'
             'No GIR/GIS/BIX files are included; do not copy those from another card.\n'
             'Keep manifest.json, CHECKSUMS.sha256, this file and guides on your computer.\n\n'
-            'Start with guides/cartridge-preparation.md for the plain-English walkthrough.\n'
-            'See guides/release-notes.md for limitations and guides/beta-cartridge-recipes.md\n'
-            'for recipe and bridge explanations. Recipe sources and tools are in the repository.\n'
+            'Start with guides/README.md, then guides/getting-started.md to install and play.\n'
+            'See guides/prepared-cartridges.md for the files and guides/troubleshooting.md\n'
+            'for problems. Developer instructions are under guides/development/.\n'
+            'Guide-to-guide links work locally; source and template links open GitHub.\n'
             'Existing beta limitations remain; these packages have no new hardware qualification.\n'
             'This local archive has not been published.\n'
         )

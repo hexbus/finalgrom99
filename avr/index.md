@@ -1,6 +1,6 @@
 # AVR source index
 
-This is the microcontroller firmware. Read the [firmware guide](../docs/firmware-guide.md) for the runtime and the [build guide](../docs/building.md) for compilation. Origin follows the [TI index's upstream reference and definitions](../ti/index.md#how-origin-is-classified). Retained or compiled files are not necessarily active; see [release notes](../docs/release-notes.md) for supported behavior.
+This is the microcontroller firmware. Read the [firmware guide](../docs/development/architecture.md) for the runtime and the [build guide](../docs/development/building.md) for compilation. Origin follows the [TI index's upstream reference and definitions](../ti/index.md#how-origin-is-classified). Retained or compiled files are not necessarily active; see [release notes](../docs/release-notes.md) for supported behavior.
 
 ## Original files at the directory root
 
@@ -24,7 +24,7 @@ These are shared helpers and required support for reproducing the released build
 | [offline-sector.inc](offline-sector.inc) | Sector writer used while the cartridge is offline. |
 | [compilation-session.inc](compilation-session.inc) | Required build support. Retains the wrapper needed for exact Beta 1 bytes and includes the shared sector writer. |
 
-The [build guide](../docs/building.md#required-build-support) explains why build-significant support remains even when its wrapper is absent from the final machine code.
+The [build guide](../docs/development/building.md#required-build-support) explains why build-significant support remains even when its wrapper is absent from the final machine code.
 
 ## Large-cartridge source directories
 
@@ -45,4 +45,4 @@ These supporting directories predate 2.0 and remain in the maintained tree.
 | [jtag/](jtag/) | CPLD programming support. [micro.c](jtag/micro.c) and [ports.c](jtag/ports.c) are modified; [lenval.c](jtag/lenval.c) and all three headers are unchanged. |
 | [test/](test/) | Unchanged host harness: [Makefile](test/Makefile), [sim.c](test/sim.c), [mocktypes.h](test/mocktypes.h), [loader.c](test/loader.c), [menu.c](test/menu.c) and [help.c](test/help.c). Preservation is not a claim of a fresh test run. |
 
-Keep this index current when adding or moving files. Commands belong in the [build guide](../docs/building.md); runtime explanations belong in the [firmware guide](../docs/firmware-guide.md).
+Keep this index current when adding or moving files. Commands belong in the [build guide](../docs/development/building.md); runtime explanations belong in the [firmware guide](../docs/development/architecture.md).
