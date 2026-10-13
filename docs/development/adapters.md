@@ -59,11 +59,11 @@ Each directory under [templates/gigacart/beta1](../../templates/gigacart/beta1/)
 | `rebuild.json` | Expected hashes and verification results |
 | `final/` | Reference GLP/GOV and available GPR outputs |
 
-Recipes refer to `input/NAME.GCR` or `input/NAME.GCS` relative to their own directory. Create that directory in your working copy, as in the example. Full images are supplied separately. Example `input/` and `built/` directories are ignored; `final/` is tracked.
+Recipes refer to `input/NAME.GCR` or `input/NAME.GCS` relative to their own directory. Create that directory in your working copy, as in the example. Full cartridge images are user-supplied; the repository does not include them. Example `input/` and `built/` directories are ignored; `final/` is tracked.
 
 ### Example layouts
 
-Sizes are bytes; bank and slot numbers refer to 8 KiB units. The [player catalog](../prepared-cartridges.md#included-images) gives output names.
+Sizes are bytes; bank and slot numbers refer to 8 KiB units. The [player catalog](../prepared-cartridges.md#supported-images) gives output names.
 
 | Example | Image bytes | Fixed banks | Reusable slots | Notes |
 | --- | ---: | ---: | ---: | --- |
@@ -142,7 +142,7 @@ Export does not recover original-ROM preparation edits. Preserve those and the o
 
 ## Build complete packages
 
-This optional tool builds ZIPs for all seven examples. It requires their exact prepared images in one directory; it does not download them. Run with Python 3.9 or newer from the repository root:
+This optional tool builds ZIPs for all seven examples. It requires the user to supply all seven exact prepared images in one directory; it does not include or download those images. Run with Python 3.9 or newer from the repository root:
 
 ```powershell
 python tools/package-beta-cartridges.py --images C:/Prepared `

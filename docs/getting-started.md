@@ -2,7 +2,7 @@
 
 [Start here](README.md) Ã‚Â· [Large cartridges](prepared-cartridges.md) Ã‚Â· [Troubleshooting](troubleshooting.md)
 
-This guide is for an existing, working FinalGROM 99. You need a computer with an SD reader, a supported FAT32 SD card, and the cartridge files you want to run. You do not need Python, an assembler, or a hardware programmer.
+This guide is for an existing, working FinalGROM 99. You need a computer with an SD reader, a supported FAT32 SD card, and your user-supplied cartridge images. Full game and video images are not included in this repository. You do not need Python, an assembler, or a hardware programmer.
 
 Read the [Beta 1 capabilities and limitations](release-notes.md) before upgrading: some original FinalGROM features are not included. Building or initially programming a new board is a separate [developer task](development/building.md).
 

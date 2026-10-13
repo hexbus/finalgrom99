@@ -34,6 +34,9 @@ selected prepared cartridges larger than the board's 1 MiB of SRAM,
 including 128 MiB images, by loading banks from SD as needed.  Ordinary
 supported ROM/GROM images continue to use the normal loading path.
 
+**Cartridge images are user-supplied.** This repository provides firmware,
+tools, templates and companion files, but no full game or video images.
+
 Large cartridges require an adaptation for the exact image revision;
 renaming an arbitrary ROM is not sufficient.  Keep the SD card inserted
 while a prepared cartridge is running.  This is beta firmware, with known

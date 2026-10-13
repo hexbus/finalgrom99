@@ -54,7 +54,7 @@ Do not mix companions from different preparations or rename just one member. For
 
 ## Assemble a set from a supported image
 
-You need Python 3.9 or newer, a checkout of this repository, and the exact image recognized by the catalog. Full game images are not included.
+You need Python 3.9 or newer, a checkout of this repository, and a user-supplied image that exactly matches the catalog. The repository supplies the companion files; full game and video images are not included.
 
 The tool is named `convert-cartridge.py`, but the built-in entries **keep your image bytes unchanged and attach the matching companions**. They recognize the already-prepared Beta 1 images. A stock ROM with the same title may not match.
 
@@ -71,9 +71,9 @@ python tools/verify-prepared-set.py output/dragon/sd-card/DRAGON.GCS
 3. **Verify:** the last command should report `"verified": true`. This checks file consistency, not every gameplay sequence.
 4. Copy the four files into a `DRAGON` folder on the card, as shown above. The converter does not supply firmware or `FGMENU.BIN`; obtain those through the installation guide.
 
-A differently named BIN with identical bytes can match. A single-BIN RPK is also accepted. For another included image, supply its input path; the catalog chooses the output name and extension.
+A differently named BIN with identical bytes can match. A single-BIN RPK is also accepted. For another supported image, supply its input path; the catalog chooses the output name and extension.
 
-### Included images
+### Supported images
 
 These are the output names in the [built-in catalog](../templates/gigacart/beta1/catalog.json). Each entry records the required input fingerprint.
 
